@@ -232,11 +232,6 @@ class com_AttachmentsInstallerScript
 
 			// Move the attachments directory out of the way temporarily
 			$this->moved_attachments_dir = JPATH_ROOT.'/temporarily_renamed_attachments_folder';
-			if ( JFolder::move($attachdir, $this->moved_attachments_dir) !== true ) {
-				$msg = JText::sprintf('ATTACH_ERROR_MOVING_ATTACHMENTS_DIR');
-				$app->enqueueMessage($msg, 'error');
-				return false;
-				}
 
 			if ( $attachments_install_verbose ) {
 				$msg = JText::sprintf('ATTACH_TEMPORARILY_RENAMED_ATTACHMENTS_DIR_TO_S', $this->moved_attachments_dir);
