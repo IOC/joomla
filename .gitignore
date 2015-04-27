@@ -7,14 +7,12 @@
 .vscode
 
 # Local System Files (i.e. cache, logs, etc.) #
-/administrator/cache
 /administrator/logs
-/cache
 /installation/cache
 /installation/sessions
 /libraries/autoload_psr4.php
+/logs
 /tmp
-/configuration.php
 /.htaccess
 /web.config
 /.php_cs.cache
@@ -42,12 +40,12 @@ phpdoc-*
 /plugins/installer/webinstaller
 
 # Languages #
-administrator/language/*
+!administrator/language/*
 !administrator/language/en-GB
-administrator/manifests/packages/*
+!administrator/manifests/packages/*
 !administrator/manifests/packages/pkg_en-GB.xml
 !administrator/language/overrides/index.html
-language/*
+!language/*
 !language/en-GB
 !language/overrides/index.html
 
@@ -209,3 +207,5 @@ composer.phar
 # Build related
 RoboFile.ini
 
+# Template development
+gulp-config.json
