@@ -119,7 +119,6 @@ class InputFilter
 		'head',
 		'html',
 		'id',
-		'iframe',
 		'ilayer',
 		'layer',
 		'link',
