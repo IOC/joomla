@@ -33,7 +33,7 @@ JHtml::_('behavior.formvalidator');
 	<?php if (($this->params->get('logindescription_show') == 1 && str_replace(' ', '', $this->params->get('login_description')) != '') || $this->params->get('login_image') != '') : ?>
 		</div>
 	<?php endif; ?>
-	<form action="<?php echo JRoute::_('index.php?option=com_users&task=user.login'); ?>" method="post" class="form-validate form-horizontal well">
+	<form action="<?php echo JRoute::_('index.php?option=com_users&task=user.login', true, 1); ?>" method="post" class="form-validate form-horizontal well">
 		<fieldset>
 			<?php echo $this->form->renderFieldset('credentials'); ?>
 			<?php if ($this->tfa) : ?>
