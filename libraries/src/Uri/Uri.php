@@ -62,7 +62,7 @@ class Uri extends \Joomla\Uri\Uri
 			if ($uri == 'SERVER')
 			{
 				// Determine if the request was over SSL (HTTPS).
-				if (isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) != 'off'))
+				if ((isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) != 'off')) || ((isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')))
 				{
 					$https = 's://';
 				}
