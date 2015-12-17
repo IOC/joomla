@@ -37,7 +37,7 @@ JHtml::_('behavior.formvalidator');
 	</div>
 	<?php endif; ?>
 
-	<form action="<?php echo JRoute::_('index.php?option=com_users&task=user.login'); ?>" method="post" class="form-validate form-horizontal well">
+	<form action="<?php echo JRoute::_('index.php?option=com_users&task=user.login', true, 1); ?>" method="post" class="form-validate form-horizontal well">
 
 		<fieldset>
 			<?php foreach ($this->form->getFieldset('credentials') as $field) : ?>
