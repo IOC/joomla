@@ -399,6 +399,8 @@ class PlgEditorTinymce extends JPlugin
 			$toolbar1_add[] = 'fontselect';
 			$toolbar1_add[] = 'fontsizeselect';
 		}
+		$paste_preprocess = 'paste_preprocess: function(pl, o) {'
+                    . 'if (/<img[^>]+src="data:/.test(o.content)) {o.content = "";}},';
 
 		// Search & replace
 		$searchreplace = $this->params->get('searchreplace', 1);
@@ -818,6 +820,7 @@ class PlgEditorTinymce extends JPlugin
 
 		// General
 		$script .= "
+		$paste_preprocess
 		directionality: \"$text_direction\",
 		selector: \"textarea#$id\",
 		language : \"$langPrefix\",
