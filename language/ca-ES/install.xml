@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" client="site" type="language" method="upgrade">
+	<name>Catalan (ca-ES)</name>
+	<tag>ca-ES</tag>
+	<version>3.8.3.3</version>
+	<creationDate>2018-01-02</creationDate>
+	<author>Catalan Translation Team</author>
+	<authorEmail>el.libre@gmail.com</authorEmail>
+	<authorUrl>www.catmidia.cat</authorUrl>
+	<copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>catalan language pack for Joomla! 3.8 - Site - Paquet d'idioma català per Joomla 3.8 - Lloc Web</description>
+	<files>
+		<folder>/</folder>
+		<filename file="meta">install.xml</filename>
+	</files>
+	<params />
+</extension>
