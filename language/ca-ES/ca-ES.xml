@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metafile version="3.6" client="site">
+	<name>Catalan (Català - ca_ES)</name>
+	<version>3.6.1</version>
+	<creationDate>August 2016</creationDate>
+	<author>Catalan Translation Team</author>
+	<authorEmail>el.libre@gmail.com</authorEmail>
+	<authorUrl>www.catmidia.cat</authorUrl>
+	<copyright>Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>Catalan language pack for Joomla! 3.5 - Site - Paquet d`idioma català per Joomla 3.5 - Lloc Web fet per www.catmidia.cat i Tradu.cat</description>
+	<metadata>
+		<name>Catalan (català)</name>
+		<tag>ca-ES</tag>
+		<rtl>0</rtl>
+		<locale>ca_ES.utf8, ca_ES.UTF-8, ca_ES, catalan, ca_AD.UTF-8, cat_AD.UTF-8, ca_AD, catalan.UTF-8, cat_ES, ca_ES, ca, ca_FR, ca_IT,ca_ES.utf8, ca_ES.UTF-8, ca_ES, ca_ES.UTF-8@euro, ca_AD.utf8, ca_AD.UTF-8, ca_AD, ca_FR.utf8, ca_FR.UTF-8, ca_FR, ca_IT.utf8, ca_IT.UTF-8, ca_IT, Catalan_Standard, ca</locale>
+		<firstDay>0</firstDay>
+		<weekEnd>0,6</weekEnd>
+	</metadata>
+	<params />
+</metafile>

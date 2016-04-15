@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.6" method="upgrade">
+  <name>Catalan (ca-ES) Language Pack</name>
+  <packagename>ca-ES</packagename>
+  <version>3.6.1.1</version>
+  <creationDate>Juliol de 2016</creationDate>
+  <author>Catalan Translation Team</author>
+  <authorEmail>el.libre@gmail.com</authorEmail>
+  <authorUrl>www.catmidia.cat</authorUrl>
+  <description>paquet d'idioma ca-ES</description>
+  <files>
+    <folder type="language" client="site" id="ca-ES">site_ca-ES</folder>
+    <folder type="language" client="administrator" id="ca-ES">admin_ca-ES</folder>
+  </files>
+  <updateservers>
+    <server type="collection" priority="1" name="Accredited Joomla! Translations">https://update.joomla.org/language/translationlist_3.xml</server>
+  </updateservers>
+</extension>
