@@ -54,6 +54,7 @@ class ContentViewFeatured extends JViewLegacy
 		$state      = $this->get('State');
 		$items      = $this->get('Items');
 		$pagination = $this->get('Pagination');
+		$important  = $this->get('Important');
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -153,6 +154,7 @@ class ContentViewFeatured extends JViewLegacy
 		$this->pagination = &$pagination;
 		$this->user       = &$user;
 		$this->db         = JFactory::getDbo();
+		$this->important  = &$important;
 
 		$this->_prepareDocument();
 

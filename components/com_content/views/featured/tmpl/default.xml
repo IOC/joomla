@@ -13,6 +13,17 @@
 <fields name="params">
 <fieldset name="advanced" label="COM_MENUS_LAYOUT_FEATURED_OPTIONS">
 			<field
+			name="important_category"
+			type="category"
+			extension="com_content"
+			multiple="false"
+			size="10"
+			default=""
+			label="Categoría de notícies importants"
+			description="Categoría de notícies importants"
+			/>
+
+			<field
 			name="featured_categories"
 			type="category"
 			extension="com_content"

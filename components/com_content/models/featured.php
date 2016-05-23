@@ -142,4 +142,29 @@ class ContentModelFeatured extends ContentModelArticles
 
 		return $query;
 	}
+
+	public function getImportant()
+	{
+		$params = clone $this->getState('params');
+		$id_category = $params->get('important_category');
+
+	    $query = 'SELECT title'.
+	                ' FROM #__categories'.
+	                ' WHERE id ='.(int) $id_category;
+	    $Arows = $this->_getList($query);
+
+	    //Agafem l'unic element
+	    $categoria = array_pop($Arows);
+
+	    $query = 'SELECT id, title, introtext, created, modified, catid, language'.
+	                ' FROM #__content c'.
+	                ' JOIN #__content_frontpage cf ON cf.content_id=c.id'.
+	                ' WHERE state = 1'.
+	                ' AND featured = 1'.
+	                ' AND catid ='. (int) $id_category .
+	                ' ORDER BY cf.ordering';
+	    $articles = $this->_getList($query);
+
+	    return $articles;
+	}
 }
