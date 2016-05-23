@@ -55,6 +55,7 @@ class ContentViewFeatured extends JViewLegacy
 		$state      = $this->get('State');
 		$items      = $this->get('Items');
 		$pagination = $this->get('Pagination');
+		$important  = $this->get('Important');
 
 		// Flag indicates to not add limitstart=0 to URL
 		$pagination->hideEmptyLimitstart = true;
@@ -158,6 +159,7 @@ class ContentViewFeatured extends JViewLegacy
 		$this->pagination = &$pagination;
 		$this->user       = &$user;
 		$this->db         = JFactory::getDbo();
+		$this->important  = &$important;
 
 		$this->_prepareDocument();
 
