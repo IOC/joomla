@@ -45,7 +45,7 @@ class JoomlaupdateControllerUpdate extends JControllerLegacy
 		if ($file)
 		{
 			JFactory::getApplication()->setUserState('com_joomlaupdate.file', $file);
-			$url = 'index.php?option=com_joomlaupdate&task=update.install&' . JFactory::getSession()->getFormToken() . '=1';
+			$url = 'index.php?option=com_joomlaupdate&task=update.install&'.JFactory::getSession()->getFormToken().'=1';
 			JLog::add(JText::sprintf('COM_JOOMLAUPDATE_UPDATE_LOG_FILE', $file), JLog::INFO, 'Update');
 		}
 		else
@@ -117,7 +117,7 @@ class JoomlaupdateControllerUpdate extends JControllerLegacy
 
 		$model->finaliseUpgrade();
 
-		$url = 'index.php?option=com_joomlaupdate&task=update.cleanup&' . JFactory::getSession()->getFormToken() . '=1';
+		$url = 'index.php?option=com_joomlaupdate&task=update.cleanup&'.JFactory::getSession()->getFormToken().'=1';
 		$this->setRedirect($url);
 	}
 
@@ -300,7 +300,7 @@ class JoomlaupdateControllerUpdate extends JControllerLegacy
 		JLog::add(JText::sprintf('COM_JOOMLAUPDATE_UPDATE_LOG_FILE', $tempFile), JLog::INFO, 'Update');
 
 		// Redirect to the actual update page
-		$url = 'index.php?option=com_joomlaupdate&task=update.install&' . JFactory::getSession()->getFormToken() . '=1';
+		$url = 'index.php?option=com_joomlaupdate&task=update.install&'.JFactory::getSession()->getFormToken().'=1';
 		$this->setRedirect($url);
 	}
 
