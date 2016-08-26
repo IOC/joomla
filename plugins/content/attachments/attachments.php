@@ -257,9 +257,6 @@ class plgContentAttachments extends JPlugin
 		$lang = JFactory::getLanguage();
 		$lang->load('plg_content_attachments', dirname(__FILE__));
 
-		// Add the refresh javascript
-		AttachmentsJavascript::setupJavascript();
-
 		// Always include the hide rule (since it may be needed to hide the custom tags)
 		JHtml::stylesheet('com_attachments/attachments_hide.css', array(), true);
 
