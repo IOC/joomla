@@ -155,7 +155,8 @@ if ( $attachment->parent_title ) {
 		  size="75" maxlength="255" value="<?php echo stripslashes($attachment->description) ?>" />
 	</td>
   </tr>
-<?php if ( $this->may_publish ): ?>
+<?php $user = JFactory::getUser();?>
+<?php if ( $this->may_publish and $user->authorise('core.admin')): ?>
   <tr>
 	<td class="key"><label><?php echo JText::_('ATTACH_PUBLISHED'); ?></label></td>
 	<td><?php echo $this->lists['published']; ?></td>

@@ -245,7 +245,8 @@ else
 				 id="description" size="80" maxlength="255"
 				 value="<?php echo stripslashes($attachment->description);?>" /></td>
   </tr>
-<?php if ( $this->may_publish ): ?>
+<?php $user = JFactory::getUser();?>
+<?php if ( $this->may_publish and $user->authorise('core.admin')): ?>
   <tr><td class="key"><label><?php echo JText::_('ATTACH_PUBLISHED'); ?></label></td>
 	  <td colspan="5"><?php echo $this->lists['published']; ?></td>
   </tr>

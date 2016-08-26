@@ -33,6 +33,8 @@ $parent_entity = $this->parent_entity;
 $base_url = $this->base_url;
 
 $format = JRequest::getWord('format', '');
+$layout = JRequest::getWord('layout', 'default');
+$view = JRequest::getWord('view', '');
 
 $html = '';
 
@@ -108,10 +110,6 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 		}
 	else {
 		$row_class = 'even';
-		}
-
-	if ($attachment->state != 1) {
-		$row_class = 'unpublished';
 		}
 
 	$html .= '<tr class="'.$row_class.'">';
@@ -324,6 +322,14 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 
 	if ( $this->some_attachments_modifiable && $this->allow_edit ) {
 		$html .= "<td class=\"at_edit\">$update_link $delete_link</td>";
+		if( $layout == 'edit' or $view == '' ) {
+		    $tooltip = JText::_('ATTACH_LINK_THIS_FILE') . ' (' . $filename . ')';
+		    $insert_link = '<a onclick="insertAttachmentsLink(\'jform_articletext\',\''.$url.'\',\''.$filename.'\');return false;" type="button" href="#"';
+		    $insert_link .= " rel=\"\" title=\"$tooltip\">";
+		    $insert_link .= JHtml::image('com_attachments/attachment.gif', $tooltip, null, true);
+		    $insert_link .= "</a>";
+		    $html .= "<td class=\"at_insert\">$insert_link</td>";
+			}
 		}
 
 	$html .= "</tr>\n";

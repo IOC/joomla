@@ -136,7 +136,8 @@ if ( $this->error )
 			   <input type="text" name="description" id="description"
 						  size="70" maxlength="255"
 				  value="<?php echo stripslashes($attachment->description); ?>" /></p>
-<?php if ( $this->may_publish ): ?>
+<?php $user = JFactory::getUser();?>
+<?php if ( $this->may_publish and $user->authorise('core.admin')): ?>
 			<div class="at_control"><label><?php echo JText::_('ATTACH_PUBLISHED'); ?></label><?php echo $this->publish; ?></div>
 <?php endif; ?>
 <?php if ( $params->get('allow_frontend_access_editing', false) ): ?>
