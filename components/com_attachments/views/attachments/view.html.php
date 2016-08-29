@@ -62,8 +62,31 @@ class AttachmentsViewAttachments extends JViewLegacy
 			JError::raiseError( 500, $errmsg);
 			}
 
+		$from = JRequest::getWord('from', 'closeme');
+		$layout = JRequest::getWord('layout');
+		$tmpl = JRequest::getWord('tmpl');
+
 		// See if there are any attachments
 		$list = $model->getAttachmentsList();
+		if ($model->getParentType() == 'com_content' and ($from == 'editor' || $layout == 'edit' || $tmpl == 'component')) {
+			$articleid = $model->getParentId();
+			$old_parent_entity = $model->getParentEntity();
+			$catid =$model->getCategoryid($articleid);
+			$model->setParentId($catid, 'com_content', 'category');
+			if ($catlist = $model->getAttachmentsList()) {
+				foreach ($catlist as $key => $value) {
+					$catlist[$key]->category = true;
+				}
+				if ($list) {
+					$model->setParentId($articleid, 'com_content', $old_parent_entity);
+					}
+				$list = array_merge($list, $catlist);
+				}
+			else {
+				// Restore old settings
+				$model->setParentId($articleid, 'com_content', $old_parent_entity);
+				}
+			}
 		if ( ! $list ) {
 			return null;
 			}
@@ -92,9 +115,6 @@ class AttachmentsViewAttachments extends JViewLegacy
 		$params = JComponentHelper::getParams('com_attachments');
 
 		// See whether the user-defined fields should be shown
-		$from = JRequest::getWord('from', 'closeme');
-		$layout = JRequest::getWord('layout');
-		$tmpl = JRequest::getWord('tmpl');
 		$task = JRequest::getWord('task');
 		$show_hidden_user_fields = false;
 		if ( $app->isAdmin() || ($from == 'editor') || ($layout == 'edit') || ($tmpl == 'component') ) {

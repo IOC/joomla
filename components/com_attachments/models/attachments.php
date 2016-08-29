@@ -442,8 +442,15 @@ class AttachmentsModelAttachments extends JModelLegacy
 		$this->_some_visible = false;
 		$this->_some_modifiable = false;
 
+		$cat_num_attachments = 0;
+		if ($parent_entity == 'article') {
+			$catid = $this->getCategoryid($parent_id);
+			$db->setQuery('SELECT count(*) FROM #__attachments WHERE parent_entity="category" AND parent_id=' . $catid);
+			$cat_num_attachments = $db->loadResult();
+			}
+
 		// Install the list of attachments in this object
-		$this->_num_attachments = count($attachments);
+		$this->_num_attachments = count($attachments) + $cat_num_attachments;
 
 		// The query only returns items that are visible/accessible for
 		// the user, so if it contains anything, they will be visible
@@ -575,6 +582,23 @@ class AttachmentsModelAttachments extends JModelLegacy
 			}
 
 		return $types;
+	}
+
+
+	/**
+	 * Get the category id for the specified article
+	 *
+	 * @param   int     $articleid      the ID for this article
+	 *
+	 * @return category id for the specified article
+	 */
+	public function getCategoryid($articleid)
+	{
+		$db = JFactory::getDbo();
+		$db->setQuery('SELECT catid FROM #__content WHERE id=' . (int) $articleid);
+		$catid = $db->loadResult();
+
+		return $catid;
 	}
 
 }
