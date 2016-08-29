@@ -29,6 +29,9 @@ function refreshAttachments(siteUrl, ptype, pentity, pid, lang, from) {
         id = "attachmentsList_" + ptype + "_default_" + pid;
         alist = window.parent.document.getElementById(id);
     }
+    if ( !alist) {
+        alist = window.parent.document.getElementsByClassName('attachmentsList')[0];
+    }
     new window.Request({
         url: url,
         method: 'get',

@@ -29,12 +29,14 @@ $attachments = $this->list;
 $parent_id = $this->parent_id;
 $parent_type = $this->parent_type;
 $parent_entity = $this->parent_entity;
+$category_attachments = false;
 
 $base_url = $this->base_url;
 
 $format = JRequest::getWord('format', '');
 $layout = JRequest::getWord('layout', 'default');
 $view = JRequest::getWord('view', '');
+$task = JRequest::getWord('task', '');
 
 $html = '';
 
@@ -110,6 +112,18 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 		}
 	else {
 		$row_class = 'even';
+		}
+
+	// Category attachments start
+	if ( !$category_attachments and isset($attachment->category) ) {
+			$category_attachments = true;
+			if ($row_num == 1) {
+				$html .= "<td>" . JText::_('ATTACH_NO_ATTACHMENTS') . "</td>";
+				}
+			$html .= "</tbody></table>\n";
+			$html .= "<table>\n";
+			$html .= "<caption>" . JText::_('ATTACH_ATTACHMENTS_CATEGORY') . "</caption>\n";
+			$html .= "<tbody>\n";
 		}
 
 	$html .= '<tr class="'.$row_class.'">';
@@ -297,7 +311,7 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 	$delete_link = '';
 
 	// Add the link to edit the attachment, if requested
-	if ( $this->some_attachments_modifiable && $attachment->user_may_edit && $this->allow_edit ) {
+	if ( $this->some_attachments_modifiable && $attachment->user_may_edit && $this->allow_edit && !isset($attachment->category) ) {
 
 		// Create the edit link
 		$update_url = str_replace('%d', (string)$attachment->id, $this->update_url);
@@ -309,7 +323,7 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 		}
 
 	// Add the link to delete the attachment, if requested
-	if ( $this->some_attachments_modifiable && $attachment->user_may_delete && $this->allow_edit ) {
+	if ( $this->some_attachments_modifiable && $attachment->user_may_delete && $this->allow_edit  && !isset($attachment->category) ) {
 
 		// Create the delete link
 		$delete_url = str_replace('%d', (string)$attachment->id, $this->delete_url);
@@ -320,16 +334,17 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 		$delete_link .= "</a>";
 		}
 
-	if ( $this->some_attachments_modifiable && $this->allow_edit ) {
+	if ( $this->some_attachments_modifiable && $this->allow_edit && !isset($attachment->category) ) {
 		$html .= "<td class=\"at_edit\">$update_link $delete_link</td>";
-		if( $layout == 'edit' or $view == '' ) {
-		    $tooltip = JText::_('ATTACH_LINK_THIS_FILE') . ' (' . $filename . ')';
-		    $insert_link = '<a onclick="insertAttachmentsLink(\'jform_articletext\',\''.$url.'\',\''.$filename.'\');return false;" type="button" href="#"';
-		    $insert_link .= " rel=\"\" title=\"$tooltip\">";
-		    $insert_link .= JHtml::image('com_attachments/attachment.gif', $tooltip, null, true);
-		    $insert_link .= "</a>";
-		    $html .= "<td class=\"at_insert\">$insert_link</td>";
-			}
+		}
+
+	if( ($layout == 'edit' or $view == '' ) && $task != 'add' && $task != 'upload' ) {
+	    $tooltip = JText::_('ATTACH_LINK_THIS_FILE') . ' (' . $filename . ')';
+	    $insert_link = '<a onclick="insertAttachmentsLink(\'jform_articletext\',\''.$url.'\',\''.$filename.'\');return false;" type="button" href="#"';
+	    $insert_link .= " rel=\"\" title=\"$tooltip\">";
+	    $insert_link .= JHtml::image('com_attachments/attachment.gif', $tooltip, null, true);
+	    $insert_link .= "</a>";
+	    $html .= "<td class=\"at_insert\">$insert_link</td>";
 		}
 
 	$html .= "</tr>\n";

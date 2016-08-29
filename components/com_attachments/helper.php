@@ -1796,13 +1796,25 @@ class AttachmentsHelper
 			}
 		$db->setQuery($query);
 		$total = $db->loadResult();
+
+		$cat_num_attachments = 0;
+		if ($parent_id) {
+			$db->setQuery('SELECT catid FROM #__content WHERE id=' . (int) $parent_id);
+			$catid = $db->loadResult();
+
+			if ($catid) {
+				$db->setQuery('SELECT count(*) FROM #__attachments WHERE parent_entity="category" AND parent_id=' . $catid);
+				$cat_num_attachments = $db->loadResult();
+				}
+			}
+
 		if ( $db->getErrorNum() ) {
 			$errmsg = $db->stderr() . ' (ERR 47)';
 			JError::raiseError(500, $errmsg);
 			}
 
 		// Generate the HTML for the attachments for the specified parent
-		if ( $total > 0 ) {
+		if ( ($total + $cat_num_attachments) > 0 ) {
 
 			// Get the component parameters
 			jimport('joomla.application.component.helper');
