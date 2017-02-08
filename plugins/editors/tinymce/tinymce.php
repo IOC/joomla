@@ -371,6 +371,9 @@ class PlgEditorTinymce extends JPlugin
 				else
 				{
 					$content_css = JUri::root(true) . '/templates/' . $template . '/css/editor.css';
+					if (file_exists($templates_path . '/' . $template . '/css/template.min.css')) {
+						$content_css .= ',' . JUri::root(true) . '/templates/' . $template . '/css/template.min.css';
+					}
 				}
 			}
 		}
