@@ -48,6 +48,8 @@ class PlgEditorTinymce extends JPlugin
 	{
 		JHtml::_('jquery.framework');
 		JHtml::script($this->_basePath . '/tinymce.min.js', false, false, false, false, false);
+		JHtml::script($this->_basePath . '/preventdelete.js', false, false, false, false, false);
+		JHtml::script($this->_basePath . '/managetabs.js', false, false, false, false, false);
 	}
 
 	/**
@@ -372,7 +374,9 @@ class PlgEditorTinymce extends JPlugin
 			'save',
 			'textcolor',
 			'colorpicker',
-			'importcss');
+			'importcss',
+			'preventdelete',
+			'managetabs');
 		$toolbar1_add[] = 'bold';
 		$toolbar1_add[] = 'italic';
 		$toolbar1_add[] = 'underline';
