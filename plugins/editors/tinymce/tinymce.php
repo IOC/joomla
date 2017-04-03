@@ -407,8 +407,22 @@ class PlgEditorTinymce extends JPlugin
 			$toolbar1_add[] = 'fontselect';
 			$toolbar1_add[] = 'fontsizeselect';
 		}
-		$paste_preprocess = 'paste_preprocess: function(pl, o) {'
-                    . 'if (/<img[^>]+src="data:/.test(o.content)) {o.content = "";}},';
+		$paste_preprocess = 'paste_preprocess: function(pl, o) {
+								var holder = document.createElement("div");
+						        holder.innerHTML = o.content;
+						        var elementsWithStyle = holder.querySelectorAll("[style]");
+						        var i = 0;
+
+						        for (i = 0; i < elementsWithStyle.length; i++) {
+						            elementsWithStyle[i].removeAttribute("style");
+						        }
+
+						        var elementsWithClass = holder.querySelectorAll("[class]");
+						        for (i = 0; i < elementsWithClass.length; i++) {
+						            elementsWithClass[i].removeAttribute("class");
+						        }
+								o.content = holder.innerHTML; '
+								. 'if (/<img[^>]+src="data:/.test(o.content)) {o.content = "";}},';
 
 		// Search & replace
 		$searchreplace = $this->params->get('searchreplace', 1);
@@ -837,6 +851,7 @@ class PlgEditorTinymce extends JPlugin
 		$skin
 		theme : \"$theme\",
 		schema: \"html5\",
+		paste_data_images: false,
 		";
 
 		// Cleanup/Output
