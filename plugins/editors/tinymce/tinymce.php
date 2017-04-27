@@ -433,6 +433,9 @@ class PlgEditorTinymce extends JPlugin
 			'save',
 			'colorpicker',
 			'importcss',
+			'preventdelete',
+			'managetabs',
+			'cleanpastedhtml',
 		);
 
 		// Allowed elements
