@@ -134,7 +134,21 @@ abstract class Factory
 		{
 			if (!$id)
 			{
-				throw new \Exception('Failed to start application', 500);
+				echo '<html lang="ca">
+						<head>
+							<title>Servei no disponible</title>
+						</head>
+						<body style="background-color: #f1f1f1;">
+							<div style="text-align:center; font-size:large; border-width:1px; background-color: #fff;
+							    border-color:#eee; border-style:solid; border-radius: 20px; border-collapse: collapse;
+							    -moz-border-radius:20px; -webkit-border-radius:20px; padding:15px; margin:200px 100px 0px 100px;">
+								<h2>Servei no disponible</h2>
+								<p>El lloc web de l&apos;IOC est&agrave; temporalment fora de servei. Estem treballant per solucionar el problema al m&eacute;s aviat possible. Si us plau proveu d&apos;accedir-hi m&eacute;s tard.</p>
+								<p>Disculpeu les mol&egrave;sties.</p>
+							</div>
+						</body>
+					</html>';
+				die;
 			}
 
 			self::$application = CMSApplication::getInstance($id);
