@@ -441,6 +441,8 @@ class PlgEditorTinymce extends JPlugin
 		// Allowed elements
 		$elements = array(
 			'hr[id|title|alt|class|width|size|noshade]',
+			'span[id|class]',
+			'div[id|class|style]',
 		);
 
 		if ($extended_elements)
