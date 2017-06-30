@@ -14,13 +14,14 @@ tinymce.PluginManager.add('preventdelete', function(ed, link) {
                         "nav-tabs",
                         "panel-title",
                         "tab-pane",
-                        "study-frame",
-                        "study-term",
                         "study-definition",
                         "study-tabs",
-                        "study-registration",
                         "study-date",
+                        "study-days",
+                        "study-month",
                         "semiheader",
+                        "panel-heading",
+                        "panel-title-anchor",
                         "col-sm-2",
                         "col-sm-4",
                         "col-sm-8",
@@ -57,7 +58,7 @@ tinymce.PluginManager.add('preventdelete', function(ed, link) {
         var range           = ed.selection.getRng();
         var currentNode     = range.endContainer.parentElement;
         var currentWrapper  = currentNode.className;
-        var parentNode      = currentNode.parentElement;
+        var parentNode      = currentNode.parentElement || currentNode;
         var parentWrapper   = parentNode.className;
         var startOffset     = getCaretCharacterOffsetWithin(currentNode);
 
@@ -66,10 +67,12 @@ tinymce.PluginManager.add('preventdelete', function(ed, link) {
         // if delete Keys pressed
         if (evt.keyCode == 8 || evt.keyCode == 46) {
 
-            // If no prent div iterate until we find it!
-            if (parentNode.tagName != 'DIV') {
-                while(parentNode && parentNode.tagName != 'DIV') {
+            // If no parent div, iterate until we find it!
+            style = window.getComputedStyle(parentNode);
+            if (parentNode.tagName != 'DIV' || style.getPropertyValue('border-top-style') != 'dashed') {
+                while(parentNode && parentNode.tagName != 'HTML' && (parentNode.tagName != 'DIV' || style.getPropertyValue('border-top-style') != 'dashed')) {
                     parentNode = parentNode.parentElement;
+                    style = window.getComputedStyle(parentNode);
                 }
             }
 
@@ -94,7 +97,7 @@ tinymce.PluginManager.add('preventdelete', function(ed, link) {
                     return false;
                 } else {
                     // study-tabs
-                    style = window.getComputedStyle(currentNode.parentElement);
+                    style = window.getComputedStyle(parentNode);
                     dashed = style.getPropertyValue('border-top-style') == 'dashed';
                     if (startOffset == currentNode.textContent.length
                         && range.collapsed
@@ -107,11 +110,11 @@ tinymce.PluginManager.add('preventdelete', function(ed, link) {
                 }
             }
             if (evt.keyCode == 8) {
-                style = window.getComputedStyle(currentNode.parentElement);
+                style = window.getComputedStyle(parentNode);
                 dashed = style.getPropertyValue('border-top-style') == 'dashed';
-                console.log('TABS '  + currentNode.parentElement.tagName);
-                if (startOffset == "0" && currentNode.parentElement.tagName == 'LI' && dashed) {
-                    console.log('Backspace avoided on tabs');
+                console.log('TABS '  + parentNode.tagName);
+                if (startOffset == "0" && dashed) {
+                    console.log('Backspace avoided');
                     evt.preventDefault();
                     evt.stopPropagation();
                     return false;
