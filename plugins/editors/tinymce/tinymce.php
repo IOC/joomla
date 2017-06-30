@@ -434,14 +434,17 @@ class PlgEditorTinymce extends JPlugin
 			'colorpicker',
 			'importcss',
 			'preventdelete',
-			'managetabs',
+			'manageelements',
 			'cleanpastedhtml',
+			'customizedanchors',
+			'templatemodal',
+			'scrollfixed',
 		);
 
 		// Allowed elements
 		$elements = array(
 			'hr[id|title|alt|class|width|size|noshade]',
-			'span[id|class]',
+			'span[id|class|style]',
 			'div[id|class|style]',
 		);
 
