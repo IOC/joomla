@@ -193,6 +193,16 @@ class RssRenderer extends DocumentRenderer
 				$itemlink = str_replace(' ', '%20', $url . $itemlink);
 			}
 
+			if (preg_match('/-ioc-welcome$/', $itemlink))
+			{
+				continue;
+			}
+
+			if (preg_match('/\d+(-featured|-latest-news)/', $itemlink))
+			{
+				$itemlink = preg_replace('/\d+(-featured|-latest-news)/', 'alias', $itemlink, 1);
+			}
+
 			$feed .= "		<item>\n";
 			$feed .= "			<title>" . htmlspecialchars(strip_tags($data->items[$i]->title), ENT_COMPAT, 'UTF-8') . "</title>\n";
 			$feed .= "			<link>" . str_replace(' ', '%20', $itemlink) . "</link>\n";
