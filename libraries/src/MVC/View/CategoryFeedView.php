@@ -106,6 +106,13 @@ class CategoryFeedView extends HtmlView
 				$date = '';
 			}
 
+			$tags = new \JHelperTags;
+			$tags->getItemTags('com_content.article', $item->id);
+			$tagnames = array_map(function ($f)
+							{
+								return $f->alias;
+							}, $tags->itemTags);
+
 			// Load individual item creator class.
 			$feeditem              = new \JFeedItem;
 			$feeditem->title       = $title;
@@ -114,6 +121,7 @@ class CategoryFeedView extends HtmlView
 			$feeditem->date        = $date;
 			$feeditem->category    = $category->title;
 			$feeditem->author      = $author;
+			$feeditem->tags        = $tagnames;
 
 			// We don't have the author email so we have to use site in both cases.
 			if ($feedEmail === 'site')
