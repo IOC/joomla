@@ -47,6 +47,10 @@ class RssRenderer extends DocumentRenderer
 	{
 		$app = \JFactory::getApplication();
 
+		// Template
+		$templatepath = JPATH_BASE . '/templates/' . $app->getTemplate();
+		$templateurl = 'templates/' . $app->getTemplate() . '/images';
+
 		// Gets and sets timezone offset from site configuration
 		$tz  = new \DateTimeZone($app->get('offset'));
 		$now = \JFactory::getDate();
@@ -214,6 +218,16 @@ class RssRenderer extends DocumentRenderer
 			else
 			{
 				$feed .= "			<guid isPermaLink=\"false\">" . htmlspecialchars($data->items[$i]->guid, ENT_COMPAT, 'UTF-8') . "</guid>\n";
+			}
+			if (preg_match('/<figure[^<]*<img.*?src="([^"]*)"/', $data->items[$i]->description, $matches))
+			{
+				$imagetype = in_array('matricules', $data->items[$i]->tags) ? 'matricula' : 'general';
+				$pathinfo = pathinfo($matches[1]);
+				preg_match('/.*?([^_]*)$/', $pathinfo['filename'], $study);
+				if (!empty($study) && file_exists($templatepath . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'twitter' . DIRECTORY_SEPARATOR . $study[1] . '-twitter-' . $imagetype . '.' . $pathinfo['extension'])) {
+					$twitterimage = $templateurl . '/twitter/' . $study[1] . '-twitter-' . $imagetype . '.' . $pathinfo['extension'];
+					$data->items[$i]->description = preg_replace('/<figure([^<]*)<img(.*?)src="([^"]*)"/', '<figure$1<img$2src="' . $twitterimage . '"', $data->items[$i]->description, 1);
+				}
 			}
 
 			$feed .= "			<description><![CDATA[" . $this->_relToAbs($data->items[$i]->description) . "]]></description>\n";
