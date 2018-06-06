@@ -138,6 +138,15 @@ class FeedItem
 	public $source;
 
 	/**
+	 * Tags element
+	 *
+	 * optional
+	 *
+	 * @var    array
+	 */
+	public $tags;
+
+	/**
 	 * Set the FeedEnclosure for this item
 	 *
 	 * @param   FeedEnclosure  $enclosure  The FeedEnclosure to add to the feed.
