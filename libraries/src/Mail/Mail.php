@@ -747,6 +747,53 @@ class Mail extends \PHPMailer
 			return false;
 		}
 
+		$app = Factory::getApplication();
+
+		if (!empty($app->get('local_xtecmail_app'))) {
+			require_once(JPATH_SITE.'/libraries/src/xtecmail/lib.php');
+
+			$xm = new \xtecmail($app->get('local_xtecmail_app'),
+	                           $app->get('local_xtecmail_sender'),
+	                           $app->get('local_xtecmail_env'));
+			if (!is_array($recipient)) {
+				$recipient = array($recipient);
+			}
+			$recipients = array();
+			foreach ($recipient as $to) {
+				array_push($recipients, MailHelper::cleanLine($to));
+			}
+			if (is_array($replyTo)) {
+				$mailreplyto = !empty($replyTo[0]) ? $replyTo[0] : 'noreply@' . \JUri::getInstance()->getHost();
+			} else {
+				$mailreplyto = !empty($replyTo) ? $replyTo : 'noreply@' . \JUri::getInstance()->getHost();
+			}
+			$mailsubject = MailHelper::cleanLine($subject);
+			$mailbody = MailHelper::cleanText($body);
+			$contenttype =  $mode ? 'text/html' : 'text/plain';
+			$attachments = array();
+			if (is_array($attachment)) {
+				foreach ($attachment as $file) {
+					$attachments[] = array('filename' => basename($file),
+									'content' => file_get_contents($file),
+									'mimetype' => mime_content_type($file));
+				}
+			} else {
+				if (!empty($attachment)) {
+					$attachments[] = array('filename' => basename($attachment),
+									'content' => file_get_contents($attachment),
+									'mimetype' => mime_content_type($attachment));
+				}
+			}
+			try {
+				$xm->send($recipients, array(), array(), $mailreplyto, $mailsubject,
+	                      $mailbody, $contenttype, $attachments);
+				return true;
+			} catch (\xtecmailerror $e) {
+				$app->enqueueMessage(\JText::_('COM_CONFIG_SENDMAIL_ERROR'), 'error');
+				return false;
+			}
+		}
+
 		return $this->Send();
 	}
 
