@@ -763,9 +763,9 @@ class Mail extends \PHPMailer
 				array_push($recipients, MailHelper::cleanLine($to));
 			}
 			if (is_array($replyTo)) {
-				$mailreplyto = !empty($replyTo[0]) ? $replyTo[0] : 'noreply@' . gethostname();
+				$mailreplyto = !empty($replyTo[0]) ? $replyTo[0] : 'noreply@' . \JUri::getInstance()->getHost();
 			} else {
-				$mailreplyto = !empty($replyTo) ? $replyTo : 'noreply@' . gethostname();
+				$mailreplyto = !empty($replyTo) ? $replyTo : 'noreply@' . \JUri::getInstance()->getHost();
 			}
 			$mailsubject = MailHelper::cleanLine($subject);
 			$mailbody = MailHelper::cleanText($body);
