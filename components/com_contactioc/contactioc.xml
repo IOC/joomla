@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+	<name>com_contactioc</name>
+	<author>Marc Català</author>
+	<creationDate>June 2018</creationDate>
+	<copyright>Institut Obert de Catalunya. All rights reserved.	</copyright>
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+	<authorEmail>mcatala@ioc.cat</authorEmail>
+	<authorUrl>ioc.gencat.cat</authorUrl>
+	<version>1.0.0</version>
+	<description>COM_CONTACTIOC_XML_DESCRIPTION</description>
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>contactioc.php</filename>
+		<folder>views</folder>
+	</files>
+	<languages folder="site">
+		<language tag="ca-ES">language/ca-ES.com_contactioc.ini</language>
+		<language tag="en-GB">language/en-GB.com_contactioc.ini</language>
+	</languages>
+</extension>
