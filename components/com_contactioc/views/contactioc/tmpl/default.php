@@ -34,7 +34,7 @@ JText::script('COM_CONTACTIOC_INVALID_SELECT');
     </div>
 	<form action="<?php echo JRoute::_('index.php?option=com_contactioc&task=send'); ?>" id="contactiocForm" method="post">
         <fieldset>
-            <legend>Vull:</legend>
+            <legend><?php echo JText::_('COM_CONTACTIOC_INBOX_HEADER'); ?></legend>
             <div class="contact-type">
                 <label>
                     <input name="contactType" value="0" <?php echo ($this->escape($data->contactType) == 0 ? 'checked="checked"' : '')?> id="consulta" type="radio" required >
