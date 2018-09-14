@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metafile version="3.8" client="administrator">
+	<name>Aranese (oc-ES)</name>
+	<version>3.8.12</version>
+	<creationDate>2018-09-13</creationDate>
+	<author>Institut Obert de Catalunya</author>
+	<authorEmail>ioc@ioc.cat</authorEmail>
+	<authorUrl>ioc.xtec.cat</authorUrl>
+	<copyright>Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description><![CDATA[oc-ES administrator language]]></description>
+	<metadata>
+		<name>Aranès (oc-ES)</name>
+		<nativeName>Aranès (oc-ES)</nativeName>
+		<tag>oc-ES</tag>
+		<rtl>0</rtl>
+		<locale>oc_ES.utf8, oc_ES.UTF-8, oc_ES.UTF-8@euro, oc_ES, oc, occitania</locale>
+		<firstDay>0</firstDay>
+		<weekEnd>0,6</weekEnd>
+		<calendar>gregorian</calendar>
+	</metadata>
+	<params />
+</metafile>
