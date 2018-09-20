@@ -727,6 +727,8 @@ class PlgEditorTinymce extends JPlugin
 			unset($scriptOptions['toolbar2']);
 		}
 
+		$scriptOptions['image_dimensions'] = false;
+
 		$options['tinyMCE']['default'] = $scriptOptions;
 
 		$doc->addStyleDeclaration('.mce-in { padding: 5px 10px !important;}');
