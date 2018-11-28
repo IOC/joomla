@@ -51,7 +51,6 @@ class ContactiocViewContactioc extends JViewLegacy
 		$input = $app->input;
 
 		// Load with previous data, if it exists
-		$data->contactType       = $input->get('contactType', 0, 'int');
 		$data->contactStudy      = $input->get('contactStudy', 0, 'int');
 		$data->contactSubject    = trim($input->get('contactSubject', '', 'string'));
 		$data->contactContent    = trim($input->get('contactContent', '', 'string'));
