@@ -35,23 +35,13 @@ JText::script('COM_CONTACTIOC_INVALID_SELECT');
 	<form action="<?php echo JRoute::_('index.php?option=com_contactioc&task=send'); ?>" id="contactiocForm" method="post">
         <fieldset>
             <legend><?php echo JText::_('COM_CONTACTIOC_INBOX_HEADER'); ?></legend>
-            <div class="contact-type">
-                <label>
-                    <input name="contactType" value="0" <?php echo ($this->escape($data->contactType) == 0 ? 'checked="checked"' : '')?> id="consulta" type="radio" required >
-                    <span class=""><?php echo JText::_('COM_CONTACTIOC_TYPE0'); ?></span>
-                </label>
-                <label>
-                    <input name="contactType" value="1" <?php echo ($this->escape($data->contactType) == 1 ? 'checked="checked"' : '')?> id="suggerencia" type="radio" required >
-                    <span class=""><?php echo JText::_('COM_CONTACTIOC_TYPE1'); ?></span>
-                </label>
-            </div>
             <div>
                 <label for="contactStudy">
                     <?php echo JText::_('COM_CONTACTIOC_STUDY'); ?>
                     <span class="required">*</span>
                 </label>
                 <select name="contactStudy" id="contactStudy" class="form-control custom_select" oninvalid="setCustomValidity('<?php echo JText::_('COM_CONTACTIOC_INVALID_SELECT');?>')" required>
-                    <?php for ($i = 0; $i < $this->emails; $i++) : ?>
+                    <?php for ($i = 0; $i <= $this->emails; $i++) : ?>
                         <option value="<?php echo ($i ? $i : ''); ?>"<?php echo ($this->escape($data->contactStudy) == $i ? 'selected' : '')?>><?php echo JText::_('COM_CONTACTIOC_STUDY' . $i); ?></option>
                     <?php endfor; ?>
                 </select>
