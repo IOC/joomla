@@ -47,8 +47,7 @@ class ContactiocController extends JControllerLegacy
 			'batxinfo@ioc.cat',
 			'fpnoreglada@ioc.cat',
 			'assessorament.prp@ioc.cat',
-			'ioc@ioc.cat',
-			'queixes_agraiments_suggeriments@ioc.cat'
+			'ioc@ioc.cat'
 		);
 
 		$this->mimetypes = array(
@@ -100,7 +99,6 @@ class ContactiocController extends JControllerLegacy
 		}
 
 		// Load data
-		$contactType       = $this->input->get('contactType', 0, 'int');
 		$contactStudy      = $this->input->get('contactStudy', 0, 'int');
 		$contactSubject    = trim($this->input->get('contactSubject', '', 'string'));
 		$contactContent    = trim($this->input->get('contactContent', '', 'string'));
@@ -113,8 +111,7 @@ class ContactiocController extends JControllerLegacy
 		$contactTypeID     = $this->input->get('contactTypeID', 0, 'int');
 		$contactID         = trim($this->input->get('contactID', '', 'string'));
 
-		$error = $contactType < 0 || $contactType > 1;
-		$error = $error || $contactStudy < 1 || $contactStudy > (count($this->emails) - 1);
+		$error = $contactStudy < 1 || $contactStudy > count($this->emails);
 		$error = $error || $contactTypeID < 1 || $contactTypeID > 4;
 		$error = $error || empty($contactSubject) || empty($contactContent) || empty($contactFirstname) || empty($contactLastname)
 					|| empty($contactEmail) || !JMailHelper::isEmailAddress($contactEmail) || empty($contactID);
@@ -125,7 +122,7 @@ class ContactiocController extends JControllerLegacy
 			return $this->contactioc($error, $script);
 		}
 
-		$typename    = JText::_('COM_CONTACTIOC_TYPE_SHORT' . $contactType);
+		$typename    = JText::_('COM_CONTACTIOC_TYPE_SHORT');
 		$study       = JText::_('COM_CONTACTIOC_STUDY' . $contactStudy);
 		$tmpfiles    = array();
 		$attachments = array();
@@ -176,11 +173,6 @@ class ContactiocController extends JControllerLegacy
 		}
 
 		$contactStudy = $contactStudy - 1;
-
-		if ($contactType > 0) {
-			$contactSubject = $typename . ' (' . $study . '): ' . $contactSubject;
-			$contactStudy = count($this->emails) - 1;
-		}
 
 		// Clean the email data
 		$subject = JMailHelper::cleanSubject($contactSubject);
