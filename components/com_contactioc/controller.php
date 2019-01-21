@@ -47,6 +47,7 @@ class ContactiocController extends JControllerLegacy
 			'batxinfo@ioc.cat',
 			'fpnoreglada@ioc.cat',
 			'assessorament.prp@ioc.cat',
+			'cre@ioc.cat',
 			'ioc@ioc.cat'
 		);
 
