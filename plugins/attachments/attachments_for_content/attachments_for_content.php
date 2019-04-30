@@ -762,7 +762,7 @@ class AttachmentsPlugin_Com_Content extends AttachmentsPlugin
 		// Make sure the parent is valid and get info about it
 		$db = JFactory::getDBO();
 
-		if ($parent_entity == 'category')
+		if ($parent_entity == 'category' || JRequest::getCmd('view') == 'category')
 		{
 			// Handle categories
 			$always_show_category_attachments = $aparams->get('always_show_category_attachments', false);
@@ -807,6 +807,7 @@ class AttachmentsPlugin_Com_Content extends AttachmentsPlugin
 			$query->select('created_by, catid')->from('#__content')->where('id = ' . (int) $parent_id);
 			$db->setQuery($query);
 			$attachments = $db->loadObjectList();
+
 			if ($db->getErrorNum() || (count($attachments) == 0))
 			{
 				$errmsg = JText::sprintf('ATTACH_ERROR_INVALID_PARENT_S_ID_N', $parent_entity_name, $parent_id) . ' (ERR 410)';
