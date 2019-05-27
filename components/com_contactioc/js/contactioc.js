@@ -1,7 +1,6 @@
 (function($) {
     $(document).ready(function() {
         $('#contactStudy').removeAttr('required');
-        $('#tipusID').removeAttr('required');
         $('#contactiocForm').append('<input type="hidden" name="script" value="true">');
     });
     $(document).on('submit', '#contactiocForm', function(e) {
@@ -74,18 +73,16 @@
             $("html, body").animate({ scrollTop: position.top - 90}, 800);
             return false;
         }
-        if ($('#tipusID option:selected').val() < 1) {
-            $('#tipusID_chzn a').addClass('input-required');
-            addErrorMessage($('#tipusID_chzn'));
-            var position = $('#tipusID_chzn').position();
-            $("html, body").animate({ scrollTop: position.top - 90}, 800);
-            return false;
-        }
         $.each($('input[type="text"],input[type="email"]'), function (index, obj) {
             if ($.trim($(obj).val()).length == 0) {
                 return false;
             }
         });
+        if (!$('#agree').is(':checked')) {
+            var position = $('#agree').position();
+            $("html, body").animate({ scrollTop: position.top - 90}, 800);
+            return false;
+        }
         return true;
     };
     var addErrorMessage = function($node) {

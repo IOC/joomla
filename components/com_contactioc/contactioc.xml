@@ -17,6 +17,7 @@
 	</files>
 	<languages folder="site">
 		<language tag="ca-ES">language/ca-ES.com_contactioc.ini</language>
+		<language tag="es-ES">language/es-ES.com_contactioc.ini</language>
 		<language tag="en-GB">language/en-GB.com_contactioc.ini</language>
 		<language tag="oc-ES">language/oc-ES.com_contactioc.ini</language>
 	</languages>

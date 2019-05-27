@@ -116,22 +116,32 @@ JText::script('COM_CONTACTIOC_INVALID_SELECT');
                     <input name="contactEmail" maxlength="100" id="correu" class="form-control" type="email" value="<?php echo $this->escape($data->contactEmail); ?>" required >
                 </label>
             </div>
-            <div>
-                <label for="tipusID">
-                    <?php echo JText::_('COM_CONTACTIOC_TYPE_ID'); ?>
-                    <span class="required">*</span>
-                    <select name="contactTypeID" id="tipusID" class="form-control custom_select hasCustomSelect" oninvalid="setCustomValidity('<?php echo JText::_('COM_CONTACTIOC_INVALID_SELECT');?>')" required >
-                        <?php for ($i = 0; $i < 5; $i++) : ?>
-                            <option value="<?php echo ($i ? $i : ''); ?>" <?php echo ($this->escape($data->contactTypeID) == $i ? 'selected' : '')?>><?php echo JText::_('COM_CONTACTIOC_TYPEID' . $i); ?></option>
-                        <?php endfor; ?>
-                    </select>
-                </label>
+            <div class="iocagree-text">
+                <h3><?php echo JText::_('COM_CONTACTIOC_GDPR_HEADER'); ?></h3>
+                <div class="text-row">
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT1'); ?></span>
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT2'); ?> <a href="/educacio/proteccio-dades">+info</a></span>
+                </div>
+                <div class="text-row">
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT3'); ?></span>
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT4'); ?> <a href="/educacio/proteccio-dades">+info</a></span>
+                </div>
+                <div class="text-row">
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT5'); ?></span>
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT6'); ?> <a href="/educacio/proteccio-dades">+info</a></span>
+                </div>
+                <div class="text-row">
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT7'); ?></span>
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT8'); ?>
+                        <br /><a href="https://ja.cat/IOCprotecciodedades">https://ja.cat/IOCprotecciodedades</a>
+                    </span>
+                </div>
             </div>
             <div>
-                <label for="documentID">
-                    <?php echo JText::_('COM_CONTACTIOC_ID'); ?>
+                <label for="agree" class="iocagree">
+                    <?php echo JText::_('COM_CONTACTIOC_AGREE'); ?>
                     <span class="required">*</span>
-                    <input name="contactID" maxlength="50" id="documentID" class="form-control" type="text"  value="<?php echo $this->escape($data->contactID); ?>" pattern="^\S+.*\S+$" oninvalid="setCustomValidity('<?php echo JText::_('COM_CONTACTIOC_INVALID_TEXT');?>')" required >
+                    <input name="contactAgree" id="agree" class="form-control" type="checkbox" value="true" required >
                 </label>
             </div>
         </fieldset>

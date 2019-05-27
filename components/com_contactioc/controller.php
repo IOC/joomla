@@ -109,13 +109,11 @@ class ContactiocController extends JControllerLegacy
 		$contactFirstname  = trim($this->input->get('contactFirstname', '', 'string'));
 		$contactLastname   = trim($this->input->get('contactLastname', '', 'string'));
 		$contactEmail      = trim($this->input->get('contactEmail', '', 'string'));
-		$contactTypeID     = $this->input->get('contactTypeID', 0, 'int');
-		$contactID         = trim($this->input->get('contactID', '', 'string'));
+		$contactAgree      = trim($this->input->get('contactAgree', '', 'string'));
 
 		$error = $contactStudy < 1 || $contactStudy > count($this->emails);
-		$error = $error || $contactTypeID < 1 || $contactTypeID > 4;
 		$error = $error || empty($contactSubject) || empty($contactContent) || empty($contactFirstname) || empty($contactLastname)
-					|| empty($contactEmail) || !JMailHelper::isEmailAddress($contactEmail) || empty($contactID);
+					|| empty($contactEmail) || !JMailHelper::isEmailAddress($contactEmail) || empty($contactAgree);
 
 		if ($error)
 		{
@@ -149,11 +147,10 @@ class ContactiocController extends JControllerLegacy
 
 		$contactContent = substr($contactContent, 0, 2048);
 		$contactEmail = JStringPunycode::emailToPunycode($contactEmail);
-		$contactTypeIDName = JText::_('COM_CONTACTIOC_TYPEID' . $contactTypeID);
 
 		// Build the message to send
 		$msg  = JText::_('COM_CONTACTIOC_EMAIL_MSG');
-		$body = sprintf($msg, $contactFirstname, $contactLastname, $contactTypeIDName, $contactID, $contactEmail, $contactContent);
+		$body = sprintf($msg, $contactFirstname, $contactLastname, $contactEmail, $contactContent);
 
 		// Attachments
 		if (!empty($tmpfiles))

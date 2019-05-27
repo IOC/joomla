@@ -57,8 +57,6 @@ class ContactiocViewContactioc extends JViewLegacy
 		$data->contactFirstname  = trim($input->get('contactFirstname', '', 'string'));
 		$data->contactLastname   = trim($input->get('contactLastname', '', 'string'));
 		$data->contactEmail      = trim($input->get('contactEmail', '', 'string'));
-		$data->contactTypeID     = $input->get('contactTypeID', 0, 'int');
-		$data->contactID         = trim($input->get('contactID', '', 'string'));
 
 		$data->contactEmail = JStringPunycode::emailToPunycode($data->contactEmail);
 
