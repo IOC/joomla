@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="54px" viewBox="0 0 44 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>collectius_singulars_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="23" y="2" width="16" height="16" rx="1"></rect>
+    </defs>
+    <g id="collectius_singulars_44x54px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="diferencia_icon" transform="translate(2.000000, 7.000000)">
+            <g id="Rectangle">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#354959" stroke-width="1" x="23.5" y="2.5" width="15" height="15" rx="1"></rect>
+            </g>
+            <polygon id="Triangle-2" stroke="#354959" fill="#B9D5EA" stroke-linejoin="round" points="30 23.5 39 39.5 21 39.5"></polygon>
+            <circle id="Oval-3" stroke="#354959" fill="#FFFFFF" cx="9" cy="31.5" r="8.5"></circle>
+            <polygon id="Star" stroke="#354959" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" points="9.5 14.5960533 3.9376941 17.5 5 11.3493422 0.5 6.99342219 6.71884705 6.09605331 9.5 0.5 12.2811529 6.09605331 18.5 6.99342219 14 11.3493422 15.0623059 17.5"></polygon>
+        </g>
+    </g>
+</svg>

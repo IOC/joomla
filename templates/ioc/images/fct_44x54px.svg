@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="54px" viewBox="0 0 44 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>fct_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M2,10 L10,10 L10,39 L1,39 L1,11 C1,10.4477153 1.44771525,10 2,10 Z" id="path-1"></path>
+        <path d="M33,10 L41,10 C41.5522847,10 42,10.4477153 42,11 L42,39 L33,39 L33,10 Z" id="path-2"></path>
+        <path d="M10,0 L33,0 C33.5522847,-1.01453063e-16 34,0.44771525 34,1 L34,39 L9,39 L9,1 C9,0.44771525 9.44771525,1.01453063e-16 10,0 Z" id="path-3"></path>
+    </defs>
+    <g id="fct_44x54px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="fct_icon" transform="translate(0.000000, 7.000000)">
+            <g id="Rectangle-8-Copy">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#354959" stroke-width="1" d="M1.5,38.5 L9.5,38.5 L9.5,10.5 L2,10.5 C1.72385763,10.5 1.5,10.7238576 1.5,11 L1.5,38.5 Z"></path>
+            </g>
+            <g id="Rectangle-8-Copy-2">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <path stroke="#354959" stroke-width="1" d="M33.5,10.5 L33.5,38.5 L41.5,38.5 L41.5,11 C41.5,10.7238576 41.2761424,10.5 41,10.5 L33.5,10.5 Z"></path>
+            </g>
+            <g id="Rectangle-6">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                <path stroke="#354959" stroke-width="1" d="M9.5,38.5 L33.5,38.5 L33.5,1 C33.5,0.723857625 33.2761424,0.5 33,0.5 L10,0.5 C9.72385763,0.5 9.5,0.723857625 9.5,1 L9.5,38.5 Z"></path>
+            </g>
+            <g id="finestres" transform="translate(12.000000, 4.000000)">
+                <g id="Finestra" transform="translate(14.000000, 0.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy" transform="translate(14.000000, 0.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-12" transform="translate(0.000000, 21.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-2" transform="translate(7.000000, 0.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-3">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-4" transform="translate(14.000000, 7.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-5" transform="translate(7.000000, 7.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-6" transform="translate(0.000000, 7.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-7" transform="translate(14.000000, 14.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-8" transform="translate(7.000000, 14.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-9" transform="translate(0.000000, 14.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-10" transform="translate(7.000000, 21.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+                <g id="Finestra-Copy-11" transform="translate(14.000000, 21.000000)">
+                    <path d="M0,0.999807492 C0,0.447629061 0.443716645,0 0.999807492,0 L4.00019251,0 C4.55237094,0 5,0.443716645 5,0.999807492 L5,4.00019251 C5,4.55237094 4.55628335,5 4.00019251,5 L0.999807492,5 C0.447629061,5 0,4.55628335 0,4.00019251 L0,0.999807492 Z" id="Rectangle-23-Copy-3" fill="#354959" fill-rule="nonzero"></path>
+                    <polygon id="Path" fill="#B9D5EA" points="1 1 1 4 4 4 4 1"></polygon>
+                </g>
+            </g>
+            <path d="M0.5,38.5 L42.5,38.5" id="Line-4" stroke="#354959" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="54px" viewBox="0 0 44 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>matriculam_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M23.5,2 L33.9914698,2 C35.1007504,2 36,2.89691889 36,4.00449605 L36,46.995504 C36,48.1025565 35.1101074,49 34.0002927,49 L1.99970728,49 C0.895299444,49 0,48.1030811 0,46.995504 L0,4.00449605 C0,2.89744345 0.89293854,2 2.0014061,2 L13.5,2" id="path-1"></path>
+        <rect id="path-2" x="5" y="10" width="26" height="34" rx="1"></rect>
+        <path d="M11,2.5 C11,1.11928813 12.1220131,0 13.5029194,0 L22.4970806,0 C23.8794048,0 25,1.10966206 25,2.5 L25,4.00019251 C25,4.55237094 24.5500512,5 23.9931545,5 L12.0068455,5 C11.4507801,5 11,4.55628335 11,4.00019251 L11,2.5 Z" id="path-3"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="matriculam_44x54px">
+            <g id="matricula_icon" transform="translate(4.000000, 5.000000)">
+                <g id="Rectangle">
+                    <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#354959" stroke-width="1" d="M33.9914698,2.5 L2.0014061,2.5 C1.17045273,2.5 0.5,3.17221203 0.5,4.00449605 L0.5,46.995504 C0.5,47.8270047 1.17150884,48.5 1.99970728,48.5 L34.0002927,48.5 C34.8316196,48.5 35.5,47.8287654 35.5,46.995504 L35.5,4.00449605 C35.5,3.173488 34.8250346,2.5 33.9914698,2.5 Z"></path>
+                </g>
+                <g id="Rectangle-2">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <rect stroke="#354959" stroke-width="1" x="5.5" y="10.5" width="25" height="33" rx="1"></rect>
+                </g>
+                <g id="Rectangle-24">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <path stroke="#354959" stroke-width="1" d="M11.5,2.5 L11.5,4.00019251 C11.5,4.27769583 11.7244758,4.5 12.0068455,4.5 L23.9931545,4.5 C24.2743405,4.5 24.5,4.27578998 24.5,4.00019251 L24.5,2.5 C24.5,1.38955863 23.6070276,0.5 22.4970806,0.5 L13.5029194,0.5 C12.3974915,0.5 11.5,1.39609402 11.5,2.5 Z"></path>
+                </g>
+            </g>
+            <polyline id="Path-3" stroke="#0F9E73" stroke-linecap="round" transform="translate(22.000000, 29.500000) rotate(-315.000000) translate(-22.000000, -29.500000) " points="25 23 25 36 19 36"></polyline>
+        </g>
+    </g>
+</svg>

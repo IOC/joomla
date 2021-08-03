@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Session Package
  *
- * @copyright  Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -13,16 +13,16 @@ use Joomla\Filter\InputFilter;
 /**
  * Custom session storage handler for PHP
  *
- * @see    http://www.php.net/manual/en/function.session-set-save-handler.php
- * @todo   When dropping compatibility with PHP 5.3 use the SessionHandlerInterface and the SessionHandler class
- * @since  1.0
- * @deprecated  The joomla/session package is deprecated
+ * @link        https://secure.php.net/manual/en/function.session-set-save-handler.php
+ * @since       1.0
+ * @deprecated  2.0  The Storage class chain will be removed.
  */
 abstract class Storage
 {
 	/**
-	 * @var    array  JSessionStorage instances container.
+	 * @var    Storage[]  Storage instances container.
 	 * @since  1.0
+	 * @deprecated  2.0
 	 */
 	protected static $instances = array();
 
@@ -32,6 +32,7 @@ abstract class Storage
 	 * @param   array  $options  Optional parameters.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function __construct($options = array())
 	{
@@ -47,11 +48,12 @@ abstract class Storage
 	 * @return  Storage
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public static function getInstance($name = 'none', $options = array())
 	{
 		$filter = new InputFilter;
-		$name = strtolower($filter->clean($name, 'word'));
+		$name   = strtolower($filter->clean($name, 'word'));
 
 		if (empty(self::$instances[$name]))
 		{
@@ -84,14 +86,21 @@ abstract class Storage
 	 * @return  void
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function register()
 	{
-		// Use this object as the session handler
-		session_set_save_handler(
-			array($this, 'open'), array($this, 'close'), array($this, 'read'), array($this, 'write'),
-			array($this, 'destroy'), array($this, 'gc')
-		);
+		if (!headers_sent())
+		{
+			session_set_save_handler(
+				array($this, 'open'),
+				array($this, 'close'),
+				array($this, 'read'),
+				array($this, 'write'),
+				array($this, 'destroy'),
+				array($this, 'gc')
+			);
+		}
 	}
 
 	/**
@@ -103,6 +112,7 @@ abstract class Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function open($save_path, $session_name)
 	{
@@ -115,6 +125,7 @@ abstract class Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function close()
 	{
@@ -130,10 +141,11 @@ abstract class Storage
 	 * @return  string  The session data.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function read($id)
 	{
-		return;
+		return '';
 	}
 
 	/**
@@ -145,6 +157,7 @@ abstract class Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function write($id, $session_data)
 	{
@@ -160,6 +173,7 @@ abstract class Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function destroy($id)
 	{
@@ -174,6 +188,7 @@ abstract class Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function gc($maxlifetime = null)
 	{
@@ -186,6 +201,7 @@ abstract class Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public static function isSupported()
 	{

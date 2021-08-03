@@ -3,11 +3,32 @@
  * @package     Joomla.Plugin
  * @subpackage  Twofactorauth.totp.tmpl
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
+
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Factory;
+
+HTMLHelper::_('script', 'plg_twofactorauth_totp/qrcode.min.js', array('version' => 'auto', 'relative' => true));
+
+$js = "
+(function(document)
+{
+	document.addEventListener('DOMContentLoaded', function()
+	{
+		var qr = qrcode(0, 'H');
+		qr.addData('" . $url . "');
+		qr.make();
+
+		document.getElementById('totp-qrcode').innerHTML = qr.createImgTag(4);
+	});
+})(document);
+";
+
+Factory::getDocument()->addScriptDeclaration($js);
 ?>
 <input type="hidden" name="jform[twofactor][totp][key]" value="<?php echo $secret ?>" />
 
@@ -24,12 +45,12 @@ defined('_JEXEC') or die;
 	</p>
 	<ul>
 		<li>
-			<a href="<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_ITEM1_LINK') ?>" target="_blank">
+			<a href="<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_ITEM1_LINK') ?>" target="_blank" rel="noopener noreferrer">
 				<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_ITEM1') ?>
 			</a>
 		</li>
 		<li>
-			<a href="<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_ITEM2_LINK') ?>" target="_blank">
+			<a href="<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_ITEM2_LINK') ?>" target="_blank" rel="noopener noreferrer">
 				<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_ITEM2') ?>
 			</a>
 		</li>
@@ -72,7 +93,7 @@ defined('_JEXEC') or die;
 		<p>
 			<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_ALTTEXT') ?>
 			<br />
-			<img src="<?php echo $url ?>" style="float: none;" />
+			<div id="totp-qrcode"></div>
 		</p>
 	</div>
 

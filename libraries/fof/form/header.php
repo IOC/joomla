@@ -2,8 +2,9 @@
 /**
  * @package    FrameworkOnFramework
  * @subpackage form
- * @copyright   Copyright (C) 2010 - 2015 Nicholas K. Dionysopoulos / Akeeba Ltd. All rights reserved.
+ * @copyright   Copyright (C) 2010-2016 Nicholas K. Dionysopoulos / Akeeba Ltd. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @note	This file has been modified by the Joomla! Project and no longer reflects the original work of its author.
  */
 // Protect from unauthorized access
 defined('FOF_INCLUDED') or die;
@@ -270,7 +271,7 @@ abstract class FOFFormHeader
 	 *
 	 * @param   SimpleXMLElement  $element  The SimpleXMLElement object representing the <field /> tag for the form field object.
 	 * @param   mixed             $value    The form field value to validate.
-	 * @param   string            $group    The field name group control value. This acts as as an array container for the field.
+	 * @param   string            $group    The field name group control value. This acts as an array container for the field.
 	 *                                      For example if the field has name="foo" and the group value is set to "bar" then the
 	 *                                      full field name would end up being "bar[foo]".
 	 *

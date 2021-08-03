@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Application Package
  *
- * @copyright  Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -35,7 +35,7 @@ abstract class AbstractApplication implements LoggerAwareInterface
 	 * @var    Input
 	 * @since  1.0
 	 */
-	public $input = null;
+	public $input;
 
 	/**
 	 * A logger.
@@ -48,19 +48,23 @@ abstract class AbstractApplication implements LoggerAwareInterface
 	/**
 	 * Class constructor.
 	 *
-	 * @param   Input     $input   An optional argument to provide dependency injection for the application's
-	 *                             input object.  If the argument is a InputCli object that object will become
-	 *                             the application's input object, otherwise a default input object is created.
-	 * @param   Registry  $config  An optional argument to provide dependency injection for the application's
-	 *                             config object.  If the argument is a Registry object that object will become
-	 *                             the application's config object, otherwise a default config object is created.
+	 * @param   Input     $input   An optional argument to provide dependency injection for the application's input object.  If the argument is an
+	 *                             Input object that object will become the application's input object, otherwise a default input object is created.
+	 * @param   Registry  $config  An optional argument to provide dependency injection for the application's config object.  If the argument
+	 *                             is a Registry object that object will become the application's config object, otherwise a default config
+	 *                             object is created.
 	 *
 	 * @since   1.0
 	 */
 	public function __construct(Input $input = null, Registry $config = null)
 	{
-		$this->input = $input instanceof Input ? $input : new Input;
+		$this->input  = $input instanceof Input ? $input : new Input;
 		$this->config = $config instanceof Registry ? $config : new Registry;
+
+		// Set the execution datetime and timestamp;
+		$this->set('execution.datetime', gmdate('Y-m-d H:i:s'));
+		$this->set('execution.timestamp', time());
+		$this->set('execution.microtimestamp', microtime(true));
 
 		$this->initialise();
 	}
@@ -84,7 +88,7 @@ abstract class AbstractApplication implements LoggerAwareInterface
 	 * Method to run the application routines.  Most likely you will want to instantiate a controller
 	 * and execute it, or perform some sort of task directly.
 	 *
-	 * @return  void
+	 * @return  mixed
 	 *
 	 * @since   1.0
 	 */

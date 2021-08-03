@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  com_config
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -24,20 +24,20 @@ JFactory::getDocument()->addScriptDeclaration("
 ");
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_config');?>" id="application-form" method="post" name="adminForm" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_config'); ?>" id="application-form" method="post" name="adminForm" class="form-validate">
 
 	<div class="row-fluid">
 		<!-- Begin Content -->
 
-		<div class="btn-toolbar">
+		<div class="btn-toolbar" role="toolbar" aria-label="<?php echo JText::_('JTOOLBAR'); ?>">
 			<div class="btn-group">
 				<button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('config.save.config.apply')">
-					<i class="icon-ok"></i> <?php echo JText::_('JSAVE') ?>
+					<span class="icon-ok"></span> <?php echo JText::_('JSAVE') ?>
 				</button>
 			</div>
 			<div class="btn-group">
 				<button type="button" class="btn" onclick="Joomla.submitbutton('config.cancel')">
-					<i class="icon-cancel"></i> <?php echo JText::_('JCANCEL') ?>
+					<span class="icon-cancel"></span> <?php echo JText::_('JCANCEL') ?>
 				</button>
 			</div>
 		</div>

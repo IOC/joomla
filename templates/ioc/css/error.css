@@ -1,0 +1,652 @@
+/* Montserrat */
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Thin.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Thin.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-ExtraLight.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-ExtraLight.woff") format("woff"), url("../fonts/Montserrat/Montserrat-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Light.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Regular.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Medium.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Medium.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-SemiBold.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-ThinItalic.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-ThinItalic.woff") format("woff"), url("../fonts/Montserrat/Montserrat-ThinItalic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-ExtraLightItalic.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-ExtraLightItalic.woff") format("woff"), url("../fonts/Montserrat/Montserrat-ExtraLightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-LightItalic.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-LightItalic.woff") format("woff"), url("../fonts/Montserrat/Montserrat-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Italic.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Italic.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-MediumItalic.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-MediumItalic.woff") format("woff"), url("../fonts/Montserrat/Montserrat-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-SemiBoldItalic.eot") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-SemiBoldItalic.woff") format("woff"), url("../fonts/Montserrat/Montserrat-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+/* IOC icons */
+@font-face {
+  font-family: 'ioc-icons';
+  src: url("../fonts/IOC/ioc-icons.eot") format("embedded-opentype"), url("../fonts/IOC/ioc-icons.woff") format("woff"), url("../fonts/IOC/ioc-icons.ttf") format("truetype"), url("../fonts/IOC/ioc-icons.svg#ioc") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+html {
+  height: 100%;
+  margin-bottom: 1px;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+}
+a:focus {
+  outline: thin solid rgba(255, 255, 255, .3) !important;
+  outline-offset: 0;
+}
+.error {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100%;
+  overflow: visible;
+  position: relative;
+}
+.error .element-invisible {
+  display: none;
+}
+.error .container {
+  display: block;
+  padding: 20px 0;
+}
+.error .error-bg {
+  background-image: url('../images/default-header-bck.jpg');
+  background-color: #374464;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 282px;
+}
+.error .error-text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  height: 100%;
+  margin: 0 auto;
+}
+.error .error-text .errorcode {
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font-weight: 300;
+  width: 100%;
+  text-align: center;
+}
+.error .error-text .sitelogo {
+  float: left;
+}
+.error .error-text .errorcode {
+  top: 185px;
+  font-size: 35px;
+  font-weight: 300;
+}
+.error .error-body {
+  margin: 0 auto;
+  padding: 50px 0;
+  min-height: 1000px;
+}
+.error .error-body .container {
+  padding: 0 15px;
+}
+.error .error-body .errormessage {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: normal;
+  text-align: center;
+  margin-top: 50px;
+  color: rgba(53, 73, 89, 0.88);
+}
+.error .error-body .error-search-title {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: rgba(53, 73, 89, 0.88);
+  margin-bottom: 28px;
+}
+.error .error-body .form-inline {
+  position: relative;
+  height: 54px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.error .error-body .form-inline .search-query::-moz-placeholder {
+  color: #8fa4aa;
+  opacity: 1;
+}
+.error .error-body .form-inline .search-query:-ms-input-placeholder {
+  color: #8fa4aa;
+}
+.error .error-body .form-inline .search-query::-webkit-input-placeholder {
+  color: #8fa4aa;
+}
+.error .error-body .form-inline .search-query {
+  max-width: calc(100% - 40px);
+  max-width: -webkit-calc(100% - 40px);
+  max-width: -moz-calc(100% - 40px);
+  width: 624px;
+  height: 40px;
+  border-radius: 0;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.43;
+  vertical-align: middle;
+  border: 1px solid #202b47;
+}
+.error .error-body .form-inline .custom-icon.delete {
+  position: absolute;
+  top: 7px;
+  right: 56px;
+}
+.error .error-body .form-inline .custom-icon.delete:before {
+  content: '\e900';
+  font-family: 'ioc-icons';
+  font-size: 20px;
+  color: #dee3e7;
+  cursor: pointer;
+}
+.error .error-body .form-inline .btn-search {
+  position: relative;
+  margin-left: -4px;
+  vertical-align: middle;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+}
+.error .error-body .form-inline .btn-search:before {
+  content: '\e906';
+  font-family: 'ioc-icons';
+  color: #fff;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+.error .error-body .btn-search {
+  height: 54px;
+  background-color: #202b47;
+  border: none;
+  border-radius: 0;
+}
+.error .error-body .btn-search:hover {
+  color: #4bcdaf;
+}
+.error .error-body .btn-search:hover:before {
+  color: #4bcdaf;
+}
+.error .error-body .error-gohome {
+  display: block;
+  margin-top: 50px;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+  color: rgba(53, 73, 89, 0.88);
+}
+.error .footer {
+  background-color: #20373d;
+  clear: both;
+  padding-top: 33px;
+  padding-bottom: 33px;
+  clear: both;
+  font-size: 12px;
+  color: #7b8f94;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.error .footer a {
+  color: #7b8f94;
+}
+.error .footer a:hover {
+  text-decoration: underline;
+}
+table, td, th, div, pre, blockquote, ul, ol, dl, address, .componentheading, .contentheading, .contentpagetitle, .sectiontableheader, .newsfeedheading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+}
+#anim_container {
+  width: 515px;
+  height: 350px;
+  background-color: #fff;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Positioning elements w. transform: translate */
+#ampolla_svg {
+  -webkit-transform: translate(236px, -80px);
+  -moz-transform: translate(236px, -80px);
+  -ms-transform: translate(236px, -80px);
+  -o-transform: translate(236px, -80px);
+  transform: translate(236px, -80px);
+}
+#missatge_svg {
+  -webkit-transform: translate(150px, -76px) rotate(9deg);
+  -moz-transform: translate(150px, -76px) rotate(9deg);
+  -ms-transform: translate(150px, -76px) rotate(9deg);
+  -o-transform: translate(150px, -76px) rotate(9deg);
+  transform: translate(150px, -76px) rotate(9deg);
+}
+#davant_svg {
+  -webkit-transform: translate(69px, -151px);
+  -moz-transform: translate(69px, -151px);
+  -ms-transform: translate(69px, -151px);
+  -o-transform: translate(69px, -151px);
+  transform: translate(69px, -151px);
+}
+/* Bottle animation */
+#ampolla {
+  -webkit-animation-name: bottle_movement;
+  -webkit-animation-duration: 7s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-name: bottle_movement;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@-webkit-keyframes bottle_movement {
+  0% {
+    -webkit-transform: translateY(14px) rotate(10deg);
+    -moz-transform: translateY(14px) rotate(10deg);
+    -ms-transform: translateY(14px) rotate(10deg);
+    -o-transform: translateY(14px) rotate(10deg);
+    transform: translateY(14px) rotate(10deg);
+  }
+  25% {
+    -webkit-transform: translateX(0px) rotate(5deg);
+    -moz-transform: translateX(0px) rotate(5deg);
+    -ms-transform: translateX(0px) rotate(5deg);
+    -o-transform: translateX(0px) rotate(5deg);
+    transform: translateX(0px) rotate(5deg);
+  }
+  50% {
+    -webkit-transform: translateY(14px) rotate(3deg);
+    -moz-transform: translateY(14px) rotate(3deg);
+    -ms-transform: translateY(14px) rotate(3deg);
+    -o-transform: translateY(14px) rotate(3deg);
+    transform: translateY(14px) rotate(3deg);
+  }
+  75% {
+    -webkit-transform: translateX(0px) rotate(3deg);
+    -moz-transform: translateX(0px) rotate(3deg);
+    -ms-transform: translateX(0px) rotate(3deg);
+    -o-transform: translateX(0px) rotate(3deg);
+    transform: translateX(0px) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translateY(14px) rotate(7deg);
+    -moz-transform: translateY(14px) rotate(7deg);
+    -ms-transform: translateY(14px) rotate(7deg);
+    -o-transform: translateY(14px) rotate(7deg);
+    transform: translateY(14px) rotate(7deg);
+  }
+}
+@keyframes bottle_movement {
+  0% {
+    -webkit-transform: translateY(14px) rotate(10deg);
+    -moz-transform: translateY(14px) rotate(10deg);
+    -ms-transform: translateY(14px) rotate(10deg);
+    -o-transform: translateY(14px) rotate(10deg);
+    transform: translateY(14px) rotate(10deg);
+  }
+  25% {
+    -webkit-transform: translateX(0px) rotate(5deg);
+    -moz-transform: translateX(0px) rotate(5deg);
+    -ms-transform: translateX(0px) rotate(5deg);
+    -o-transform: translateX(0px) rotate(5deg);
+    transform: translateX(0px) rotate(5deg);
+  }
+  50% {
+    -webkit-transform: translateY(14px) rotate(3deg);
+    -moz-transform: translateY(14px) rotate(3deg);
+    -ms-transform: translateY(14px) rotate(3deg);
+    -o-transform: translateY(14px) rotate(3deg);
+    transform: translateY(14px) rotate(3deg);
+  }
+  75% {
+    -webkit-transform: translateX(0px) rotate(3deg);
+    -moz-transform: translateX(0px) rotate(3deg);
+    -ms-transform: translateX(0px) rotate(3deg);
+    -o-transform: translateX(0px) rotate(3deg);
+    transform: translateX(0px) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translateY(14px) rotate(7deg);
+    -moz-transform: translateY(14px) rotate(7deg);
+    -ms-transform: translateY(14px) rotate(7deg);
+    -o-transform: translateY(14px) rotate(7deg);
+    transform: translateY(14px) rotate(7deg);
+  }
+}
+#missatge {
+  -webkit-animation-name: message_movement;
+  -webkit-animation-duration: 7s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-name: message_movement;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@-webkit-keyframes message_movement {
+  0% {
+    -webkit-transform: translateY(14px) rotate(10deg);
+    -moz-transform: translateY(14px) rotate(10deg);
+    -ms-transform: translateY(14px) rotate(10deg);
+    -o-transform: translateY(14px) rotate(10deg);
+    transform: translateY(14px) rotate(10deg);
+  }
+  25% {
+    -webkit-transform: translateX(0px) rotate(5deg);
+    -moz-transform: translateX(0px) rotate(5deg);
+    -ms-transform: translateX(0px) rotate(5deg);
+    -o-transform: translateX(0px) rotate(5deg);
+    transform: translateX(0px) rotate(5deg);
+  }
+  50% {
+    -webkit-transform: translateY(14px) rotate(3deg);
+    -moz-transform: translateY(14px) rotate(3deg);
+    -ms-transform: translateY(14px) rotate(3deg);
+    -o-transform: translateY(14px) rotate(3deg);
+    transform: translateY(14px) rotate(3deg);
+  }
+  75% {
+    -webkit-transform: translateX(0px) rotate(3deg);
+    -moz-transform: translateX(0px) rotate(3deg);
+    -ms-transform: translateX(0px) rotate(3deg);
+    -o-transform: translateX(0px) rotate(3deg);
+    transform: translateX(0px) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translateY(14px) rotate(7deg);
+    -moz-transform: translateY(14px) rotate(7deg);
+    -ms-transform: translateY(14px) rotate(7deg);
+    -o-transform: translateY(14px) rotate(7deg);
+    transform: translateY(14px) rotate(7deg);
+  }
+}
+@keyframes message_movement {
+  0% {
+    -webkit-transform: translateY(14px) rotate(10deg);
+    -moz-transform: translateY(14px) rotate(10deg);
+    -ms-transform: translateY(14px) rotate(10deg);
+    -o-transform: translateY(14px) rotate(10deg);
+    transform: translateY(14px) rotate(10deg);
+  }
+  25% {
+    -webkit-transform: translateX(0px) rotate(5deg);
+    -moz-transform: translateX(0px) rotate(5deg);
+    -ms-transform: translateX(0px) rotate(5deg);
+    -o-transform: translateX(0px) rotate(5deg);
+    transform: translateX(0px) rotate(5deg);
+  }
+  50% {
+    -webkit-transform: translateY(14px) rotate(3deg);
+    -moz-transform: translateY(14px) rotate(3deg);
+    -ms-transform: translateY(14px) rotate(3deg);
+    -o-transform: translateY(14px) rotate(3deg);
+    transform: translateY(14px) rotate(3deg);
+  }
+  75% {
+    -webkit-transform: translateX(0px) rotate(3deg);
+    -moz-transform: translateX(0px) rotate(3deg);
+    -ms-transform: translateX(0px) rotate(3deg);
+    -o-transform: translateX(0px) rotate(3deg);
+    transform: translateX(0px) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translateY(14px) rotate(7deg);
+    -moz-transform: translateY(14px) rotate(7deg);
+    -ms-transform: translateY(14px) rotate(7deg);
+    -o-transform: translateY(14px) rotate(7deg);
+    transform: translateY(14px) rotate(7deg);
+  }
+}
+/* Water animation */
+#aigua_top_3_1, #aigua_top_dr_2_1 {
+  -webkit-animation-name: water_movement;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-name: water_movement;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#aigua_extra_0_1, #aigua_extra_2_1, #aigua_extra_3_1, #aigua_extra_4_1, #aigua_extra_4_2 {
+  -webkit-animation-name: water_movement;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-name: water_movement;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#aigua_top_esq_4_1, #aigua_top_esq_4_2, #aigua_top_esq_5_1, #aigua_top_esq_5_2, #aigua_top_esq_5_3, #aigua_top_esq_6_1, #aigua_top_esq_6_2, #aigua_top_esq_7_2, #aigua_top_esq_7_3, #aigua_top_esq_7_4 {
+  -webkit-animation-name: water_movement;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-name: water_movement;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#aigua_extra_5_1, #aigua_extra_7_1 {
+  -webkit-animation-name: water_movement;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 1s;
+  animation-name: water_movement;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 1s;
+}
+@-webkit-keyframes water_movement {
+  0% {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes water_movement {
+  0% {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+#aigua_extra_6_1 {
+  -webkit-animation-name: water_movement_2;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 1s;
+  animation-name: water_movement_2;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 1s;
+}
+@-webkit-keyframes water_movement_2 {
+  0% {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    -o-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+@keyframes water_movement_2 {
+  0% {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    -o-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+@media all and (max-width: 991px) {
+  .error .error-bg {
+    height: 147px;
+  }
+  .error .error-text .sitelogo {
+    float: none;
+  }
+  .error .error-text .errorcode {
+    font-size: 25px;
+    top: 80px;
+  }
+  .error .error-body {
+    min-height: 550px;
+  }
+  .error .error-body .errormessage {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+  .error .error-body .error-search-title {
+    font-size: 18px;
+  }
+  .error .error-body .form-inline {
+    height: 40px;
+  }
+  .error .error-body .form-inline .search-query {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .error .error-body #anim_container {
+    width: 100%;
+    height: auto;
+  }
+  .error .footer {
+    padding: 19px 0;
+    overflow: hidden;
+  }
+  .error .footer .logo-gen {
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .error .footer .footer-separator {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    height: 1px;
+    width: 100vw;
+    background-color: rgba(123, 143, 148, 0.2);
+  }
+}

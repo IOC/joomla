@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.5" type="template" method="upgrade">
+	<name>IOC</name>
+	<creationDate>3 Nov 2016</creationDate>
+	<author>Marc Català</author>
+	<copyright>Copyright © 2018</copyright>
+	<authorEmail>mcatala@ioc.cat</authorEmail>
+	<authorUrl>https://ioc.xtec.cat</authorUrl>
+	<version>1.0.0</version>
+	<description><![CDATA[
+		<h1>IOC - Institut Obert de Catalunya</h1>
+		<p>Plantilla pel portal de l'Institut Obert de Catalunya</p>
+	]]></description>
+	<files>
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>includes</folder>
+		<folder>js</folder>
+		<folder>scss</folder>
+		<folder>vendor</folder>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>offline.php</filename>
+		<filename>favicon.png</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+    <positions>
+	<position>top</position>
+	<position>navigation</position>
+	<position>fullwidth</position>
+        <position>showcase</position>
+	<position>feature</position>
+        <position>breadcrumbs</position>
+        <position>left</position>
+        <position>right</position>
+        <position>content-top</position>
+        <position>content-bottom</position>
+        <position>bottom</position>
+        <position>footer</position>
+        <position>copy</position>
+        <position>panelnav</position>
+		<position>debug</position>
+		<position>login-campus</position>
+		<position>studies</position>
+		<position>sub_studies</position>
+		<position>employment</position>
+        <position>sub_menu</position>
+		<position>search</position>
+        <position>avis_campus</position>
+        <position>footer</position>
+        <position>footer-top-col1</position>
+        <position>footer-top-col2</position>
+        <position>footer-top-col3</position>
+        <position>footer-top-col4</position>
+        <position>footer-bottom-col1</position>
+        <position>footer-bottom-col2</position>
+        <position>footer-bottom-col3</position>
+        <position>footer-bottom-col4</position>
+		<position>footer-banners</position>
+	</positions>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.tpl_ioc.ini</language>
+        <language tag="ca-ES">ca-ES/ca-ES.tpl_ioc.ini</language>
+    </languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="leftColumnWidth" type="list" default="3" label="Left Column Width" description="Choose a width for your left column">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</field>
+				<field name="rightColumnWidth" type="list" default="3" label="Right Column Width" description="Choose a width for your right column">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</field>
+				<!-- SHOW FRONTPAGE-->
+				<field name="frontpageshow" type="radio" class="btn-group" default="1" label="Show FrontPage Articles" description="Show FrontPage Articles">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- MODERNIZR-->
+				<field name="modernizr" type="radio" class="btn-group" default="0" label="Modernizr" description="Enable JavaScript modernizr.js in head">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- FONT-AWESOME -->
+				<field name="fontawesome" type="radio" class="btn-group" default="0" label="Font Awesome" description="Enable Font Awesome for better icons in Bootstrap">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- PIE-->
+				<field name="pie" type="radio" class="btn-group" default="0" label="PIE" description="Enable PIE (CSS3 for IE 9+8)">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- MATERIAL DESIGN-->
+				<field name="materialdesign" type="radio" class="btn-group" default="0" label="Material Design" description="Enable Material Design">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- SASS-->
+				<field name="compile_sass" type="radio" class="btn-group" default="0" label="Compile Sass" description="Do you want to enable Sass compilation)">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <!-- SASS-->
+                <field name="refresh_media_version" type="radio" class="btn-group" default="0" label="Refresh media version" description="Refresh media version to reload media files">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+			</fieldset>
+			<!-- LOGO-->
+			<fieldset  name="logo" type="upload_func" label="Logo">
+				<field name="logo_file" type="media" label="Select your logo:"></field>
+				<field name="logo_link" type="text" label="Logo link:"  description="Example: http://www.masterbootstrap.com" default="index.php"></field>
+				<field name="logo_width" type="text" label="Logo width:" description="Example: 90" default="173"></field>
+				<field name="logo_height" type="text" label="Logo height:" description="Example: 90" default="26"></field>
+			</fieldset>
+			<!-- GOOGLE FONTS-->			
+			<fieldset name="Font" label="Fonts">
+				<field name="googleFont" type="radio" class="btn-group btn-group-yesno"	default="0"	label="Google Font for Headings" description="Google Font for H1, H2, H3, etc">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="googleFontName" class="" type="text" default="Open+Sans" label="Font Name" description="Font Name" showon="googleFont:1" />
+                <field name="bodyFont" class="btn-group btn-group-yesno" type="radio" default="0" label="Google Font for Body" description="Google Font for Body">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="bodyFontName" type="text"  default="Open+Sans" label="Font Name" description="Font Name" showon="bodyFont:1"/>
+
+				<field name="navigationFont" class="btn-group btn-group-yesno" type="radio" default="0" label="Google Font for Menu" description="Google Font for Menu">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="navigationFontname" type="text" default="Open+Sans" label="Font Name" description="Font Name" showon="navigationFont:1"/>
+			</fieldset>
+			<!-- LAYOUT -->
+			<fieldset name="Layout" label="Layout Options">
+        		<field name="layout" type="radio" class="btn-group" default="full" label="Layout" description="Select Full Layout or Boxed Layout" >
+          		<option value="full">Full Layout</option>
+          		<option value="boxed">Boxed Layout</option>
+        		</field>
+      		</fieldset>
+	  <!-- PATTERN -->
+		   <fieldset name="Pattern" label="Pattern Options">
+        		<field name="pattern" type="list" default="default" label="Pattern" description="Select Pattern for Boxed Layout" >
+          			<option value="default">Pattern Default</option>
+          			<option value="1">Pattern 1</option>
+          			<option value="2">Pattern 2</option>
+          			<option value="3">Pattern 3</option>
+          			<option value="4">Pattern 4</option>
+          			<option value="5">Pattern 5</option>
+          			<option value="6">Pattern 6</option>
+		        </field>
+	      </fieldset>
+      <!-- OPEN GRAPH -->
+		   <fieldset name="fbopengraph" label="Open Graph">
+			   <field name="twittersite" type="text" default="@masterbootstrap" label="@username of website" description="@username of website" />
+		   		<field name="twittercreator" type="text" default="@masterbootstrap" label="@username of content creator" description="@username of content creator" />
+		   		<field name="ogsitename" type="text" default="MasterBootStrap" label="Overall site name" description="Overall site name" />
+		   		<field name="FBadmins" type="text" default="USER_ID" label="Facebook Admin Id" description="Facebook Admin Id" />
+			    <field name="FBapp_id" type="text" default="APPID" label="Facebook App Id" description="Facebook App Id" />
+      		</fieldset>
+		</fields>
+	</config>
+</extension>

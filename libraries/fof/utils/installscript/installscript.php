@@ -2,8 +2,9 @@
 /**
  * @package     FrameworkOnFramework
  * @subpackage  utils
- * @copyright   Copyright (C) 2010 - 2015 Nicholas K. Dionysopoulos / Akeeba Ltd. All rights reserved.
+ * @copyright   Copyright (C) 2010-2016 Nicholas K. Dionysopoulos / Akeeba Ltd. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @note	This file has been modified by the Joomla! Project and no longer reflects the original work of its author.
  */
 
 defined('FOF_INCLUDED') or die;
@@ -281,8 +282,14 @@ abstract class FOFUtilsInstallscript
 			return false;
 		}
 
-		// Workarounds for notorious JInstaller bugs we submitted patches for but were rejected – yet the bugs were
-		// never fixed. Way to go, Joomla!...
+		// Always reset the OPcache if it's enabled. Otherwise there's a good chance the server will not know we are
+		// replacing .php scripts. This is a major concern since PHP 5.5 included and enabled OPcache by default.
+		if (function_exists('opcache_reset'))
+		{
+			opcache_reset();
+		}
+
+		// Workarounds for JInstaller issues
 		if (in_array($type, array('install', 'discover_install')))
 		{
 			// Bugfix for "Database function returned no error"
@@ -436,16 +443,23 @@ abstract class FOFUtilsInstallscript
 	{
 		$src = $parent->getParent()->getPath('source');
 
+		$cliPath = JPATH_ROOT . '/cli';
+
+		if (!JFolder::exists($cliPath))
+		{
+			JFolder::create($cliPath);
+		}
+
 		foreach ($this->cliScriptFiles as $script)
 		{
-			if (JFile::exists(JPATH_ROOT . '/cli/' . $script))
+			if (JFile::exists($cliPath . '/' . $script))
 			{
-				JFile::delete(JPATH_ROOT . '/cli/' . $script);
+				JFile::delete($cliPath . '/' . $script);
 			}
 
 			if (JFile::exists($src . '/' . $this->cliSourcePath . '/' . $script))
 			{
-				JFile::copy($src . '/' . $this->cliSourcePath . '/' . $script, JPATH_ROOT . '/cli/' . $script);
+				JFile::copy($src . '/' . $this->cliSourcePath . '/' . $script, $cliPath . '/' . $script);
 			}
 		}
 	}
@@ -605,7 +619,7 @@ abstract class FOFUtilsInstallscript
 	 */
 	protected function bugfixDBFunctionReturnedNoError()
 	{
-		$db = JFactory::getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();
 
 		// Fix broken #__assets records
 		$query = $db->getQuery(true);
@@ -647,6 +661,7 @@ abstract class FOFUtilsInstallscript
 		$query = $db->getQuery(true);
 		$query->select('extension_id')
 			->from('#__extensions')
+			->where($db->qn('type') . ' = ' . $db->q('component'))
 			->where($db->qn('element') . ' = ' . $db->q($this->componentName));
 		$db->setQuery($query);
 		$ids = $db->loadColumn();
@@ -707,12 +722,13 @@ abstract class FOFUtilsInstallscript
 	 */
 	protected function bugfixCantBuildAdminMenus()
 	{
-		$db = JFactory::getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();
 
 		// If there are multiple #__extensions record, keep one of them
 		$query = $db->getQuery(true);
 		$query->select('extension_id')
 			->from('#__extensions')
+			->where($db->qn('type') . ' = ' . $db->q('component'))
 			->where($db->qn('element') . ' = ' . $db->q($this->componentName));
 		$db->setQuery($query);
 
@@ -779,6 +795,76 @@ abstract class FOFUtilsInstallscript
 				}
 			}
 		}
+
+		// Remove #__menu records for good measure! –– I think this is not necessary and causes the menu item to
+		// disappear on extension update.
+		/**
+		$query = $db->getQuery(true);
+		$query->select('id')
+			->from('#__menu')
+			->where($db->qn('type') . ' = ' . $db->q('component'))
+			->where($db->qn('menutype') . ' = ' . $db->q('main'))
+			->where($db->qn('link') . ' LIKE ' . $db->q('index.php?option=' . $this->componentName));
+		$db->setQuery($query);
+
+		try
+		{
+			$ids1 = $db->loadColumn();
+		}
+		catch (Exception $exc)
+		{
+			$ids1 = array();
+		}
+
+		if (empty($ids1))
+		{
+			$ids1 = array();
+		}
+
+		$query = $db->getQuery(true);
+		$query->select('id')
+			->from('#__menu')
+			->where($db->qn('type') . ' = ' . $db->q('component'))
+			->where($db->qn('menutype') . ' = ' . $db->q('main'))
+			->where($db->qn('link') . ' LIKE ' . $db->q('index.php?option=' . $this->componentName . '&%'));
+		$db->setQuery($query);
+
+		try
+		{
+			$ids2 = $db->loadColumn();
+		}
+		catch (Exception $exc)
+		{
+			$ids2 = array();
+		}
+
+		if (empty($ids2))
+		{
+			$ids2 = array();
+		}
+
+		$ids = array_merge($ids1, $ids2);
+
+		if (!empty($ids))
+		{
+			foreach ($ids as $id)
+			{
+				$query = $db->getQuery(true);
+				$query->delete('#__menu')
+					->where($db->qn('id') . ' = ' . $db->q($id));
+				$db->setQuery($query);
+
+				try
+				{
+					$db->execute();
+				}
+				catch (Exception $exc)
+				{
+					// Nothing
+				}
+			}
+		}
+		/**/
 	}
 
 	/**
@@ -792,7 +878,7 @@ abstract class FOFUtilsInstallscript
 	{
 		$src = $parent->getParent()->getPath('source');
 
-		$db = JFactory::getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();;
 
 		$status = new JObject();
 		$status->modules = array();
@@ -1038,7 +1124,7 @@ abstract class FOFUtilsInstallscript
 	 */
 	protected function uninstallSubextensions($parent)
 	{
-		$db = JFactory::getDBO();
+		$db = FOFPlatform::getInstance()->getDbo();
 
 		$status = new stdClass();
 		$status->modules = array();
@@ -1201,11 +1287,11 @@ abstract class FOFUtilsInstallscript
 		// Get the target path
 		if (!defined('JPATH_LIBRARIES'))
 		{
-			$target = JPATH_ROOT . '/libraries/fof';
+			$target = JPATH_ROOT . '/libraries/f0f';
 		}
 		else
 		{
-			$target = JPATH_LIBRARIES . '/fof';
+			$target = JPATH_LIBRARIES . '/f0f';
 		}
 
 		// Do I have to install FOF?
@@ -1445,7 +1531,7 @@ abstract class FOFUtilsInstallscript
 	{
 		JLoader::import('joomla.installer.installer');
 
-		$db = JFactory::getDBO();
+		$db = FOFPlatform::getInstance()->getDbo();
 
 		$status = new stdClass();
 		$status->modules = array();
@@ -1531,18 +1617,21 @@ abstract class FOFUtilsInstallscript
 	 */
 	private function _createAdminMenus($parent)
 	{
-		$db = $parent->getParent()->getDbo();
+		$db = $db = FOFPlatform::getInstance()->getDbo();
+
 		/** @var JTableMenu $table */
 		$table = JTable::getInstance('menu');
 		$option = $parent->get('element');
 
-		// If a component exists with this option in the table then we don't need to add menus
+		// If a component exists with this option in the table then we don't need to add menus - check only 'main' menutype
 		$query = $db->getQuery(true)
 			->select('m.id, e.extension_id')
 			->from('#__menu AS m')
 			->join('LEFT', '#__extensions AS e ON m.component_id = e.extension_id')
 			->where('m.parent_id = 1')
 			->where('m.client_id = 1')
+			->where('m.menutype = ' . $db->q('main'))
+			->where($db->qn('e') . '.' . $db->qn('type') . ' = ' . $db->q('component'))
 			->where('e.element = ' . $db->quote($option));
 
 		$db->setQuery($query);
@@ -1560,6 +1649,7 @@ abstract class FOFUtilsInstallscript
 		$query->clear()
 			->select('e.extension_id')
 			->from('#__extensions AS e')
+			->where('e.type = ' . $db->quote('component'))
 			->where('e.element = ' . $db->quote($option));
 		$db->setQuery($query);
 		$component_id = $db->loadResult();
@@ -1640,6 +1730,8 @@ abstract class FOFUtilsInstallscript
 			$data['component_id'] = $component_id;
 			$data['img'] = ((string)$menuElement->attributes()->img) ? (string)$menuElement->attributes()->img : 'class:component';
 			$data['home'] = 0;
+			$data['path'] = '';
+			$data['params'] = '';
 		}
 		// No menu element was specified, Let's make a generic menu item
 		else
@@ -1656,6 +1748,8 @@ abstract class FOFUtilsInstallscript
 			$data['component_id'] = $component_id;
 			$data['img'] = 'class:component';
 			$data['home'] = 0;
+			$data['path'] = '';
+			$data['params'] = '';
 		}
 
 		try
@@ -1664,7 +1758,10 @@ abstract class FOFUtilsInstallscript
 		}
 		catch (InvalidArgumentException $e)
 		{
-			JLog::add($e->getMessage(), JLog::WARNING, 'jerror');
+			if (class_exists('JLog'))
+			{
+				JLog::add($e->getMessage(), JLog::WARNING, 'jerror');
+			}
 
 			return false;
 		}
@@ -1842,7 +1939,8 @@ abstract class FOFUtilsInstallscript
 	 */
 	private function _reallyPublishAdminMenuItems($parent)
 	{
-		$db = $parent->getParent()->getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();
+
 		$option = $parent->get('element');
 
 		$query = $db->getQuery(true)
@@ -1851,6 +1949,8 @@ abstract class FOFUtilsInstallscript
 			->set($db->qn('published') . ' = ' . $db->q(1))
 			->where('m.parent_id = 1')
 			->where('m.client_id = 1')
+			->where('m.menutype = ' . $db->quote('main'))
+			->where('e.type = ' . $db->quote('component'))
 			->where('e.element = ' . $db->quote($option));
 
 		$db->setQuery($query);
@@ -1873,7 +1973,7 @@ abstract class FOFUtilsInstallscript
 	{
 		/** @var JTableMenu $table */
 		$table = JTable::getInstance('menu');
-		$db = $table->getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();
 
 		// We need to rebuild the menu based on its root item. By default this is the menu item with ID=1. However, some
 		// crappy upgrade scripts enjoy screwing it up. Hey, ho, the workaround way I go.
@@ -2146,7 +2246,7 @@ abstract class FOFUtilsInstallscript
 		// Check if the definition exists
 		$tableName = '#__postinstall_messages';
 
-		$db = JFactory::getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();
 		$query = $db->getQuery(true)
 			->select('*')
 			->from($db->qn($tableName))
@@ -2214,10 +2314,11 @@ abstract class FOFUtilsInstallscript
 		}
 
 		// Get the extension ID for our component
-		$db = JFactory::getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();
 		$query = $db->getQuery(true);
 		$query->select('extension_id')
 			->from('#__extensions')
+			->where($db->qn('type') . ' = ' . $db->q('component'))
 			->where($db->qn('element') . ' = ' . $db->q($this->componentName));
 		$db->setQuery($query);
 
@@ -2259,10 +2360,11 @@ abstract class FOFUtilsInstallscript
 		}
 
 		// Get the extension ID for our component
-		$db = JFactory::getDbo();
+		$db = FOFPlatform::getInstance()->getDbo();
 		$query = $db->getQuery(true);
 		$query->select('extension_id')
 			->from('#__extensions')
+			->where($db->qn('type') . ' = ' . $db->q('component'))
 			->where($db->qn('element') . ' = ' . $db->q($this->componentName));
 		$db->setQuery($query);
 
@@ -2283,7 +2385,7 @@ abstract class FOFUtilsInstallscript
 		$extension_id = array_shift($ids);
 
 		$query = $db->getQuery(true)
-			->delete($this->postInstallationMessages)
+			->delete($db->qn('#__postinstall_messages'))
 			->where($db->qn('extension_id') . ' = ' . $db->q($extension_id));
 
 		try

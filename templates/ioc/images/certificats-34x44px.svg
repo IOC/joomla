@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="44px" viewBox="0 0 34 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>certificats_34x44px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="1.5 7 7.5 7 7.5 16 4.5 14.5 1.5 16"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="certificats_34x44px">
+            <g id="certificats_icon" transform="translate(3.000000, 1.000000)">
+                <g id="sheet">
+                    <path d="M20,1 L27,8 L21.0769231,8 C20.3589744,8 20,7.64102564 20,6.92307692 C20,6.20512821 20,4.23076923 20,1 Z" id="Line-2" fill="#B9D5EA"></path>
+                    <path d="M27.5,8.20710678 L19.7928932,0.5 L1.5514383,0.5 C0.978150402,0.5 0.5,0.998597171 0.5,1.62065638 L0.5,36.3793436 C0.5,37.0030211 0.977031927,37.5 1.55532788,37.5 L26.4446721,37.5 C27.0252251,37.5 27.5,37.0038679 27.5,36.3777429 L27.5,8.20710678 Z" id="Rectangle-4" stroke="#354959"></path>
+                    <path d="M20,1 L20,7 C19.827957,7.66666667 20.1612903,8 21,8 C21.8387097,8 23.8387097,8 27,8 L27,36.1219512 C27,36.7073171 26.7204301,37 26.1612903,37 C25.6021505,37 17.4946237,37 1.83870968,37 C1.27956989,37 1,36.7073171 1,36.1219512 C1,35.5365854 1,24.1219512 1,1.87804878 C1,1.29268293 1.27956989,1 1.83870968,1 C2.39784946,1 8.4516129,1 20,1 Z" id="Line-3" fill="#FFFFFF"></path>
+                    <path d="M26.7928932,8.5 L19.5,1.20710678 L19.5,7.09547181 C19.5,7.86969912 20.1291506,8.5 20.9028181,8.5 L26.7928932,8.5 Z" id="Path" stroke="#354959"></path>
+                </g>
+                <g id="ribbon" transform="translate(4.500000, 27.000000)">
+                    <g id="Rectangle-17">
+                        <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <path stroke="#354959" stroke-width="1" d="M2,7.5 L2,15.190983 L4.5,13.940983 L7,15.190983 L7,7.5 L2,7.5 Z"></path>
+                    </g>
+                    <circle id="Oval-6" stroke="#354959" fill="#B9D5EA" cx="4.5" cy="4.5" r="4.5"></circle>
+                </g>
+                <g id="inside_details" transform="translate(6.000000, 13.000000)" stroke="#354959" stroke-linecap="round">
+                    <path d="M0.5,1.5 L8,1.5" id="Line"></path>
+                    <path d="M0.5,6.5 L15.5,6.5" id="Line"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

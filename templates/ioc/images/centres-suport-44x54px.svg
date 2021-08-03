@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="54px" viewBox="0 0 44 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>centres_suport_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M2,0.9996105 C2,0.447540865 2.43981314,0 2.99653482,0 L29.0034652,0 C29.5538362,0 30,0.453815624 30,0.9996105 L30,43 L2,43 L2,0.9996105 Z" id="path-1"></path>
+        <rect id="path-2" x="0" y="0" width="6" height="6" rx="1"></rect>
+        <rect id="path-3" x="8" y="0" width="6" height="6" rx="1"></rect>
+        <rect id="path-4" x="16" y="0" width="6" height="6" rx="1"></rect>
+        <rect id="path-5" x="0" y="8" width="6" height="6" rx="1"></rect>
+        <rect id="path-6" x="8" y="8" width="6" height="6" rx="1"></rect>
+        <rect id="path-7" x="16" y="8" width="6" height="6" rx="1"></rect>
+        <rect id="path-8" x="0" y="16" width="6" height="6" rx="1"></rect>
+        <rect id="path-9" x="8" y="16" width="6" height="6" rx="1"></rect>
+        <rect id="path-10" x="16" y="16" width="6" height="6" rx="1"></rect>
+        <rect id="path-11" x="0" y="24" width="6" height="6" rx="1"></rect>
+        <rect id="path-12" x="8" y="24" width="6" height="6" rx="1"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="centres_suport_44x54px">
+            <g id="centres_suport_icon" transform="translate(1.000000, 6.000000)">
+                <g id="building_icon">
+                    <g id="walls_lining">
+                        <path d="M0,42.5 L31.5,42.5" id="Line" stroke="#354959" stroke-linecap="round"></path>
+                        <g id="Rectangle">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#354959" stroke-width="1" d="M2.5,42.5 L29.5,42.5 L29.5,0.9996105 C29.5,0.726965098 29.2747101,0.5 29.0034652,0.5 L2.99653482,0.5 C2.71899104,0.5 2.5,0.720638166 2.5,0.9996105 L2.5,42.5 Z"></path>
+                        </g>
+                    </g>
+                    <g id="windows" transform="translate(5.000000, 4.000000)">
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            <rect stroke="#354959" stroke-width="1" x="0.5" y="0.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-3"></use>
+                            <rect stroke="#354959" stroke-width="1" x="8.5" y="0.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-4"></use>
+                            <rect stroke="#354959" stroke-width="1" x="16.5" y="0.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-5"></use>
+                            <rect stroke="#354959" stroke-width="1" x="0.5" y="8.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-6"></use>
+                            <rect stroke="#354959" stroke-width="1" x="8.5" y="8.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-7"></use>
+                            <rect stroke="#354959" stroke-width="1" x="16.5" y="8.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-8"></use>
+                            <rect stroke="#354959" stroke-width="1" x="0.5" y="16.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-9"></use>
+                            <rect stroke="#354959" stroke-width="1" x="8.5" y="16.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-10"></use>
+                            <rect stroke="#354959" stroke-width="1" x="16.5" y="16.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-11"></use>
+                            <rect stroke="#354959" stroke-width="1" x="0.5" y="24.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                        <g id="Rectangle-19">
+                            <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-12"></use>
+                            <rect stroke="#354959" stroke-width="1" x="8.5" y="24.5" width="5" height="5" rx="1"></rect>
+                        </g>
+                    </g>
+                </g>
+                <g id="pin" transform="translate(20.000000, 19.000000)" stroke="#354959">
+                    <path d="M10.5,0 C4.69411765,0 0,4.83354524 0,10.8118775 C0,19.9065745 9.69705882,27.538488 10.1294118,27.8564844 C10.2529412,27.9200837 10.3764706,27.983683 10.5,27.983683 C10.6235294,27.983683 10.7470588,27.9200837 10.8705882,27.8564844 C11.3029412,27.538488 21,19.9065745 21,10.8118775 C21,4.83354524 16.3058824,0 10.5,0 Z" id="icona_centre_suport-copy-2" fill="#FFFFFF" fill-rule="nonzero" transform="translate(10.500000, 13.991841) scale(-1, 1) translate(-10.500000, -13.991841) "></path>
+                    <path d="M10.5,6.22222222 C7.99285714,6.22222222 6,8.26239316 6,10.8290598 C6,13.3957265 7.99285714,15.4358974 10.5,15.4358974 C13.0071429,15.4358974 15,13.3957265 15,10.8290598 C15,8.26239316 13.0071429,6.22222222 10.5,6.22222222 Z" id="Path" fill="#B9D5EA" transform="translate(10.500000, 10.829060) scale(-1, 1) translate(-10.500000, -10.829060) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

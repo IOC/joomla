@@ -3,8 +3,8 @@
  * @package     Joomla.UnitTest
  * @subpackage  Module
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
+ * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 /**
@@ -99,7 +99,7 @@ class JModuleHelperTest extends TestCaseDatabase
 		$this->assertEquals(
 			$module->id,
 			0,
-			'There anonymous module should have no id'
+			'The anonymous module should have no id'
 		);
 
 		$this->assertEquals(
@@ -111,7 +111,7 @@ class JModuleHelperTest extends TestCaseDatabase
 		$this->assertEquals(
 			$module->module,
 			'mod_false',
-			'There anonymous module should have the given name'
+			'The anonymous module should have the given name'
 		);
 	}
 
@@ -126,11 +126,7 @@ class JModuleHelperTest extends TestCaseDatabase
 	{
 		$modules = JModuleHelper::getModules('position-0');
 
-		$this->assertEquals(
-			count($modules),
-			1,
-			'There is 1 module in position-0'
-		);
+		$this->assertCount(1, $modules, 'There is 1 module in position-0');
 
 		$this->assertEquals(
 			$modules[0]->id,

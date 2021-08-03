@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="54px" viewBox="0 0 44 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>arxiu_zip_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="arxiu_zip_44x54px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sheet-copy" transform="translate(6.000000, 6.000000)">
+            <path d="M32,8.41421356 L24.5857864,1 L1.82848085,1 C1.37426845,1 1,1.37471187 1,1.83390064 L1,41.1660994 C1,41.6270257 1.37287177,42 1.833065,42 L31.166935,42 C31.6295258,42 32,41.6282966 32,41.1642881 L32,8.41421356 Z M33,41.1642881 C33,42.1781238 32.1842651,43 31.166935,43 L1.833065,43 C0.820691157,43 0,42.1794146 0,41.1660994 L0,1.83390064 C0,0.821065284 0.823343268,0 1.82848085,0 L25,0 L33,8 L33,41.1642881 Z" id="Rectangle-4" fill="#354959" fill-rule="nonzero"></path>
+            <path d="M24.5,1 L32,8.5 L32,41 C32,41.6666667 31.6666667,42 31,42 C30.3333333,42 20.6666667,42 2,42 C1.33333333,42 1,41.6666667 1,41 C1,40.3333333 1,27.3333333 1,2 C1,1.33333333 1.33333333,1 2,1 C2.66666667,1 10.1666667,1 24.5,1 Z" id="Line-3" fill="#FFFFFF"></path>
+        </g>
+        <polygon id="Line-Copy-12" fill="#354959" fill-rule="nonzero" points="23 24 23 23 26 23 26 24"></polygon>
+        <polygon id="Line-Copy-13" fill="#354959" fill-rule="nonzero" points="19 22 19 21 22 21 22 22"></polygon>
+        <polygon id="Line-Copy-15" fill="#354959" fill-rule="nonzero" points="23 28 23 27 26 27 26 28"></polygon>
+        <polygon id="Line-Copy-14" fill="#354959" fill-rule="nonzero" points="19 26 19 25 22 25 22 26"></polygon>
+        <polygon id="Line-Copy-19" fill="#354959" fill-rule="nonzero" points="23 32 23 31 26 31 26 32"></polygon>
+        <polygon id="Line-Copy-18" fill="#354959" fill-rule="nonzero" points="19 30 19 29 22 29 22 30"></polygon>
+        <polygon id="Line-Copy-17" fill="#354959" fill-rule="nonzero" points="23 36 23 35 26 35 26 36"></polygon>
+        <polygon id="Line-Copy-16" fill="#354959" fill-rule="nonzero" points="19 34 19 33 22 33 22 34"></polygon>
+        <polygon id="Line-Copy-23" fill="#354959" fill-rule="nonzero" points="23 40 23 39 26 39 26 40"></polygon>
+        <polygon id="Line-Copy-22" fill="#354959" fill-rule="nonzero" points="19 38 19 37 22 37 22 38"></polygon>
+        <polygon id="Line-Copy-21" fill="#354959" fill-rule="nonzero" points="23 44 23 43 26 43 26 44"></polygon>
+        <polygon id="Line-Copy-20" fill="#354959" fill-rule="nonzero" points="19 42 19 41 22 41 22 42"></polygon>
+        <path d="M25,11 L20,11 L20,17 L25,17 L25,11 Z M26,18 L19,18 L19,10 L26,10 L26,18 Z" id="Path-12" fill="#354959" fill-rule="nonzero"></path>
+        <polygon id="Path-Copy" fill="#B9D5EA" points="25 11 20 11 20 17 25 17"></polygon>
+    </g>
+</svg>

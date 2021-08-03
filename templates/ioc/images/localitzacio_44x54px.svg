@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="54px" viewBox="0 0 44 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>localitzacio_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="localitzacio_44x54px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="location_icon" transform="translate(3.000000, 5.000000)">
+            <ellipse id="Oval-2" fill="#B9D5EA" cx="19" cy="38" rx="18.5" ry="5"></ellipse>
+            <path d="M19,0.5 C11.2588235,0.5 5,6.94848485 5,14.9242424 C5,27.0575758 17.9294118,37.2393939 18.5058824,37.6636364 C18.6705882,37.7484848 18.8352941,37.8333333 19,37.8333333 C19.1647059,37.8333333 19.3294118,37.7484848 19.4941176,37.6636364 C20.0705882,37.2393939 33,27.0575758 33,14.9242424 C33,6.94848485 26.7411765,0.5 19,0.5 Z" id="icona_centre_suport-copy-2" stroke="#354959" fill="#FFFFFF" fill-rule="nonzero" transform="translate(19.000000, 19.166667) scale(-1, 1) translate(-19.000000, -19.166667) "></path>
+            <path d="M19,8.5 C15.9357143,8.5 13.5,10.9357143 13.5,14 C13.5,17.0642857 15.9357143,19.5 19,19.5 C22.0642857,19.5 24.5,17.0642857 24.5,14 C24.5,10.9357143 22.0642857,8.5 19,8.5 Z" id="Path" stroke="#354959" fill="#B9D5EA" transform="translate(19.000000, 14.000000) scale(-1, 1) translate(-19.000000, -14.000000) "></path>
+        </g>
+    </g>
+</svg>

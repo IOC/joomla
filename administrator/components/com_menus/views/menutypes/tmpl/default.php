@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_menus
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -14,13 +14,14 @@ $input = JFactory::getApplication()->input;
 // Checking if loaded via index.php or component.php
 $tmpl = ($input->getCmd('tmpl') != '') ? '1' : '';
 
+JHtml::_('behavior.core');
 JFactory::getDocument()->addScriptDeclaration('
 		setmenutype = function(type) {
 			var tmpl = ' . json_encode($tmpl) . ';
 			if (tmpl)
 			{
 				window.parent.Joomla.submitbutton("item.setType", type);
-				window.parent.jModalClose();
+				window.parent.jQuery("#menuTypeModal").modal("hide");
 			}
 			else
 			{
@@ -37,10 +38,10 @@ JFactory::getDocument()->addScriptDeclaration('
 			<ul class="nav nav-tabs nav-stacked">
 				<?php foreach ($list as $title => $item) : ?>
 					<li>
-						<?php $menutype = array('id' => $this->recordId, 'title' => (isset($item->type) ? $item->type : $item->title), 'request' => $item->request); ?>
+						<?php $menutype = array('id' => $this->recordId, 'title' => isset($item->type) ? $item->type : $item->title, 'request' => $item->request); ?>
 						<?php $menutype = base64_encode(json_encode($menutype)); ?>
 						<a class="choose_type" href="#" title="<?php echo JText::_($item->description); ?>"
-							onclick="javascript:setmenutype('<?php echo $menutype; ?>')">
+							onclick="setmenutype('<?php echo $menutype; ?>')">
 							<?php echo $title;?>
 							<small class="muted">
 								<?php echo JText::_($item->description); ?>

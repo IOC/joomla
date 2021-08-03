@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="35px" viewBox="0 0 58 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>bank-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-648.000000, -233.000000)">
+            <g id="bank-icon" transform="translate(648.000000, 233.000000)">
+                <path d="M19,0 L39,0 C40.1045695,0 41,0.8954305 41,2 L41,35 L17,35 L17,2 C17,0.8954305 17.8954305,0 19,0 Z" id="Path" fill="#354959" fill-rule="nonzero"></path>
+                <path d="M39.85,34.15 L53.15,34.15 L53.15,11 C53.15,10.3648725 52.6351275,9.85 52,9.85 L41,9.85 C40.3648725,9.85 39.85,10.3648725 39.85,11 L39.85,34.15 Z" id="Rectangle-Copy-4" stroke="#354959" stroke-width="1.7" fill="#FFFFFF"></path>
+                <path d="M4.85,34.15 L18.15,34.15 L18.15,9.85 L6,9.85 C5.36487254,9.85 4.85,10.3648725 4.85,11 L4.85,34.15 Z" id="Rectangle-Copy-3" stroke="#354959" stroke-width="1.7" fill="#FFFFFF"></path>
+                <path d="M4.85,34.15 L18.15,34.15 L18.15,9.85 L6,9.85 C5.36487254,9.85 4.85,10.3648725 4.85,11 L4.85,34.15 Z" id="Rectangle-Copy-2" stroke="#354959" stroke-width="1.7"></path>
+                <path d="M39.85,34.15 L53.15,34.15 L53.15,11 C53.15,10.3648725 52.6351275,9.85 52,9.85 L41,9.85 C40.3648725,9.85 39.85,10.3648725 39.85,11 L39.85,34.15 Z" id="Rectangle-Copy" stroke="#354959" stroke-width="1.7"></path>
+                <path d="M39.3,33.3 L39.3,2 C39.3,1.83431458 39.1656854,1.7 39,1.7 L19,1.7 C18.8343146,1.7 18.7,1.83431458 18.7,2 L18.7,33.3 L39.3,33.3 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <rect id="Rectangle-2" stroke="#354959" stroke-width="1.7" fill="#B9D5EA" x="24.85" y="21.85" width="8.3" height="12.3"></rect>
+                <path d="M53.5,33.8 L53.5,34.5 L57.15,34.5 C57.3432997,34.5 57.5,34.3432997 57.5,34.15 C57.5,33.9567003 57.3432997,33.8 57.15,33.8 L53.5,33.8 Z" id="Rectangle-3" stroke="#354959"></path>
+                <path d="M4.5,34.5 L4.5,33.8 L0.85,33.8 C0.656700338,33.8 0.5,33.9567003 0.5,34.15 C0.5,34.3432997 0.656700338,34.5 0.85,34.5 L4.5,34.5 Z" id="Rectangle-3-Copy" stroke="#354959"></path>
+                <path d="M34,11 C34,13.7614237 31.7614237,16 29,16 C26.2385763,16 24,13.7614237 24,11 C24,8.23857625 26.2385763,6 29,6 L29,7.7 C27.1774603,7.7 25.7,9.17746033 25.7,11 C25.7,12.8225397 27.1774603,14.3 29,14.3 C30.8225397,14.3 32.3,12.8225397 32.3,11 L34,11 Z" id="Oval" fill="#354959" fill-rule="nonzero" transform="translate(29.000000, 11.000000) rotate(-315.000000) translate(-29.000000, -11.000000) "></path>
+                <g id="a" transform="translate(23.000000, 8.300000)" fill="#354959">
+                    <rect id="Rectangle-4" x="0" y="0.7" width="5" height="1.7"></rect>
+                    <rect id="Rectangle-4-Copy" x="0" y="3" width="5" height="1.7"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

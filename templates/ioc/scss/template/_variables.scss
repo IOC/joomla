@@ -1,0 +1,288 @@
+$ioc-bg-header:       #202b47;
+$ioc-bg-header-mat:   #374464;
+$ioc-accent-mat:      #63749d;
+$ioc-black:           #182825;
+$ioc-link:            #337ab7;
+$ioc-link-navbar:     #4bcdaf;
+$ioc-lnk-nb-frpage:   #2cc4ec;
+$ioc-bd-campus:       #2f3b5c;
+$ioc-link-carousel:   #07fddd;
+$ioc-link2-carousel:  rgba(59,88,96,0.90);
+$ioc-login-bg:        rgba(59,88,96,0.74);
+$ioc-white:           #ffffff;
+$ioc-bg-gray:         #eeeeee;
+$ioc-footer-heading:  #333333;
+$ioc-bg-news-layer:   rgba(246, 249, 255, 0.85);
+$ioc-figcaption:      #849fa6;
+$ioc-bg-fp:           #fc4c00;
+$ioc-bg-fpmig:        lighten($ioc-bg-fp, 10%);
+$ioc-bg-fpsup:        darken($ioc-bg-fp, 10%);
+$ioc-featured-text:   #1b252d;
+$ioc-matricula:       #bf0000;
+$ioc-matricula-bd:    #8f0808;
+$ioc-text:            #354959;
+$ioc-text2:           #364958;
+$ioc-separator:       rgba(255,255,255,.3);
+$ioc-footer-text:     #f9f9f9;
+$ioc-footer-title:    #f5f5f5;
+$ioc-footer-bottom:   #7b8f94;
+$ioc-bg-footer-t:     #31525a;
+$ioc-bg-footer-b:     #20373d;
+$ioc-bg-pagination:   #e7ecf1;
+$ioc-bd-pagination:   #dce1e5;
+$ioc-bg-pag-mobile:   rgba(164, 251, 239, 0.25);
+$ioc-bg-collapse:     #657c82;
+$ioc-bg-study-date:   #b9d4d5;
+$ioc-semiheader:      #fbecee;
+$ioc-study-button:    #005578;
+$ioc-moreinfo-tab:    #edf4f7;//#f1f9fd;
+$ioc-bg-employment:   #f4f8ff;
+$ioc-bd-employment:   #050708;
+$ioc-featured-news:   #f66262;
+$ioc-bg-moreinfo:     #d5e3fa;
+$ioc-semiheader-mb:   #83a1b9;
+$ioc-bg-form-login:   #f8faff;
+$ioc-accent:          #01c1b9;
+$ioc-submenu:         #ecf3f7;
+$ioc-fp-study:        #0f9e73;
+$ioc-module-bottom:   #829cb0;
+$ioc-backdrop:        #1e303e;
+$ioc-header-mini:     60px;
+$ioc-header-big:      130px;
+$ioc-header-margin:   50px;
+$ioc-campus-warn:     #ff5151;
+$ioc-campus-hv-warn:  #af3a3a;
+$ioc-tooltip-bd:      #e3eef7;
+$ioc-warning-msg:     rgba(255, 229, 229, .8); //#ffe5e5
+$ioc-outline:         rgba(255, 255, 255, .3);
+$ioc-bg-slide:        #f7fbfd;
+$ioc-matricula-bt:    #73798B;
+
+$ioc-title-default:   #e7edfb;
+$ioc-title-study1:    #fff2f3;
+$ioc-title-study2:    #fff6e8;
+$ioc-title-study3:    #e1fff6;
+$ioc-title-study4:    #fbf9f5;
+$ioc-title-study5:    #fce9ef;
+$ioc-title-study6:    #eaeeff;
+$ioc-title-study7:    #ddebec;
+
+$ioc-article-date:    #728696;
+$ioc-article-arrow:   #aab4bc;
+$ioc-tag-separator:   #c3c3c3;
+$ioc-btx-assign:      #5651a2;
+$ioc-btx-assign-btn:  #5754a2;
+$ioc-table-th:        #e7ecf1;
+$ioc-table-td:        rgba(195, 214, 224, 0.25);
+$ioc-study-acfgs:     #476f7c;
+$ioc-study-btx:       #6e6ca2;
+$ioc-study-btx-mat:   #41b0c8;
+$ioc-study-eoi:       #fc9601;
+$ioc-study-fesp:      #982649;
+$ioc-study-fp:        #10b07f;
+$ioc-study-ges:       #d14c5e;
+$ioc-title-module:    #5b6b78;
+$ioc-title-ges:       #eb5066;
+$ioc-faqs:            #293658;
+$ioc-breadcrumb-fp:   #0e7554;
+$ioc-bg-back-to-top:  #08191d;
+$ioc-back-to-top:     #eafff9;
+$ioc-placeholder:     #8fa4aa;
+$ioc-cross:           #f4f8fb;
+$ioc-delete-icon:     #dee3e7;
+$ioc-btn-search-2nd:  #d7d9de;
+$ioc-error-campus-bg: #f75555;
+$ioc-error-campus:    #fae5e5;
+$ioc-error-input:     #eb5066;
+$ioc-agree:           #f8fbfd;
+
+$ioc-acfgs-colors: (
+    header-bg: #476f7c,
+    header-title: #e5f7fe,
+    navbar-hover: #5eabc5,
+    campus-border: #2c4a54,
+    campus-bg: rgba(69, 110, 124, 0.9),
+    date-bg: #b9d2d5,
+    date-semiheader: #19636e,
+    tab-title: #19636e,
+    tab-border: #26727d,
+    button: #26727d,
+    moreinfo-title: #26727d
+);
+$ioc-btx-colors: (
+    header-bg: #6e6ca2,
+    header-title: #f0effd,
+    navbar-hover: #9696ea,
+    campus-border: #302f58,
+    campus-bg: rgba(73, 72, 132, 0.8),
+    date-bg: #dcdbe9,
+    date-semiheader: #b0aceb,
+    tab-title: #6462a9,
+    tab-border: #6462a9,
+    button: #6462a9,
+    moreinfo-title: #6462a9
+);
+$ioc-btxioc-colors: (
+    header-bg: #6e6ca2,
+    header-title: #f0effd,
+    navbar-hover: #9696ea,
+    campus-border: #302f58,
+    campus-bg: rgba(73, 72, 132, 0.8),
+    date-bg: #dcdbe9,
+    date-semiheader: #b0aceb,
+    tab-title: #6462a9,
+    tab-border: #6462a9,
+    button: #6462a9,
+    moreinfo-title: #6462a9,
+    banner-assign: #5651a2,
+    banner-assign-image: linear-gradient(161deg, $ioc-btx-assign, rgba(81, 92, 162, 0.86)),
+    banner-assign-btn: #5754a2
+);
+$ioc-btxmat-colors: (
+    header-bg: #41b0c8,
+    header-title: #e5f7fe,
+    navbar-hover: #70e6ff,
+    campus-border: #146c7d,
+    campus-bg: rgba(39, 158, 184, 0.6),
+    date-bg: #e2eaf1,
+    date-semiheader: #3eaec6,
+    tab-title: #3ba3ba,
+    tab-border: #41b0c8,
+    button: #41b0c8,
+    moreinfo-title: #479eb0
+);
+$ioc-cre-colors: (
+    header-bg: #42adb5,
+    header-title: #eafdff,
+    navbar-hover: #04565a,
+    campus-border: #0e5e62,
+    campus-bg: rgba(14, 94, 98, 0.48),
+    date-bg: #e7ebec,
+    date-semiheader: #5fa9ae,
+    tab-title: #116b6f,
+    tab-border: #1a898e,
+    button: #1a898e,
+    moreinfo-title: #1a898e
+);
+$ioc-competic-colors: (
+    header-bg: #5874f6,
+    header-title: #e9edff,
+    navbar-hover: #0a26a3,
+    campus-border: #112fb9,
+    campus-bg: rgba(47, 73, 202, 0.81),
+    date-bg: #e3eafb,
+    date-semiheader: #95b0f1,
+    tab-title: #2f49ca,
+    tab-border: #5468cd,
+    button: #2f49ca,
+    moreinfo-title: #2f49ca
+);
+$ioc-eoi-colors: (
+    header-bg: #f3a22d,
+    header-title: #ffffff,
+    navbar-hover: #b97100,
+    campus-border: #c47200,
+    campus-bg: #e89619,
+    date-bg: #eaedef,
+    date-semiheader: #eb9626,
+    tab-title: #de9c02,
+    tab-border: #ecb023,
+    button: #f6ad03,
+    moreinfo-title: #f6ad03,
+    menu-title-bg: rgba(223, 140, 32, 0.94),
+    menu-title: #f0effd,
+    breadcrumb: #c47200,
+    modal-border: #fc9601,
+    modal-title: #cf8218
+);
+$ioc-fesp-colors: (
+    header-bg: #ab3f5f,
+    header-title: #ffffff,
+    navbar-hover: #c86885,
+    campus-border: #650020,
+    campus-bg: #90314f,
+    date-bg: #eaedef,
+    date-semiheader: #a03a59,
+    tab-title: #a03a59,
+    tab-border: #a03a59,
+    button: #a03a59,
+    moreinfo-title: #a03a59
+);
+$ioc-fp-colors: (
+    header-bg: #0fa175,
+    header-title: #ddebec,
+    navbar-hover: #128862,
+    campus-border: #0e7554,
+    campus-bg: rgba(27, 170, 127, 0.69),
+    date-bg: #eaedef,
+    date-semiheader: #0f9e73,
+    tab-title: #0f9e73,
+    tab-border: #27a680,
+    button: #27a680,
+    moreinfo-title: #0f9e73,
+    menu-title-bg: rgba(17, 176, 127, 0.94),
+    menu-title: #f0effd,
+    breadcrumb: #0e7554,
+    modal-border: #0f9e73,
+    modal-title: #0f9e73,
+    banner-assign: #0f9e73,
+    banner-assign-imgage: linear-gradient(164deg, #0f9e73, rgba(15, 158, 115, 0.86)),
+    banner-assign-btn: #088d65
+);
+$ioc-fpd-colors: (
+    header-bg: #f6bb2f,
+    header-title: #ffffff,
+    navbar-hover: #b67f00,
+    campus-border: #a27100,
+    campus-bg: #ecaa0f,
+    date-bg: #eaedef,
+    date-title: #354959,
+    date-semiheader: #de9c02,
+    tab-title: #de9c02,
+    tab-border: #ecb023,
+    button: #f6ad03,
+    moreinfo-title: #f6ad03
+);
+$ioc-ges-colors: (
+    header-bg: #d14c5e,
+    header-title: #ffe7e8,
+    navbar-hover: #9a1b2d,
+    campus-border: #9a1b2d,
+    campus-bg: #ba2f43,
+    date-bg: #d2e1e5,
+    date-semiheader: #d14c5e,
+    tab-title: #d14c5e,
+    tab-border: #e15064,
+    button: #e15064,
+    moreinfo-title: #d14c5e
+);
+$ioc-pau-colors: (
+    header-bg: #508d90,
+    header-title: #ddebec,
+    navbar-hover: #2b5453,
+    campus-border: #2d5958,
+    campus-bg: #386d6c,
+    date-bg: #b9d4d5,
+    date-semiheader: #196a6e,
+    tab-title: #508d90,
+    tab-border: #508d90,
+    button: #508d90,
+    moreinfo-title: #508f92
+);
+$ioc-news-colors: (
+    header-bg: #fd2175,
+    header-title: #ffffff,
+    navbar-hover: #b90050,
+    campus-border: #cb1563,
+    campus-bg: #ff1973
+);
+
+$ioc-bg-panel:       #f2f6f9;
+$ioc-bd-button:      #e7ecf0;
+$ioc-bg-panel-res:   #e2e7f2;
+$ioc-bottom-res:     rgba(72, 90, 134, 0.5);
+$ioc-btx-menu-mbl:   #f0effd;
+$ioc-acfgs-menu-mbl: #ddebec;
+$ioc-select:         #3d657c;
+$ioc-select-options: #57798d;
+

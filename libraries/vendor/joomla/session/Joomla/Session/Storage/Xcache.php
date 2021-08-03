@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Session Package
  *
- * @copyright  Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -13,8 +13,8 @@ use Joomla\Session\Storage;
 /**
  * XCache session storage handler
  *
- * @since  1.0
- * @deprecated  The joomla/session package is deprecated
+ * @since       1.0
+ * @deprecated  2.0  The Storage class chain will be removed
  */
 class Xcache extends Storage
 {
@@ -25,6 +25,7 @@ class Xcache extends Storage
 	 *
 	 * @since   1.0
 	 * @throws  \RuntimeException
+	 * @deprecated  2.0
 	 */
 	public function __construct($options = array())
 	{
@@ -44,6 +45,7 @@ class Xcache extends Storage
 	 * @return  string  The session data.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function read($id)
 	{
@@ -52,7 +54,7 @@ class Xcache extends Storage
 		// Check if id exists
 		if (!xcache_isset($sess_id))
 		{
-			return;
+			return '';
 		}
 
 		return (string) xcache_get($sess_id);
@@ -67,12 +69,13 @@ class Xcache extends Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function write($id, $session_data)
 	{
 		$sess_id = 'sess_' . $id;
 
-		return xcache_set($sess_id, $session_data, ini_get("session.gc_maxlifetime"));
+		return xcache_set($sess_id, $session_data, ini_get('session.gc_maxlifetime'));
 	}
 
 	/**
@@ -83,6 +86,7 @@ class Xcache extends Storage
 	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
 	public function destroy($id)
 	{
@@ -99,12 +103,13 @@ class Xcache extends Storage
 	/**
 	 * Test to see if the SessionHandler is available.
 	 *
-	 * @return boolean  True on success, false otherwise.
+	 * @return  boolean  True on success, false otherwise.
 	 *
 	 * @since   1.0
+	 * @deprecated  2.0
 	 */
-	static public function isSupported()
+	public static function isSupported()
 	{
-		return (extension_loaded('xcache'));
+		return \extension_loaded('xcache');
 	}
 }

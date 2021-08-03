@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="54px" viewBox="0 0 44 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>ambit_professional_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1,21.9907951 C1,20.8913093 1.89666034,20 2.99749218,20 L41.0025078,20 C42.1056923,20 43,20.8982124 43,21.9907951 L43,38.0092049 C43,39.1086907 42.1033397,40 41.0025078,40 L2.99749218,40 C1.89430771,40 1,39.1017876 1,38.0092049 L1,21.9907951 Z" id="path-1"></path>
+        <path d="M0,7.99456145 C0,6.89299558 0.898855112,6 2.00492334,6 L41.9950767,6 C43.1023652,6 44,6.90234375 44,7.99456145 L44,23.991212 C44,25.6529197 42.6591426,27 40.9930191,27 L3.0069809,27 C1.34627121,27 0,25.6544098 0,23.991212 L0,7.99456145 Z" id="path-2"></path>
+        <rect id="path-3" x="6" y="22" width="8" height="9" rx="2"></rect>
+        <rect id="path-4" x="30" y="22" width="8" height="9" rx="2"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ambit_professional_44x54px">
+            <g id="ambit_professional_icon" transform="translate(0.000000, 9.000000)">
+                <g id="Rectangle-5-Copy">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#354959" stroke-width="1" d="M1.5,21.9907951 L1.5,38.0092049 C1.5,38.8279212 2.17272843,39.5 2.99749218,39.5 L41.0025078,39.5 C41.8284757,39.5 42.5,38.8312711 42.5,38.0092049 L42.5,21.9907951 C42.5,21.1720788 41.8272716,20.5 41.0025078,20.5 L2.99749218,20.5 C2.17152434,20.5 1.5,21.1687289 1.5,21.9907951 Z"></path>
+                </g>
+                <rect id="Rectangle-7" stroke="#AEC8CF" stroke-width="2" x="15" y="1" width="14" height="12" rx="2"></rect>
+                <rect id="Rectangle-7-Copy-3" stroke="#354959" stroke-width="2" x="15" y="1" width="14" height="12" rx="2"></rect>
+                <rect id="Rectangle-7-Copy-4" stroke="#B9D5EA" stroke-width="2" x="16" y="2" width="12" height="11" rx="1"></rect>
+                <rect id="Rectangle-7-Copy-5" stroke="#354959" x="16.5" y="2.5" width="11" height="11" rx="1"></rect>
+                <g id="Rectangle-5">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <path stroke="#354959" stroke-width="1" d="M0.5,7.99456145 L0.5,23.991212 C0.5,25.3777818 1.62192804,26.5 3.0069809,26.5 L40.9930191,26.5 C42.3809237,26.5 43.5,25.3788569 43.5,23.991212 L43.5,7.99456145 C43.5,7.17547597 42.8232059,6.5 41.9950767,6.5 L2.00492334,6.5 C1.17395094,6.5 0.5,7.17018603 0.5,7.99456145 Z"></path>
+                </g>
+                <g id="Rectangle-7-Copy">
+                    <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <rect stroke="#354959" stroke-width="1" x="6.5" y="22.5" width="7" height="8" rx="2"></rect>
+                </g>
+                <g id="Rectangle-7-Copy-2">
+                    <use fill="#B9D5EA" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    <rect stroke="#354959" stroke-width="1" x="30.5" y="22.5" width="7" height="8" rx="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

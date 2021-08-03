@@ -3,16 +3,21 @@
  * @package     Joomla.Administrator
  * @subpackage  com_users
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('JPATH_BASE') or die;
 
-JFormHelper::loadFieldClass('list');
+use Joomla\CMS\Access\Access;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Form\FormHelper;
+use Joomla\CMS\Helper\UserGroupsHelper;
+
+FormHelper::loadFieldClass('list');
 
 /**
- * Form Field class for the Joomla Framework.
+ * User Group Parent field..
  *
  * @since  1.6
  */
@@ -27,6 +32,31 @@ class JFormFieldGroupParent extends JFormFieldList
 	protected $type = 'GroupParent';
 
 	/**
+	 * Method to clean the Usergroup Options from all children starting by a given father
+	 *
+	 * @param   array    $userGroupsOptions  The usergroup options to clean
+	 * @param   integer  $fatherId           The father ID to start with
+	 *
+	 * @return  array  The cleaned field options
+	 *
+	 * @since   3.9.4
+	 */
+	private function cleanOptionsChildrenByFather($userGroupsOptions, $fatherId)
+	{
+		foreach ($userGroupsOptions as $userGroupsOptionsId => $userGroupsOptionsData)
+		{
+			if ((int) $userGroupsOptionsData->parent_id === (int) $fatherId)
+			{
+				unset($userGroupsOptions[$userGroupsOptionsId]);
+
+				$userGroupsOptions = $this->cleanOptionsChildrenByFather($userGroupsOptions, $userGroupsOptionsId);
+			}
+		}
+
+		return $userGroupsOptions;
+	}
+
+	/**
 	 * Method to get the field options.
 	 *
 	 * @return  array  The field option objects
@@ -35,44 +65,33 @@ class JFormFieldGroupParent extends JFormFieldList
 	 */
 	protected function getOptions()
 	{
-		$options = array();
+		$options        = UserGroupsHelper::getInstance()->getAll();
+		$currentGroupId = $this->form->getValue('id');
 
-		$db = JFactory::getDbo();
-		$user = JFactory::getUser();
-		$query = $db->getQuery(true)
-			->select('a.id AS value, a.title AS text, COUNT(DISTINCT b.id) AS level')
-			->from('#__usergroups AS a')
-			->join('LEFT', $db->quoteName('#__usergroups') . ' AS b ON a.lft > b.lft AND a.rgt < b.rgt');
-
-		// Prevent parenting to children of this item.
-		if ($id = $this->form->getValue('id'))
+		// Prevent to set yourself as parent
+		if ($currentGroupId)
 		{
-			$query->join('LEFT', $db->quoteName('#__usergroups') . ' AS p ON p.id = ' . (int) $id)
-				->where('NOT(a.lft >= p.lft AND a.rgt <= p.rgt)');
+			unset($options[$currentGroupId]);
 		}
 
-		$query->group('a.id, a.title, a.lft, a.rgt')
-			->order('a.lft ASC');
-
-		// Get the options.
-		$db->setQuery($query);
-
-		try
+		// We should not remove any groups when we are creating a new group
+		if (!is_null($currentGroupId))
 		{
-			$options = $db->loadObjectList();
+			// Prevent parenting direct children and children of children of this item.
+			$options = $this->cleanOptionsChildrenByFather($options, $currentGroupId);
 		}
-		catch (RuntimeException $e)
-		{
-			JError::raiseWarning(500, $e->getMessage());
-		}
+
+		$options      = array_values($options);
+		$isSuperAdmin = Factory::getUser()->authorise('core.admin');
 
 		// Pad the option text with spaces using depth level as a multiplier.
 		for ($i = 0, $n = count($options); $i < $n; $i++)
 		{
 			// Show groups only if user is super admin or group is not super admin
-			if ($user->authorise('core.admin') || (!JAccess::checkGroup($options[$i]->value, 'core.admin')))
+			if ($isSuperAdmin || !Access::checkGroup($options[$i]->id, 'core.admin'))
 			{
-				$options[$i]->text = str_repeat('- ', $options[$i]->level) . $options[$i]->text;
+				$options[$i]->value = $options[$i]->id;
+				$options[$i]->text = str_repeat('- ', $options[$i]->level) . $options[$i]->title;
 			}
 			else
 			{
@@ -81,8 +100,6 @@ class JFormFieldGroupParent extends JFormFieldList
 		}
 
 		// Merge any additional options in the XML definition.
-		$options = array_merge(parent::getOptions(), $options);
-
-		return $options;
+		return array_merge(parent::getOptions(), $options);
 	}
 }

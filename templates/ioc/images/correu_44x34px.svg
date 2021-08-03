@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="37px" viewBox="0 0 44 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>correu_44x34px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,1.99821383 C0,0.894630804 0.898855112,0 2.00492334,0 L41.9950767,0 C43.1023652,0 44,0.894337654 44,1.99821383 L44,29.0017862 C44,30.1053692 43.1011449,31 41.9950767,31 L2.00492334,31 C0.897634756,31 0,30.1056623 0,29.0017862 L0,1.99821383 Z" id="path-1"></path>
+    </defs>
+    <g id="correu_44x34px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="envelop_icon" transform="translate(0.000000, 3.000000)">
+            <g id="Rectangle">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#354959" stroke-width="1" d="M0.5,1.99821383 L0.5,29.0017862 C0.5,29.8290314 1.17328973,30.5 2.00492334,30.5 L41.9950767,30.5 C42.8258454,30.5 43.5,29.8283838 43.5,29.0017862 L43.5,1.99821383 C43.5,1.17096855 42.8267103,0.5 41.9950767,0.5 L2.00492334,0.5 C1.17415464,0.5 0.5,1.1716162 0.5,1.99821383 Z"></path>
+            </g>
+            <polygon id="Triangle" fill="#E9F2F9" points="19.516129 16.6973684 1 28 1 4"></polygon>
+            <polygon id="Triangle-Copy" fill="#E9F2F9" transform="translate(33.741935, 15.750000) scale(-1, 1) translate(-33.741935, -15.750000) " points="43 16.6973684 24.483871 28 24.483871 3.5"></polygon>
+            <path d="M0.35483871,3.19736842 L20.5806452,17.3299746 C20.5806452,17.3299746 22,18.1184211 23.4193548,17.3299746 C24.8387097,16.5415281 43.6451613,3.19736842 43.6451613,3.19736842" id="Path-3" stroke="#354959"></path>
+        </g>
+    </g>
+</svg>

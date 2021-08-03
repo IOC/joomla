@@ -1,0 +1,777 @@
+$custom_red:    rgb(217, 83, 79);
+$ioc-link:      #23527c;
+$ioc-text:      #354959;
+$ioc-accent:    #01c1b9;
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+#tinymce {
+
+    @mixin borderioc($width, $color) {
+        box-sizing: border-box;
+        border: $width dashed $color;
+        padding: 10px;
+        background-color: #fafafa;
+    }
+
+    @mixin numbertab($number) {
+        content: $number;
+        color: $custom_red;
+    }
+
+    @mixin addelement($color) {
+        content: '\002b';
+        background-color: $color;
+        color: #fff;
+        font-family: 'Glyphicons Halflings';
+        margin-left: 1em;
+        cursor: pointer;
+        padding: 1px 2px 1px 3px;
+        pointer-events: auto;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    @mixin removeelement($color) {
+        content: '\2212';
+        font-family: 'Glyphicons Halflings';
+        background-color: $color;
+        color: #fff;
+        cursor: pointer;
+        padding: 0 2px;
+        pointer-events: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    @mixin hideelement($color) {
+        content: '\e105';
+        background-color: $color;
+        color: #fff;
+        font-family: 'Glyphicons Halflings';
+        font-size: 16px;
+        line-height: 16px;
+        cursor: pointer;
+        padding: 1px 2px 1px 3px;
+        pointer-events: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    h1, h2, h3, h4 {
+        margin: 0;
+    }
+
+    .ioc-accent {
+        color: $ioc-accent;
+    }
+
+    .container {
+        max-width: 100%;
+        width: 100% !important;
+    }
+
+    .ioc-parent-breadcrumb {
+        .ioc-breadcrumb {
+            @include borderioc(1px, $custom_red);
+            color: $ioc-text;
+            a,
+            span {
+                color: $ioc-text;
+                @include borderioc(1px, $custom_red);
+            }
+        }
+    }
+
+    .study-main {
+        @include borderioc(2px, $custom_red);
+        display: flex;
+        .study-overview {
+            @include borderioc(1px, $custom_red);
+            flex-basis: 50%;
+            height: 100%;
+            .study-overview-headline,
+            .study-overview-text {
+                @include borderioc(1px, $custom_red);
+            }
+            .study-overview-headline {
+                &:after {
+                    bottom: -25px;
+                }
+            }
+        }
+        .study-panel {
+            margin-top: 0;
+            .study-data {
+                height: 100%;
+                @include borderioc(1px, $custom_red);
+                color: #000;
+                .study-col {
+                    @include borderioc(1px, $custom_red);
+                    padding: 0 10px;
+                    height: 100%;
+                    &:after {
+                        display: none;
+                    }
+
+                    h4 {
+                        @include borderioc(1px, $custom_red);
+                        width: 100%;
+                        height: auto;
+                    }
+                    .study-dates {
+                        @include borderioc(1px, $custom_red);
+                        color: $ioc-text;
+                        height: auto;
+                        pointer-events: none;
+                        position: relative;
+                        h3 {
+                            color: $ioc-text;
+                            @include borderioc(1px, $custom_red);
+                        }
+                        &:after {
+                            @include addelement($custom_red);
+                        }
+                        .study-block {
+                            &:before {
+                                @include removeelement($custom_red);
+                            }
+                            &:nth-child(2) {
+                                &:before {
+                                    content: '';
+                                }
+                            }
+                        }
+                        .study-block,
+                        .study-date {
+                            &:after {
+                                content: '';
+                                flex: auto;
+                            }
+                            pointer-events: none;
+                            position: relative;
+                            height: auto;
+                            .semiheader {
+                                &:before {
+                                    bottom: -10px;
+                                }
+                            }
+                        }
+                        .study-date,
+                        .semiheader {
+                            @include borderioc(1px, $custom_red);
+                            color: #000;
+                            display: block;
+                        }
+                    }
+                    .btn {
+                        background-color: transparent;
+                    }
+                }
+                h3:after {
+                    color: #942A25;
+                }
+                a {
+                    pointer-events: auto;
+                    cursor: pointer;
+                    color: $ioc-link;
+                }
+            }
+        }
+    }
+
+    .study-buttons {
+        margin-top: 25px;
+        > div {
+            @include borderioc(1px, $custom_red);
+        }
+        a {
+            pointer-events: auto;
+            cursor: pointer;
+        }
+        .custom-icon {
+            @include borderioc(1px, $custom_red);
+            pointer-events: none;
+        }
+        .icon-text {
+            padding: 0;
+        }
+    }
+
+    .study-buttons,
+    .body-modal-modules,
+    .subpage-buttons {
+        .study-button,
+        .file-modal-module,
+        .subpage-button {
+            a {
+                &:hover {
+                    &:after {
+                        content: '';
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .subpage-text-buttons,
+    .subpage-text-buttons-banner,
+    .subpage-bigbanner {
+        .subpage-text {
+            @include borderioc(1px, $custom_red);
+            width: 100%;
+            text-align: center;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        .subpage-button {
+            @include borderioc(1px, $custom_red);
+            &:hover {
+                background-color: #fff;
+            }
+            a,
+            .custom-icon {
+                @include borderioc(1px, $custom_red);
+            }
+            .icon-text {
+                padding: 0;
+                left: 0;
+            }
+        }
+        .title,
+        .study-overview-headline,
+        .study-overview-text,
+        h2,
+        .subpage-button {
+            @include borderioc(1px, $custom_red);
+            pointer-events: none;
+            background-image: none;
+            color: $ioc-text;
+        }
+        .subpage-button {
+            padding: 0;
+        }
+    }
+
+    .subpage-bigbanner {
+        margin-top: 0;
+        height: auto;
+        background-color: #aaa;
+        .study-overview {
+            .study-overview-headline {
+                max-width: 100%;
+                max-height: 220px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .subpage-text-buttons-banner .subpage-filter,
+    .subpage-buttons-filter .subpage-filter {
+        background-image: none;
+        background-color: #aaa;
+    }
+
+    .modal-modules,
+    .modal-resources {
+        @include borderioc(1px, $custom_red);
+        .pretitle {
+            @include borderioc(1px, $custom_red);
+        }
+        .title {
+            h1 {
+                @include borderioc(1px, $custom_red);
+                color: $ioc-text;
+                &:before,
+                &:after {
+                    border: 0;
+                }
+            }
+        }
+        .content-modal-modules {
+            .modal-module {
+                max-width: 200px;
+            }
+        }
+        .body-modal-modules {
+            .modal-module {
+                max-width: 480px;
+            }
+        }
+        .content-modal-modules,
+        .body-modal-modules {
+            .modal-module {
+                overflow: visible;
+                img,
+                .text-modal-module,
+                .bottom-modal-module,
+                .shortname-modal-module {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                }
+            }
+            .modal-module,
+            .modal-dialog {
+                @include borderioc(1px, $custom_red);
+                cursor: default;
+                height: auto;
+                margin: 0 auto;
+                img,
+                .body-modal-module,
+                .shortname-modal-module,
+                .text-modal-module,
+                p,
+                .bottom-modal-module,
+                .bottom-modal-title,
+                .bottom-modal-last,
+                .file-modal-module {
+                    @include borderioc(1px, $custom_red);
+                    color: $ioc-text;
+                }
+                img {
+                    width: 100%;
+                }
+                .body-modal-module {
+                    .body-modal-content {
+                        p + p {
+                            &:before {
+                                @include hideelement($custom_red);
+                            }
+                            pointer-events: none;
+                            position: relative;
+                            &.ocult {
+                                &:before {
+                                    content: '\e106';
+                                    font-family: 'Glyphicons Halflings';
+                                }
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+                .bottom-modal-module {
+                    flex-wrap: nowrap;
+                }
+                .custom-icon {
+                    padding: 0;
+                    &.clock {
+                        height: auto;
+                    }
+                }
+                .text-modal-module {
+                    max-height: 100%;
+                }
+                .bottom-modal-last {
+                    &:before {
+                        display: none;
+                    }
+                    display: flex;
+                    span {
+                        @include borderioc(1px, $custom_red);
+                    }
+                }
+                .clock {
+                    margin: 0;
+                }
+                .file-modal-module {
+                    &:hover {
+                        background-color: #fff;
+                    }
+                }
+                &:hover {
+                    filter: none;
+                }
+            }
+            .icon-text {
+                width: auto;
+            }
+        }
+    }
+
+    .ioc-news {
+        @include borderioc(2px, $custom_red);
+        .imatge-noticia {
+            margin-left: 0;
+            img, figcaption {
+                @include borderioc(2px, $custom_red);
+            }
+            figcaption {
+                margin-top: -2px;
+                padding-left: 5px;
+            }
+        }
+        .ioc-news-content {
+            padding: 0 0.5em;
+            @include borderioc(2px, $custom_red);
+        }
+    }
+
+    .imatge-blog {
+        margin-left: 0;
+        img, figcaption {
+            @include borderioc(2px, $custom_red);
+        }
+        figcaption {
+            margin-top: -2px;
+            padding-left: 5px;
+        }
+    }
+    .blog-content {
+        padding: 0 0.5em;
+        @include borderioc(2px, $custom_red);
+    }
+
+    .study-parallax {
+        @include borderioc(2px, $custom_red);
+    }
+
+    .study-tabs {
+        @include borderioc(2px, $custom_red);
+        background-image: none;
+        & > h2 {
+            @include borderioc(2px, $custom_red);
+            color: $ioc-text;
+        }
+        .nav-tabs{
+            counter-reset: numtab;
+            clear: both;
+            position: relative;
+            @include borderioc(2px, $custom_red);
+            pointer-events: none;
+            margin-bottom: 0;
+            li {
+                position: relative;
+                display: inline-block;
+                pointer-events: none;
+                @include borderioc(1px, $custom_red);
+                padding: 15px;
+                &:first-child{
+                    &:after {
+                        content: '';
+                    }
+                }
+                &:before {
+                    counter-increment: numtab;
+                    @include numbertab(counter(numtab));
+                    position: absolute;
+                    top: 0;
+                    left: 5px;
+                }
+                &:after {
+                    @include removeelement($custom_red);
+                }
+                &.active a {
+                    background-color: transparent;
+                    border: 0;
+                }
+                a {
+                    background-color: transparent;
+                    border-bottom: 0;
+                    line-height: 1;
+                    display: inline-block;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                    cursor: pointer;
+                    pointer-events: auto;
+                    color: $ioc-link;
+                    .tab-title {
+                        display: inline;
+                    }
+                }
+            }
+            &:after {
+                @include addelement($custom_red);
+            }
+        }
+        .tab-content {
+            counter-reset: numtabcontent;
+            @include borderioc(2px, $custom_red);
+            max-width: 100%;
+            .tab-pane {
+                @include borderioc(1px, $custom_red);
+                &:before {
+                    counter-increment: numtabcontent;
+                    @include numbertab(counter(numtabcontent));
+                }
+            }
+        }
+    }
+    .study-more-info {
+        @include borderioc(2px, $custom_red);
+        .panel-heading,
+        .panel-title,
+        .panel-body,
+        .more-section,
+        .more-section-content,
+        & > h4 {
+            @include borderioc(1px, $custom_red);
+            color: $ioc-text;
+            &:before,
+            &:after {
+                border: 0;
+            }
+        }
+        .title-more-information {
+            margin-top: 0;
+        }
+        .panel-heading {
+            .custom-icon {
+                &.plus {
+                    display: none;
+                }
+            }
+        }
+
+        .panel-title {
+            a {
+                padding: 5px;
+            }
+        }
+    }
+    .faqsindex {
+        li {
+            @include borderioc(1px, $custom_red);
+        }
+    }
+    .panel-faqs {
+        #panel-sections {
+            &:after {
+                display: none;
+            }
+            .panel-heading {
+                @include borderioc(1px, $custom_red);
+                a {
+                    pointer-events: auto;
+                }
+            }
+            .panel-collapse {
+                .panel-body {
+                    @include borderioc(1px, $custom_red);;
+                }
+            }
+            .panel.panel-default {
+                pointer-events: auto;
+                &:first-child{
+                    &:before {
+                        display: none;
+                    }
+                }
+                &:before {
+                    display: none;
+                }
+                .panel-body {
+                    h4 {
+                        @include borderioc(1px, $custom_red);
+                    }
+                }
+            }
+        }
+    }
+    #panel-sections {
+        pointer-events: none;
+        position: relative;
+        &:after {
+            @include addelement($custom_red);
+        }
+        .panel-heading {
+            a {
+                cursor: pointer;
+                pointer-events: auto;
+            }
+        }
+        .panel.panel-default {
+            pointer-events: none;
+            position: relative;
+            &:first-child{
+                &:before {
+                    content: '';
+                }
+            }
+            &:before {
+                @include removeelement($custom_red);
+            }
+        }
+    }
+    .panel-modal-resources {
+        pointer-events: none;
+        position: relative;
+        @include borderioc(2px, $custom_red);
+        max-width: 100%;
+        &:after {
+            @include addelement($custom_red);
+        }
+        .panel-heading {
+            position: relative;
+            background-color: transparent;
+            &:after {
+                @include removeelement($custom_red);
+            }
+            .custom-icon {
+                &.plus {
+                    display: none;
+                }
+            }
+            a {
+                @include borderioc(1px, $custom_red);
+                color: $ioc-text;
+                &:before,
+                &:after {
+                    border: 0;
+                }
+            }
+        }
+        .panel {
+            &:first-child {
+                .panel-heading {
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+        }
+        .panel-body {
+            pointer-events: none;
+            position: relative;
+            @include borderioc(2px, $custom_red);
+            width: 100%;
+            &:after {
+                @include addelement($custom_red);
+            }
+            .modal-resource {
+                position: relative;
+                &:before {
+                    @include removeelement($custom_red);
+                }
+                &:first-child {
+                    &:before {
+                        content: '';
+                    }
+                }
+            }
+        }
+        .modal-resource {
+            @include borderioc(1px, $custom_red);
+            pointer-events: none;
+            margin: 20px 0;
+            div,
+            img,
+            a,
+            .icon-text {
+                @include borderioc(1px, $custom_red);
+            }
+            .icon-text {
+                width: 100%;
+            }
+            a {
+                padding: 0;
+                pointer-events: auto;
+            }
+            .bottom-modal-resource {
+                text-align: center;
+            }
+        }
+    }
+    .location-content {
+        @include borderioc(1px, $custom_red);
+        .location-map,
+        .location-address {
+            @include borderioc(1px, $custom_red);
+            .custom-icon {
+                @include borderioc(1px, $custom_red);
+            }
+        }
+        .location-transport {
+            @include borderioc(1px, $custom_red);
+            .title {
+                @include borderioc(1px, $custom_red);
+            }
+            .transport {
+                .transport-content,
+                .transport-name,
+                .transport-text {
+                    @include borderioc(1px, $custom_red);
+                }
+            }
+        }
+    }
+    .location-bottom {
+        @include borderioc(1px, $custom_red);
+        .location-bottom-text {
+            @include borderioc(1px, $custom_red);
+            span {
+                @include borderioc(1px, $custom_red);
+                display: inline-block;
+            }
+
+        }
+        .body-modal-modules {
+            .title {
+                @include borderioc(1px, $custom_red);
+            }
+            .ioc-study-address {
+                @include borderioc(1px, $custom_red);
+                div {
+                    @include borderioc(1px, $custom_red);
+                }
+            }
+
+        }
+
+    }
+    .columns {
+        @include borderioc(1px, $custom_red);
+        .column {
+            @include borderioc(1px, $custom_red);
+        }
+    }
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: left;
+    }
+    .col-md-8 {
+        width: 66.66666667%;
+    }
+    .col-md-4 {
+        width: 33.33333333%;
+    }
+    .study-matricula {
+        .slide-hidden {
+          display: block !important;
+        }
+        .slide-container {
+            @include borderioc(1px, $custom_red);
+            .slide-content {
+                h3,
+                p,
+                ul {
+                    @include borderioc(1px, $custom_red);
+                }
+            }
+        }
+        .button-row,
+        .button-column {
+            @include borderioc(1px, $custom_red);
+            button {
+                @include borderioc(1px, $custom_red);
+                img {
+                    margin-top: 0;
+                }
+                span {
+                    @include borderioc(1px, $custom_red);
+                }
+            }
+        }
+    }
+}

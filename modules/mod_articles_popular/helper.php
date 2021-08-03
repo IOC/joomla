@@ -3,23 +3,20 @@
  * @package     Joomla.Site
  * @subpackage  mod_articles_popular
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
-require_once JPATH_SITE . '/components/com_content/helpers/route.php';
+JLoader::register('ContentHelperRoute', JPATH_SITE . '/components/com_content/helpers/route.php');
 
 JModelLegacy::addIncludePath(JPATH_SITE . '/components/com_content/models', 'ContentModel');
 
 /**
  * Helper for mod_articles_popular
  *
- * @package     Joomla.Site
- * @subpackage  mod_articles_popular
- *
- * @since       1.6.0
+ * @since  1.6
  */
 abstract class ModArticlesPopularHelper
 {
@@ -40,11 +37,15 @@ abstract class ModArticlesPopularHelper
 		$appParams = $app->getParams();
 		$model->setState('params', $appParams);
 
-		// Set the filters based on the module params
 		$model->setState('list.start', 0);
-		$model->setState('list.limit', (int) $params->get('count', 5));
 		$model->setState('filter.published', 1);
+
+		// Set the filters based on the module params
+		$model->setState('list.limit', (int) $params->get('count', 5));
 		$model->setState('filter.featured', $params->get('show_front', 1) == 1 ? 'show' : 'hide');
+
+		// This module does not use tags data
+		$model->setState('load_tags', false);
 
 		// Access filter
 		$access = !JComponentHelper::getParams('com_content')->get('show_noauth');
@@ -78,6 +79,8 @@ abstract class ModArticlesPopularHelper
 		foreach ($items as &$item)
 		{
 			$item->slug = $item->id . ':' . $item->alias;
+
+			/** @deprecated Catslug is deprecated, use catid instead. 4.0 */
 			$item->catslug = $item->catid . ':' . $item->category_alias;
 
 			if ($access || in_array($item->access, $authorised))

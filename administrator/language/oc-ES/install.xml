@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" client="administrator" type="language" method="upgrade">
+	<name>Aranese (oc-ES)</name>
+	<tag>oc-ES</tag>
+	<version>3.8.12</version>
+	<creationDate>2018-09-13</creationDate>
+	<author>Institut Obert de Catalunya</author>
+	<authorEmail>ioc@ioc.cat</authorEmail>
+	<authorUrl>ioc.xtec.cat</authorUrl>
+	<copyright>Copyright (C) 2005 - 2018 Open Source Matters. Tots els drets reservats.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>oc-ES administrator language</description>
+	<files>
+		<folder>/</folder>
+		<filename file="meta">install.xml</filename>
+	</files>
+	<params />
+</extension>

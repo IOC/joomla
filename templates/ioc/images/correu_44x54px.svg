@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="44px" viewBox="0 0 54 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>correu_44x54px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="54" height="37.4516129" rx="2"></rect>
+    </defs>
+    <g id="correu_44x54px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="envelop_icon" transform="translate(0.000000, 3.000000)">
+            <g id="Rectangle">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#354959" stroke-width="1" x="0.5" y="0.5" width="53" height="36.4516129" rx="2"></rect>
+            </g>
+            <polygon id="Triangle" fill="#E9F2F9" points="23.9516129 20.4677419 0.870967742 34.4032258 0.870967742 4.35483871"></polygon>
+            <polygon id="Triangle-Copy" fill="#E9F2F9" transform="translate(41.588710, 19.379032) scale(-1, 1) translate(-41.588710, -19.379032) " points="53.1290323 20.4677419 30.0483871 34.4032258 30.0483871 4.35483871"></polygon>
+            <path d="M0.435483871,3.91935484 L25.2580645,21.2431946 C25.2580645,21.2431946 27,22.2096774 28.7419355,21.2431946 C30.483871,20.2767118 53.5645161,3.91935484 53.5645161,3.91935484" id="Path-3" stroke="#354959"></path>
+        </g>
+    </g>
+</svg>
