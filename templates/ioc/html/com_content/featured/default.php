@@ -284,6 +284,7 @@ $menuitems = array();
   			</p>
   		<?php  endif; ?>
   				<?php echo $this->pagination->getPagesLinks(); ?>
+  				<img src="templates/ioc/images/2022_febrer_LogosMRR.png" class="test" title="logos"  style="margin-bottom: -60px;" />
   	</div>
 <?php endif; ?>
 
