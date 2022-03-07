@@ -1790,18 +1790,6 @@
                 font-size: 15px;
             }
         }
-        .iocagree-text {
-            .text-row {
-                span {
-                    width: 100%;
-                    text-align: center;
-                    border-right: none;
-                }
-                span + span {
-                    text-align: left;
-                }
-            }
-        }
     }
     .study-matricula {
         h2 {
@@ -2218,61 +2206,6 @@
                     }
                     .content-pagination {
                         margin: 45px 0 0 0;
-                    }
-                }
-
-                &.blog {
-                    .items-more {
-                        margin-top: 15px;
-                        h3 {
-                            font-size: 13px;
-                            font-weight: 500;
-                            margin-bottom: 11px;
-                        }
-                        .link-elements {
-                            .extra-blog {
-                                margin-bottom: 12px;
-                                margin-right: -15px;
-                                width: 100%;
-                                &:nth-child(2n) {
-                                    margin-left: 0;
-                                }
-                            }
-                        }
-                    }
-                    .modified {
-                        display: block;
-                        font-size: 9px;
-                        letter-spacing: 0.9px;
-                        margin-bottom: 5px;
-                    }
-                    &.blog-individual {
-                        .ioctags {
-                            margin-left: 0;
-                            border-left: 0;
-                            padding-left: 0;
-                            white-space: nowrap;
-                            max-width: 90%;
-                            overflow: hidden;
-                            .custom-icon-tag {
-                                height: 9px;
-                            }
-                            .tag-icon {
-                                width: 15px;
-                                margin: 0;
-                                line-height: 11px;
-                                &:before {
-                                    font-size: 16px;
-                                }
-                            }
-                            .tag-icon,
-                            .tag {
-                                display: inline-block;
-                            }
-                        }
-                        .blog-related-items {
-                            margin-top: 50px;
-                        }
                     }
                 }
             }
@@ -4185,13 +4118,6 @@
     .container {
         width: 830px;
     }
-    #main-box {
-        div.item-page-default.blog {
-            .blog-content {
-                width: 652px;
-            }
-        }
-    }
     .fluid-container {
         &.page-header {
             &.subpage {
@@ -4855,22 +4781,6 @@
             margin-bottom: 122px;
             .page-header{
                 margin-bottom: 16px;
-            }
-            &.blog {
-                &.blog-individual {
-                    max-width: 1170px;
-                    padding: 0;
-                    .blog-post {
-                        @include flexbox($justify-content: space-between);
-                        .blog-content {
-                            width: 60%;
-                        }
-                    }
-                    .blog-related-items {
-                        margin-top: 0;
-                        width: 400px;
-                    }
-                }
             }
         }
     }

@@ -5,7 +5,14 @@
 # @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 # Website http://www.gsuez.cl
 -------------------------------------------------------------------------*/	// no direct access
+
 defined('_JEXEC') or die;
+//queueit
+require_once(__DIR__ .'/../../queueit/iocqueue.php');
+$json = __DIR__ .'/../../queueit/';
+iocqueue($json);
+//End Queueit
+
 require_once('includes/params.php');
 if ($params->get('compile_sass', '0') === '1')
 {
@@ -392,5 +399,6 @@ JText::script('TPL_IOC_TAB_PREVIOUS');
 <!-- JS -->
 <script type="text/javascript" src="<?php echo $tpath; ?>/js/template.min.js"></script>
 <!-- JS -->
+<?php echo 'hola'; ?>
 </body>
 </html>

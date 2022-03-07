@@ -29,11 +29,9 @@ $suffixes = array(
     'logo_',
     'subpage_'
 );
-$blog = $params['layout_type'] == 'blog' ? 'blog blog-individual' : '';
 $pageclass = str_replace($suffixes, '', $pageclass);
 if ($newsclass) {
     $pageclass = 'news';
-    $blog = '';
 }
 
 // Check if associations are implemented. If they are, define the parameter.
@@ -63,7 +61,7 @@ JHtml::_('behavior.caption');
     }
     ?>
 
-<div class="<?php echo $container; ?> item-page<?php echo '-' . $pageclass; echo $currentstudy; echo $blog; ?>" itemscope itemtype="https://schema.org/Article">
+<div class="<?php echo $container; ?> item-page<?php echo '-' . $pageclass; echo $currentstudy; ?>" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
     <?php // Todo Not that elegant would be nice to group the params ?>
     <?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
@@ -93,9 +91,6 @@ JHtml::_('behavior.caption');
             <span class="label label-warning"><?php echo JText::_('JEXPIRED'); ?></span>
         <?php endif; ?>
     </div>
-    <?php if (!empty($blog)) :
-        echo JLayoutHelper::render('joomla.content.info_block.modify_date', array('item' => $this->item, 'params' => $this->params, 'position' => 'above'));
-    endif; ?>
     <?php endif; ?>
     <?php if (!$this->print) : ?>
         <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
@@ -153,8 +148,6 @@ JHtml::_('behavior.caption');
             $customclass = 'container ioc-news-container';
         } else if (!empty($subpage)) {
             $customclass = 'subpagebody';
-        } else if (!empty($blog)) {
-            $customclass = 'blog-post';
         } else if ($pageclass == 'default') {
             $customclass = 'article-default';
         } else if (strpos($pageclass, 'resource') !== false) {
@@ -163,41 +156,8 @@ JHtml::_('behavior.caption');
     ?>
     <div itemprop="articleBody" class="<?php echo $customclass;?>">
         <?php echo $this->item->text; ?>
-
-    <?php if (!empty($blog)) :
-        $items = array();
-        if (!empty($this->item->tags->itemTags)) {
-            $model = JModelLegacy::getInstance('Articles', 'ContentModel', array('ignore_request' => true));
-            $model->setState('params', JFactory::getApplication()->getParams());
-            $model->setState('filter.category_id', $this->item->catid);
-            $model->setState('filter.published', 1);
-            $model->setState('list.ordering', 'a.created');
-            $model->setState('list.direction', 'DESC');
-            $model->setState('list.limit', 4);
-            $model->setState('filter.article_id', $this->item->id);
-            $model->setState('filter.article_id.include', false);
-            $tagids = array_map(
-                                function($tag) {
-                                    return $tag->tag_id;
-                                }, $this->item->tags->itemTags);
-            $model->setState('filter.tag', $tagids);
-            $items = $model->getItems();
-        }
-    ?>
-        <?php if (!empty($items)) : ?>
-            <div class="blog-related-items">
-                <div class="blog-related-header">
-                    <?php echo JText::_('TPL_IOC_RELATED_BLOG_ENTRIES'); ?>
-                </div>
-                <?php foreach ($items as $item) : ?>
-                    <a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($item->id, $item->catid, $item->language)); ?>" class="blog-related-item">
-                        <?php echo $item->title; ?>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
-    <?php endif; ?>
     </div>
+
     <?php if ($info == 1 || $info == 2) : ?>
         <?php if ($useDefList) : ?>
             <?php echo JLayoutHelper::render('joomla.content.info_block.modify_date', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>

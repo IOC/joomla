@@ -99,12 +99,12 @@ class ContactiocController extends JControllerLegacy
 			return $this->contactioc($error, $script);
 		}
 
-		/*if (JFactory::getConfig()->get('captcha') != '0') {
+		if (JFactory::getConfig()->get('captcha') != '0') {
 			if (empty(trim($this->input->get('g-recaptcha-response', '', 'string')))) {
 				$error = JText::_('COM_CONTACTIOC_ERROR_CAPTCHA');
 				return $this->contactioc($error, $script);
 			}
-		}*/
+		}
 
 		// Load data
 		$contactStudy      = $this->input->get('contactStudy', 0, 'int');

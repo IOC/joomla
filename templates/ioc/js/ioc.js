@@ -329,7 +329,7 @@
         });
 
         $.ajax({
-            url: '/campus/loggedinas.php',
+            url: '/campus/local/loggedinas.php',
             success: function(responseText){
                 if (responseText){
                     if (responseText.length > 20){

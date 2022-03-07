@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_languages
  *
- * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright   (C) 2010 Open Source Matters, Inc. <https://www.joomla.org>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -108,7 +108,7 @@ if ($params->get('dropdown', 0) && !$params->get('dropdownimage', 1))
 		<a href="https://translate.google.com/translate?hl=&sl=ca&tl=es&u=https://ioc.xtec.cat/educacio">ES</a>
 	</li>
 	<?php //END @PATCH IOC001 ?>
-</ul>
+	</ul>
 <?php endif; ?>
 
 <?php if ($footerText) : ?>

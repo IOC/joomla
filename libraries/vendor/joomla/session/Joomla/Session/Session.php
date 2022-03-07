@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Session Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -88,6 +88,24 @@ class Session implements \IteratorAggregate
 	 * @deprecated  2.0
 	 */
 	protected $cookie_path;
+
+	/**
+	 * The configuration of the HttpOnly cookie.
+	 *
+	 * @var    mixed
+	 * @since  1.5.0
+	 * @deprecated  2.0
+	 */
+	protected $cookie_httponly = true;
+
+	/**
+	 * The configuration of the SameSite cookie.
+	 *
+	 * @var    mixed
+	 * @since  1.5.0
+	 * @deprecated  2.0
+	 */
+	protected $cookie_samesite;
 
 	/**
 	 * Session instances container.
@@ -598,7 +616,7 @@ class Session implements \IteratorAggregate
 				if ($session_clean)
 				{
 					session_id($session_clean);
-					$cookie->set($session_name, '', 1);
+					$cookie->set($session_name, '', array('expires' => 1));
 				}
 			}
 		}
@@ -646,7 +664,20 @@ class Session implements \IteratorAggregate
 		 */
 		$cookie = session_get_cookie_params();
 
-		$this->input->cookie->set($this->getName(), '', 1, $cookie['path'], $cookie['domain'], $cookie['secure'], true);
+		$cookieOptions = array(
+			'expires'  => 1,
+			'path'     => $cookie['path'],
+			'domain'   => $cookie['domain'],
+			'secure'   => $cookie['secure'],
+			'httponly' => true,
+		);
+
+		if (isset($cookie['samesite']))
+		{
+			$cookieOptions['samesite'] = $cookie['samesite'];
+		}
+
+		$this->input->cookie->set($this->getName(), '', $cookieOptions);
 
 		session_unset();
 		session_destroy();
@@ -715,7 +746,14 @@ class Session implements \IteratorAggregate
 		$this->store->register();
 
 		// Restore config
-		session_set_cookie_params($cookie['lifetime'], $cookie['path'], $cookie['domain'], $cookie['secure'], true);
+		if (version_compare(PHP_VERSION, '7.3', '>='))
+		{
+			session_set_cookie_params($cookie);
+		}
+		else
+		{
+			session_set_cookie_params($cookie['lifetime'], $cookie['path'], $cookie['domain'], $cookie['secure'], $cookie['httponly']);
+		}
 
 		// Restart session with new id
 		session_regenerate_id(true);
@@ -804,13 +842,27 @@ class Session implements \IteratorAggregate
 			$cookie['path'] = $this->cookie_path;
 		}
 
-		session_set_cookie_params($cookie['lifetime'], $cookie['path'], $cookie['domain'], $cookie['secure'], true);
+		$cookie['httponly'] = $this->cookie_httponly;
+
+		if ($this->cookie_samesite)
+		{
+			$cookie['samesite'] = $this->cookie_samesite;
+		}
+
+		if (version_compare(PHP_VERSION, '7.3', '>='))
+		{
+			session_set_cookie_params($cookie);
+		}
+		else
+		{
+			session_set_cookie_params($cookie['lifetime'], $cookie['path'], $cookie['domain'], $cookie['secure'], $cookie['httponly']);
+		}
 	}
 
 	/**
 	 * Create a token-string
 	 *
-	 * @param   integer  $length  Length of string
+	 * @param   integer  $length  Length of string {@deprecated As of 2.0 the session token will be a fixed length}
 	 *
 	 * @return  string  Generated token
 	 *
@@ -825,7 +877,7 @@ class Session implements \IteratorAggregate
 	/**
 	 * Create a token-string
 	 *
-	 * @param   integer  $length  Length of string
+	 * @param   integer  $length  Length of string {@deprecated As of 2.0 the session token will be a fixed length}
 	 *
 	 * @return  string  Generated token
 	 *
@@ -966,6 +1018,16 @@ class Session implements \IteratorAggregate
 		if (isset($options['cookie_path']))
 		{
 			$this->cookie_path = $options['cookie_path'];
+		}
+
+		if (isset($options['cookie_httponly']))
+		{
+			$this->cookie_httponly = (bool) $options['cookie_httponly'];
+		}
+
+		if (isset($options['cookie_samesite']))
+		{
+			$this->cookie_samesite = $options['cookie_samesite'];
 		}
 
 		// Sync the session maxlifetime

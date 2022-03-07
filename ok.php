@@ -10,4 +10,12 @@ require_once JPATH_BASE . '/includes/framework.php';
 require_once JPATH_PLATFORM . '/src/Factory.php';
 
 $db = JFactory::getDbo();
+
+
+//$result = $db->query("SELECT * FROM `INFORMATION_SCHEMA`.`TABLES`");
+
+//print_R($result);
+
+
+
 echo "OK";

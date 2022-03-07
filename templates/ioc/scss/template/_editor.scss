@@ -418,21 +418,6 @@ $ioc-accent:    #01c1b9;
         }
     }
 
-    .imatge-blog {
-        margin-left: 0;
-        img, figcaption {
-            @include borderioc(2px, $custom_red);
-        }
-        figcaption {
-            margin-top: -2px;
-            padding-left: 5px;
-        }
-    }
-    .blog-content {
-        padding: 0 0.5em;
-        @include borderioc(2px, $custom_red);
-    }
-
     .study-parallax {
         @include borderioc(2px, $custom_red);
     }

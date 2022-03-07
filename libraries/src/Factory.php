@@ -2,7 +2,7 @@
 /**
  * Joomla! Content Management System
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  (C) 2005 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -134,6 +134,10 @@ abstract class Factory
 		{
 			if (!$id)
 			{
+				// @PATCH IOC007
+				// CODI ORIGINAL
+				// throw new \Exception('Failed to start application', 500);
+				// CODI MODIFICAT
 				echo '<html lang="ca">
 						<head>
 							<title>Servei no disponible</title>
@@ -149,6 +153,7 @@ abstract class Factory
 						</body>
 					</html>';
 				die;
+				// FI
 			}
 
 			self::$application = CMSApplication::getInstance($id);
@@ -389,8 +394,8 @@ abstract class Factory
 	/**
 	 * Get a parsed XML Feed Source
 	 *
-	 * @param   string   $url         Url for feed source.
-	 * @param   integer  $cache_time  Time to cache feed for (using internal cache mechanism).
+	 * @param   string   $url        Url for feed source.
+	 * @param   integer  $cacheTime  Time to cache feed for (using internal cache mechanism).
 	 *
 	 * @return  mixed  SimplePie parsed object on success, false on failure.
 	 *
@@ -398,7 +403,7 @@ abstract class Factory
 	 * @throws  \BadMethodCallException
 	 * @deprecated  4.0  Use directly JFeedFactory or supply SimplePie instead. Mehod will be proxied to JFeedFactory beginning in 3.2
 	 */
-	public static function getFeedParser($url, $cache_time = 0)
+	public static function getFeedParser($url, $cacheTime = 0)
 	{
 		if (!class_exists('JSimplepieFactory'))
 		{
@@ -407,7 +412,7 @@ abstract class Factory
 
 		Log::add(__METHOD__ . ' is deprecated.   Use JFeedFactory() or supply SimplePie instead.', Log::WARNING, 'deprecated');
 
-		return \JSimplepieFactory::getFeedParser($url, $cache_time);
+		return \JSimplepieFactory::getFeedParser($url, $cacheTime);
 	}
 
 	/**
@@ -798,17 +803,17 @@ abstract class Factory
 	/**
 	 * Creates a new stream object with appropriate prefix
 	 *
-	 * @param   boolean  $use_prefix   Prefix the connections for writing
-	 * @param   boolean  $use_network  Use network if available for writing; use false to disable (e.g. FTP, SCP)
-	 * @param   string   $ua           UA User agent to use
-	 * @param   boolean  $uamask       User agent masking (prefix Mozilla)
+	 * @param   boolean  $usePrefix        Prefix the connections for writing
+	 * @param   boolean  $useNetwork       Use network if available for writing; use false to disable (e.g. FTP, SCP)
+	 * @param   string   $userAgentSuffix  String to append to user agent
+	 * @param   boolean  $maskUserAgent    User agent masking (prefix Mozilla)
 	 *
 	 * @return  \JStream
 	 *
 	 * @see     \JStream
 	 * @since   1.7.0
 	 */
-	public static function getStream($use_prefix = true, $use_network = true, $ua = null, $uamask = false)
+	public static function getStream($usePrefix = true, $useNetwork = true, $userAgentSuffix = null, $maskUserAgent = false)
 	{
 		\JLoader::import('joomla.filesystem.stream');
 
@@ -817,21 +822,21 @@ abstract class Factory
 		$version = new Version;
 
 		// Set the UA for HTTP and overwrite for FTP
-		$context['http']['user_agent'] = $version->getUserAgent($ua, $uamask);
+		$context['http']['user_agent'] = $version->getUserAgent($userAgentSuffix, $maskUserAgent);
 		$context['ftp']['overwrite'] = true;
 
-		if ($use_prefix)
+		if ($usePrefix)
 		{
 			$FTPOptions = \JClientHelper::getCredentials('ftp');
 			$SCPOptions = \JClientHelper::getCredentials('scp');
 
-			if ($FTPOptions['enabled'] == 1 && $use_network)
+			if ($FTPOptions['enabled'] == 1 && $useNetwork)
 			{
 				$prefix = 'ftp://' . $FTPOptions['user'] . ':' . $FTPOptions['pass'] . '@' . $FTPOptions['host'];
 				$prefix .= $FTPOptions['port'] ? ':' . $FTPOptions['port'] : '';
 				$prefix .= $FTPOptions['root'];
 			}
-			elseif ($SCPOptions['enabled'] == 1 && $use_network)
+			elseif ($SCPOptions['enabled'] == 1 && $useNetwork)
 			{
 				$prefix = 'ssh2.sftp://' . $SCPOptions['user'] . ':' . $SCPOptions['pass'] . '@' . $SCPOptions['host'];
 				$prefix .= $SCPOptions['port'] ? ':' . $SCPOptions['port'] : '';

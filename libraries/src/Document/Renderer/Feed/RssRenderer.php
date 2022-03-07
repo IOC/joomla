@@ -2,7 +2,7 @@
 /**
  * Joomla! Content Management System
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  (C) 2015 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -47,9 +47,12 @@ class RssRenderer extends DocumentRenderer
 	{
 		$app = \JFactory::getApplication();
 
+		// @PATCH IOC005
+		// CODI AFEGIT
 		// Template
 		$templatepath = JPATH_BASE . '/templates/' . $app->getTemplate();
 		$templateurl = 'templates/' . $app->getTemplate() . '/images';
+		// FI
 
 		// Gets and sets timezone offset from site configuration
 		$tz  = new \DateTimeZone($app->get('offset'));
@@ -197,6 +200,8 @@ class RssRenderer extends DocumentRenderer
 				$itemlink = str_replace(' ', '%20', $url . $itemlink);
 			}
 
+			// @PATCH IOC005
+			// CODI AFEGIT
 			if (preg_match('/-ioc-welcome$/', $itemlink))
 			{
 				continue;
@@ -206,6 +211,7 @@ class RssRenderer extends DocumentRenderer
 			{
 				$itemlink = preg_replace('/\d+(-featured|-latest-news)/', 'alias', $itemlink, 1);
 			}
+			// FI
 
 			$feed .= "		<item>\n";
 			$feed .= "			<title>" . htmlspecialchars(strip_tags($data->items[$i]->title), ENT_COMPAT, 'UTF-8') . "</title>\n";
@@ -219,6 +225,8 @@ class RssRenderer extends DocumentRenderer
 			{
 				$feed .= "			<guid isPermaLink=\"false\">" . htmlspecialchars($data->items[$i]->guid, ENT_COMPAT, 'UTF-8') . "</guid>\n";
 			}
+			// @PATCH IOC005
+			// CODI AFEGIT
 			if (preg_match('/<figure[^<]*<img.*?src="([^"]*)"/', $data->items[$i]->description, $matches))
 			{
 				$imagetype = in_array('matricules', $data->items[$i]->tags) ? 'matricula' : 'general';
@@ -229,6 +237,7 @@ class RssRenderer extends DocumentRenderer
 					$data->items[$i]->description = preg_replace('/<figure([^<]*)<img(.*?)src="([^"]*)"/', '<figure$1<img$2src="' . $twitterimage . '"', $data->items[$i]->description, 1);
 				}
 			}
+			// FI
 
 			$feed .= "			<description><![CDATA[" . $this->_relToAbs($data->items[$i]->description) . "]]></description>\n";
 

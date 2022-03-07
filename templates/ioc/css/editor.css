@@ -383,26 +383,6 @@
   padding: 10px;
   background-color: #fafafa;
 }
-#tinymce .imatge-blog {
-  margin-left: 0;
-}
-#tinymce .imatge-blog img, #tinymce .imatge-blog figcaption {
-  box-sizing: border-box;
-  border: 2px dashed #d9534f;
-  padding: 10px;
-  background-color: #fafafa;
-}
-#tinymce .imatge-blog figcaption {
-  margin-top: -2px;
-  padding-left: 5px;
-}
-#tinymce .blog-content {
-  padding: 0 0.5em;
-  box-sizing: border-box;
-  border: 2px dashed #d9534f;
-  padding: 10px;
-  background-color: #fafafa;
-}
 #tinymce .study-parallax {
   box-sizing: border-box;
   border: 2px dashed #d9534f;

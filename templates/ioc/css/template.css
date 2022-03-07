@@ -5707,6 +5707,15 @@ div[class*="item-page-news"] .ioc-breadcrumb {
 .fluid-container.page-header.eoi-angles {
   background-image: url('../images/eoi-angles-header-bck.jpg');
 }
+.fluid-container.page-header.fp-dia {
+  background-image: url('../images/fp-dia-header-bck.jpg');
+}
+.fluid-container.page-header.fp-mip {
+  background-image: url('../images/fp-mip-header-bck.jpg');
+}
+.fluid-container.page-header.fp-til {
+  background-image: url('../images/fp-til-header-bck.jpg');
+}
 
 
 .fluid-container.page-header.pau {
@@ -12997,7 +13006,7 @@ div[class*="item-page-"] table p {
     height: 249px;
   }
   .submenu .submenu-content .navbar-nav, .substudies .submenu-content .navbar-nav, .submenu .substudies-content .navbar-nav, .substudies .substudies-content .navbar-nav {
-    max-width: 1180px;
+    max-width: 1220px;
   }
   .submenu .submenu-content .navbar-nav.filtering li:nth-child(3n), .substudies .submenu-content .navbar-nav.filtering li:nth-child(3n), .submenu .substudies-content .navbar-nav.filtering li:nth-child(3n), .substudies .substudies-content .navbar-nav.filtering li:nth-child(3n) {
     margin-right: 38px;

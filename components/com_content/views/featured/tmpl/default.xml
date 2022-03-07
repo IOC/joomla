@@ -12,6 +12,8 @@
 	<!-- Add fields to the parameters object for the layout. -->
 	<fields name="params">
 		<fieldset name="advanced" label="COM_MENUS_LAYOUT_FEATURED_OPTIONS">
+			<!-- @PATCH IOC002 -->
+			<!-- CODI AFEGIT -->
 			<field
 				name="important_category"
 				type="category"
@@ -22,6 +24,7 @@
 				label="Categoría de notícies importants"
 				description="Categoría de notícies importants"
 				/>
+			<!-- FI -->
 			<field
 				name="featured_categories"
 				type="category"

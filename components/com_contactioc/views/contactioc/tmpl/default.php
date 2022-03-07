@@ -146,12 +146,12 @@ JText::script('COM_CONTACTIOC_INVALID_SELECT');
             </div>
         </fieldset>
         <?php
-            /*$captcha_plugin = JFactory::getConfig()->get('captcha');
+            $captcha_plugin = JFactory::getConfig()->get('captcha');
             if ($captcha_plugin != '0') {
               $captcha = JCaptcha::getInstance($captcha_plugin);
               $field_id = 'contactioc-captcha';
               print $captcha->display($field_id, $field_id, 'g-recaptcha');
-            }*/
+            }
         ?>
 		<div>
 			<button type="submit" class="contact-submit">

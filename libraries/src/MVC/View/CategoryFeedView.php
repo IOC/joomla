@@ -2,7 +2,7 @@
 /**
  * Joomla! Content Management System
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  (C) 2013 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -94,8 +94,9 @@ class CategoryFeedView extends HtmlView
 			$link   = \JRoute::_($router->getRoute($item->id, $contentType, null, null, $item->catid));
 
 			// Strip HTML from feed item description text.
-			$description = $item->description;
-			$author      = $item->created_by_alias ?: $item->author;
+			$description   = $item->description;
+			$author        = $item->created_by_alias ?: $item->author;
+			$categoryTitle = isset($item->category_title) ? $item->category_title : $category->title;
 
 			if ($createdField)
 			{
@@ -106,12 +107,15 @@ class CategoryFeedView extends HtmlView
 				$date = '';
 			}
 
+			// @PATCH IOC004
+			// CODI AFEGIT
 			$tags = new \JHelperTags;
 			$tags->getItemTags('com_content.article', $item->id);
 			$tagnames = array_map(function ($f)
 							{
 								return $f->alias;
 							}, $tags->itemTags);
+			// FI
 
 			// Load individual item creator class.
 			$feeditem              = new \JFeedItem;
@@ -119,9 +123,12 @@ class CategoryFeedView extends HtmlView
 			$feeditem->link        = $link;
 			$feeditem->description = $description;
 			$feeditem->date        = $date;
-			$feeditem->category    = $category->title;
+			$feeditem->category    = $categoryTitle;
 			$feeditem->author      = $author;
+			// @PATCH IOC004
+			// CODI AFEGIT
 			$feeditem->tags        = $tagnames;
+			// FI
 
 			// We don't have the author email so we have to use site in both cases.
 			if ($feedEmail === 'site')
@@ -140,7 +147,7 @@ class CategoryFeedView extends HtmlView
 
 	/**
 	 * Method to reconcile non standard names from components to usage in this class.
-	 * Typically overriden in the component feed view class.
+	 * Typically overridden in the component feed view class.
 	 *
 	 * @param   object  $item  The item for a feed, an element of the $items array.
 	 *

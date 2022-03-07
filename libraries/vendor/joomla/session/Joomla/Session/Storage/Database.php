@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Session Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -14,7 +14,7 @@ use Joomla\Session\Storage;
 /**
  * Database session storage handler for PHP
  *
- * @link        https://secure.php.net/manual/en/function.session-set-save-handler.php
+ * @link        https://www.php.net/manual/en/function.session-set-save-handler.php
  * @since       1.0
  * @deprecated  2.0  The Storage class chain will be removed
  */
