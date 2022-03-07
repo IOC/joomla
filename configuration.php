@@ -1,1 +1,1 @@
-/dades/data/ioc/configuration.php
+../../config-joomla.php
