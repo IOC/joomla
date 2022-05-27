@@ -8,9 +8,12 @@
 
 defined('_JEXEC') or die;
 //queueit
-require_once(__DIR__ .'/../../queueit/iocqueue.php');
-$json = __DIR__ .'/../../queueit/';
-iocqueue($json);
+$file_queueit = '/dades/data/data-joomla/queueit.txt';
+if (file_exists($file_queueit)) {
+    require_once(__DIR__ .'/../../queueit/iocqueue.php');
+    $json = __DIR__ .'/../../queueit/';
+    iocqueue($json);
+}
 //End Queueit
 
 require_once('includes/params.php');
