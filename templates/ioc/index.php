@@ -5,14 +5,16 @@
 # @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 # Website http://www.gsuez.cl
 -------------------------------------------------------------------------*/	// no direct access
+require_once(__DIR__ .'/../../configuration.php');
 
 defined('_JEXEC') or die;
 //queueit
-$file_queueit = '/dades/data/data-joomla/queueit.txt';
+$CONF = new Jconfig();
+
+$file_queueit = $CONF->jsonQueueit . 'queueit.txt';
 if (file_exists($file_queueit)) {
-    require_once(__DIR__ .'/../../queueit/iocqueue.php');
-    $json = __DIR__ .'/../../queueit/';
-    iocqueue($json);
+    require_once(__DIR__ . '/../../queueit/iocqueue.php');
+    iocqueue($CONF->jsonQueueit);
 }
 //End Queueit
 
