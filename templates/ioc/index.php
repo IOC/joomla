@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 $file_queueit = '/dades/data/data-joomla/queueit.txt';
 if (file_exists($file_queueit)) {
     require_once(__DIR__ .'/../../queueit/iocqueue.php');
-    $json = __DIR__ .'/../../queueit/';
+    $json = '/dades/data/data-joomla/';
     iocqueue($json);
 }
 //End Queueit
