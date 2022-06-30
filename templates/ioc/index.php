@@ -404,6 +404,5 @@ JText::script('TPL_IOC_TAB_PREVIOUS');
 <!-- JS -->
 <script type="text/javascript" src="<?php echo $tpath; ?>/js/template.min.js"></script>
 <!-- JS -->
-<?php echo 'hola'; ?>
 </body>
 </html>
