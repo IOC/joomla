@@ -8,7 +8,7 @@ class xtecmail {
     private $allowed_senders = array(
         'xtec' => 'correus_aplicacions.educacio@xtec.cat',
         'gencat' => 'correus_aplicacions.educacio@gencat.cat',
-        'educacio' => 'apligest@correueducacio.xtec.cat',
+        'educacio' => 'correus_aplicacions.educacio@gencat.cat',
     );
 
 
