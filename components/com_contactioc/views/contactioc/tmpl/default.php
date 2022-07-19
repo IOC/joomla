@@ -145,6 +145,9 @@ JText::script('COM_CONTACTIOC_INVALID_SELECT');
                 </label>
             </div>
         </fieldset>
+
+        <!-- Removed captcha form contact form -->
+        <!--
         <?php
             $captcha_plugin = JFactory::getConfig()->get('captcha');
             if ($captcha_plugin != '0') {
@@ -153,6 +156,8 @@ JText::script('COM_CONTACTIOC_INVALID_SELECT');
               print $captcha->display($field_id, $field_id, 'g-recaptcha');
             }
         ?>
+        -->
+
 		<div>
 			<button type="submit" class="contact-submit">
 				<?php echo JText::_('COM_CONTACTIOC_SEND'); ?>
