@@ -13,4 +13,3 @@ if ($token == $CONF->tokenCron) {
     echo "Acc&eacute;s incorrecte.<br />";
     echo '</body></html>';
 }
-~   
