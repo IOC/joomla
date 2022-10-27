@@ -409,8 +409,13 @@ class PlgEditorTinymce extends JPlugin
 		else
 		{
 			// Use filters from TinyMCE params
-			$invalid_elements  = trim($levelParams->get('invalid_elements', 'script,applet,iframe'));
-			$extended_elements = trim($levelParams->get('extended_elements', ''));
+			$invalid_elements  = trim($levelParams->get('invalid_elements', 'script,applet,iframe'));			
+			// @PATCH IOC011
+			// CODI ORIGINAL
+			// $extended_elements = trim($levelParams->get('extended_elements', ''));
+			// CODI MODIFICAT
+			$extended_elements = trim($levelParams->get('extended_elements', 'span[*]'));
+			// FI
 			$valid_elements    = trim($levelParams->get('valid_elements', ''));
 		}
 
