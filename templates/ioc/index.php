@@ -12,6 +12,13 @@ defined('_JEXEC') or die;
 $CONF = new Jconfig();
 
 $file_queueit = $CONF->jsonQueueit . 'queueit.txt';
+
+if(!empty($_SERVER['HTTP_VIA'])){
+    if (strpos($_SERVER['HTTP_VIA'], 'translate') !== false || strpos($_SERVER['HTTP_VIA'], 'google') !== false) {
+        $file_queueit = false;
+    }
+}
+
 if (file_exists($file_queueit)) {
     require_once(__DIR__ . '/../../queueit/iocqueue.php');
     iocqueue($CONF->jsonQueueit);
