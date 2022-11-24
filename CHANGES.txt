@@ -1,0 +1,4 @@
+Version 4.00.1
+----------------------
+- First version to deploy with AWS team.
+- Fix google translator IOC es.
