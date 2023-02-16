@@ -68,7 +68,14 @@ try {
 
 function getFullRequestUri() {
      // Get HTTP/HTTPS (the possible values for this vary from server to server)
-    $myUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && !in_array(strtolower($_SERVER['HTTPS']),array('off','no'))) ? 'https' : 'http';
+     if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+        $myUrl = $_SERVER['HTTP_X_FORWARDED_PROTO'];
+    } else if (!empty($_SERVER['HTTPS'])) {
+        $myUrl = strtolower($_SERVER['HTTPS']) == 'off' ? 'http' : 'https';
+    } else {
+        $myUrl = 'http';
+    }
+    
     // Get domain portion
     $myUrl .= '://'.$_SERVER['HTTP_HOST'];
     // Get path to script
