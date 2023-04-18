@@ -10,8 +10,9 @@
 defined('JPATH_BASE') or die;
 
 ?>
-            <dd class="modified">
-                <time datetime="<?php echo JHtml::_('date', $displayData['item']->modified, 'c'); ?>" itemprop="dateModified">
-                    <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $displayData['item']->modified, 'l, j F Y')); ?>
-                </time>
-            </dd>
+			<dd class="modified">
+				<?php //@PATCH IOC012: modify dateModified to datePuhlished (1148-2022-0119 i 1148-2023-0188) ?>
+				<time datetime="<?php echo JHtml::_('date', $displayData['item']->publish_up, 'c'); ?>" itemprop="datePublished">
+					<?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $displayData['item']->publish_up, 'l, j F Y')); ?>
+				</time>
+			</dd>
