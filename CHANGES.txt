@@ -1,3 +1,7 @@
+Version 4.00.2
+----------------------
+- Added Erasmus images
+
 Version 4.00.1
 ----------------------
 - First version to deploy with AWS team.
