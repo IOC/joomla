@@ -54,7 +54,9 @@ $imgpath = 'templates/' . $app->getTemplate() . '/images/';
 $itemid = JRequest::getVar('Itemid');
 if ($itemid && JRequest::getCmd('view') != 'search') {
     $active = $menu->getItem($itemid);
-    $params = $menu->getParams( $active->id );
+    if ($active) {
+        $params = $menu->getParams( $active->id );
+    }
     $pageclass = $params->get( 'pageclass_sfx' );
     $suffixes = array(
         'logo_',
