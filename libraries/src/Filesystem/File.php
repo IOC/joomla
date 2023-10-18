@@ -189,6 +189,12 @@ class File
 	{
 		$FTPOptions = ClientHelper::getCredentials('ftp');
 		$pathObject = new PathWrapper;
+		// @PATCH IOC013 Que elimini nomes el contingut dels enllaços simbolics.gt
+		// CODI MODIFICAT
+		if (is_link($file)) {
+			exec("cat /dev/null > $file 2>&1", $output, $returnCode);
+		}
+		// FI
 
 		if (is_array($file))
 		{
