@@ -15,3 +15,7 @@ Version 4.00.1
 ----------------------
 - First version to deploy with AWS team.
 - Fix google translator IOC es.
+
+Version 4.00.2
+----------------------
+- Add Sitemap generation plugin.
