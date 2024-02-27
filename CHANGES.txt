@@ -1,3 +1,7 @@
+Version 4.00.6
+----------------------
+- Fix text overlap in login modal.
+
 Version 4.00.5
 ----------------------
 - Add Sitemap generation plugin.
