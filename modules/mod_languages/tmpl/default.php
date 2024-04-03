@@ -103,10 +103,7 @@ if ($params->get('dropdown', 0) && !$params->get('dropdownimage', 1))
 			</li>
 		<?php endif; ?>
 	<?php endforeach; ?>
-	<?php //@PATCH IOC001: Add spanish and english button to translate the web content with google translate ?>
-	<li>
-		<a href="https://translate.google.com/translate?hl=&sl=ca&tl=es&u=https://ioc.xtec.cat/educacio">ES</a>
-	</li>
+	<?php //@PATCH IOC001: Add english button to translate the web content with google translate ?>
 	<li>
 		<a href="https://translate.google.com/translate?hl=&sl=ca&tl=en&u=https://ioc.xtec.cat/educacio">EN</a>
 	</li>

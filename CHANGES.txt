@@ -1,3 +1,7 @@
+Version 4.00.7
+----------------------
+- Delete Translate to Spanish by Google Translator.
+
 Version 4.00.6
 ----------------------
 - Fix text overlap in login modal.
