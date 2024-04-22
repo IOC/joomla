@@ -1,3 +1,7 @@
+Version 4.00.8
+----------------------
+- Changes in contact form (1148-2024-0223)
+
 Version 4.00.7
 ----------------------
 - Delete Translate to Spanish by Google Translator.
