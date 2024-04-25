@@ -131,9 +131,7 @@ JText::script('COM_CONTACTIOC_INVALID_SELECT');
                     <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT6'); ?> <a href="/educacio/proteccio-dades">+info</a></span>
                 </div>
                 <div class="text-row">
-                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT8'); ?>
-                        <br /><a href="https://forms.gle/PFjqdmKrQFhuP8P27">https://forms.gle/PFjqdmKrQFhuP8P27</a>
-                    </span>
+                    <span><?php echo JText::_('COM_CONTACTIOC_GDPR_TEXT8'); ?></span>
                 </div>
             </div>
             <div>
