@@ -68,7 +68,7 @@ if ($itemid && JRequest::getCmd('view') != 'search') {
     }
 }
 ?>
-<body class="<?php echo $frontpage; echo $multilang ? ' multilang' : '';?>">
+<body class="<?php echo $frontpage; ?>">
 <?php
  if($layout=='boxed'){ ?>
 <div class="layout-boxed">
