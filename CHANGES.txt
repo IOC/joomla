@@ -1,3 +1,7 @@
+Verison 4.00.12
+----------------------
+- Fix logo resolution.
+
 Verison 4.00.11
 ----------------------
 - Add new logo Departament.
