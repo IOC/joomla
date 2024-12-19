@@ -89,7 +89,7 @@ if ($itemid && JRequest::getCmd('view') != 'search') {
 </button>
     <div id="brand">
         <a href="http://ensenyament.gencat.cat" class="ioc-departament" tabindex="1" aria-label="<?php echo JText::_('TPL_IOC_JUMP_TO_DEPARTAMENT');?>">
-            <img class=" logo" src="<?php echo $imgpath; ?>logo-dep-2024.png" alt="Departament d'Educacio" />
+            <img class="logo_dep" src="<?php echo $imgpath; ?>logo-dep-2024.png" alt="Departament d'Educacio" />
         </a>
         <a href="<?php echo $this->params->get('logo_link');?>" class="ioc-logo" tabindex="1" aria-label="<?php echo JText::_('TPL_IOC_JUMP_TO_START');?>">
             <img class="logo" src="<?php echo $imgpath; ?>logo-ioc-petit.svg" alt="Institut Obert de Catalunya" />
