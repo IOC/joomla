@@ -229,7 +229,7 @@ class RssRenderer extends DocumentRenderer
 			// CODI AFEGIT
 			if (preg_match('/<figure[^<]*<img.*?src="([^"]*)"/', $data->items[$i]->description, $matches))
 			{
-				$imagetype = in_array('matricules', $data->items[$i]->tags) ? 'matricula' : 'general';
+				$imagetype = @in_array('matricules', $data->items[$i]->tags) ? 'matricula' : 'general';
 				$pathinfo = pathinfo($matches[1]);
 				preg_match('/.*?([^_]*)$/', $pathinfo['filename'], $study);
 				if (!empty($study) && file_exists($templatepath . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'twitter' . DIRECTORY_SEPARATOR . $study[1] . '-twitter-' . $imagetype . '.' . $pathinfo['extension'])) {

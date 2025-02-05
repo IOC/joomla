@@ -1,16 +1,20 @@
-Verison 4.00.13
+Version 4.00.14
+----------------------
+- Fix Warnings on rss.
+
+Version 4.00.13
 ----------------------
 - Fix logo scroll elements.
 
-Verison 4.00.12
+Version 4.00.12
 ----------------------
 - Fix logo resolution.
 
-Verison 4.00.11
+Version 4.00.11
 ----------------------
 - Add new logo Departament.
 
-Verison 4.00.10
+Version 4.00.10
 ----------------------
 - Add forcepasswordreset plugin.
 
