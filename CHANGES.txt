@@ -1,3 +1,7 @@
+Version 4.00.15
+----------------------
+- Fix Spanish literal.
+
 Version 4.00.14
 ----------------------
 - Fix Warnings on rss.
