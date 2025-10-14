@@ -3931,10 +3931,12 @@ header.headroom--not-top {
                             &.iis {
                                 @include filter-background-icon(iis);
                             }
-			     &.agr {
+                            &.agr {
                                 @include filter-background-icon(agr);
                             }
-
+                            &.hit {
+                                @include filter-background-icon(hit);
+                            }
                             &.eie {
                                 @include filter-background-icon(eie);
                             }

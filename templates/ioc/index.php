@@ -119,10 +119,10 @@ if ($itemid && JRequest::getCmd('view') != 'search') {
     </button>
 <?php  endif; ?>
 <div class="social hidden-sm hidden-xs text-left">
-        <a href="https://es.linkedin.com/in/ioc-institut-obert-de-catalunya-bb4805b1" target="_blank" aria-label="<?php echo JText::_('TPL_IOC_LINKEDIN');?>" tabindex="9">
+        <a href="https://www.linkedin.com/school/iocinstitut" target="_blank" aria-label="<?php echo JText::_('TPL_IOC_LINKEDIN');?>" tabindex="9">
             <span class="linkedin custom-icon"></span>
         </a>
-        <a href="http://twitter.com/ioc" target="_blank" aria-label="<?php echo JText::_('TPL_IOC_TWITTER');?>" tabindex="10">
+        <a href="https://x.com/iocinstitut" target="_blank" aria-label="<?php echo JText::_('TPL_IOC_TWITTER');?>" tabindex="10">
             <span class="twitter custom-icon"></span>
         </a>
         <a href="https://vimeo.com/institutobert" target="_blank" aria-label="<?php echo JText::_('TPL_IOC_VIMEO');?>" tabindex="11">
@@ -329,10 +329,10 @@ if ($itemid && JRequest::getCmd('view') != 'search') {
     <div class="visible-xs visible-sm container mobile">
         <div class="social">
             <span class="text"><?php echo JText::_('TPL_IOC_FOLLOWUS'); ?></span>
-            <a href="https://es.linkedin.com/in/ioc-institut-obert-de-catalunya-bb4805b1">
+            <a href="https://www.linkedin.com/school/iocinstitut">
                 <span class="custom-icon linkedin"></span>
             </a>
-            <a href="https://twitter.com/ioc"><span class="custom-icon twitter"></span></a>
+            <a href="https://x.com/iocinstitut"><span class="custom-icon twitter"></span></a>
             <a href="https://vimeo.com/institutobert"><span class="custom-icon vimeo"></span></a>
         </div>
         <div class="contacte">

@@ -6446,6 +6446,9 @@ div[class*="item-page-news"] .ioc-breadcrumb {
 .subpage-text-buttons-banner .subpage-filter .filter-dropdown .filter-elements ul li a.agr, .subpage-text-banner .subpage-filter .filter-dropdown .filter-elements ul li a.agr, .subpage-buttons-filter .subpage-filter .filter-dropdown .filter-elements ul li a.agr {
   background-image: url('../images/familia-agr-icon.png');
 }
+.subpage-text-buttons-banner .subpage-filter .filter-dropdown .filter-elements ul li a.hit, .subpage-text-banner .subpage-filter .filter-dropdown .filter-elements ul li a.hit, .subpage-buttons-filter .subpage-filter .filter-dropdown .filter-elements ul li a.hit {
+  background-image: url('../images/familia-hit-icon.png');
+}
 .subpage-text-buttons-banner .subpage-filter .filter-dropdown .filter-elements ul li .tooltip, .subpage-text-banner .subpage-filter .filter-dropdown .filter-elements ul li .tooltip, .subpage-buttons-filter .subpage-filter .filter-dropdown .filter-elements ul li .tooltip {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
 }
