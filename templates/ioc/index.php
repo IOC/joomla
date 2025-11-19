@@ -148,7 +148,6 @@ if ($itemid && JRequest::getCmd('view') != 'search') {
                         <jdoc:include type="modules" name="navigation" style="none" />
                         <?php  endif; ?>
 </div>
-<?php if (!$multilang) : ?>
 <div class="megaphone hidden-xs hidden-sm">
     <a href="/educacio/#news" aria-label="<?php echo JText::_('TPL_IOC_LINK_NEWS');?>" tabindex="2" title="<?php echo JText::_('TPL_IOC_TAG_NEWS');?>">
         <svg width="32px" height="22px" viewBox="0 0 32 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -164,7 +163,6 @@ if ($itemid && JRequest::getCmd('view') != 'search') {
     </svg>
     </a>
 </div>
-<?php  endif; ?>
 </div></div>
 </div>
 </header>
