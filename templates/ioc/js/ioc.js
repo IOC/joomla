@@ -266,6 +266,22 @@
             $('header').removeClass('bck-displayed');
         });
 
+		$(document).on('click', '.ioc-menu .navbar-nav a[href*="#"]', function(e) {
+			var $hamburger = $('.navbar-toggle');
+			if ($hamburger.is(':visible') && $hamburger.hasClass('open')) {
+				e.preventDefault();
+				var href = this.getAttribute('href');
+				var hash = href.split('#')[1];
+				var target = $('#' + hash);
+				$hamburger.trigger('click');
+				setTimeout(function() {
+					if (target.length) {
+						$('html, body').animate({scrollTop: target.offset().top}, 500);
+					}
+				}, 400);
+			}
+		});
+
         $(document).on('shown.bs.collapse', '.ioc-menu', function(e) {
             $('.social, .ioc-languages').addClass('bck-displayed');
         });
