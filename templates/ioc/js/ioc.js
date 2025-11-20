@@ -268,17 +268,12 @@
 
 		$(document).on('click', '.ioc-menu .navbar-nav a[href*="#"]', function(e) {
 			var $hamburger = $('.navbar-toggle');
-			if ($hamburger.is(':visible') && $hamburger.hasClass('open')) {
-				e.preventDefault();
-				var href = this.getAttribute('href');
-				var hash = href.split('#')[1];
-				var target = $('#' + hash);
+			var $navbarCollapse = $('.ioc-menu');
+
+			if ($hamburger.is(':visible') && $navbarCollapse.hasClass('in')) {
 				$hamburger.trigger('click');
-				setTimeout(function() {
-					if (target.length) {
-						$('html, body').animate({scrollTop: target.offset().top}, 500);
-					}
-				}, 400);
+
+				setTimeout(function() {}, 300);
 			}
 		});
 
