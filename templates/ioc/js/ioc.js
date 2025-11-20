@@ -534,8 +534,6 @@
         ga('send', 'pageview');
 
 		$(document).on('click', '.ioc-menu .navbar-nav a[href*="#"]', function(e) {
-			$(document).off('click', '.ioc-menu .navbar-nav a[href*="#"]');
-
 			var $hamburger = $('.navbar-toggle');
 			var $navbarCollapse = $('.ioc-menu');
 
