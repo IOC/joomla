@@ -266,15 +266,6 @@
             $('header').removeClass('bck-displayed');
         });
 
-		$(document).on('click', '.ioc-menu .navbar-nav a[href*="#"]', function(e) {
-			var $hamburger = $('.navbar-toggle');
-			var $navbarCollapse = $('.ioc-menu');
-
-			if ($hamburger.is(':visible') && $navbarCollapse.hasClass('in')) {
-				$hamburger.trigger('click');
-			}
-		});
-
         $(document).on('shown.bs.collapse', '.ioc-menu', function(e) {
             $('.social, .ioc-languages').addClass('bck-displayed');
         });
@@ -541,5 +532,16 @@
 
         ga('create', 'UA-36486089-1', 'auto');
         ga('send', 'pageview');
+
+		$(document).on('click', '.ioc-menu .navbar-nav a[href*="#"]', function(e) {
+			$(document).off('click', '.ioc-menu .navbar-nav a[href*="#"]');
+
+			var $hamburger = $('.navbar-toggle');
+			var $navbarCollapse = $('.ioc-menu');
+
+			if ($hamburger.is(':visible') && $navbarCollapse.hasClass('in')) {
+				$hamburger.trigger('click');
+			}
+		});
     });
 })(jQuery);
