@@ -272,8 +272,6 @@
 
 			if ($hamburger.is(':visible') && $navbarCollapse.hasClass('in')) {
 				$hamburger.trigger('click');
-
-				setTimeout(function() {}, 300);
 			}
 		});
 
